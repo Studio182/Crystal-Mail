@@ -1,0 +1,326 @@
+/***** crystalmail|Mail address book task styles *****/
+
+#abooktoolbar
+{
+  position: absolute;
+    background: url('../crystal/images/header.png') repeat-x;
+  top: 26px;
+  left: 0px;
+  right: 0px;
+  height: 46px;
+  min-width: 350px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 225px;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+
+#abooktoolbar a
+{
+  padding-right: 10px;
+}
+
+#abooktoolbar a.button,
+#abooktoolbar a.buttonPas,
+#abooktoolbar span.separator {
+  display: block;
+  float: left;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  margin-right: 10px;
+  overflow: hidden;
+  background: url(../crystal/images/abook_toolbar.png) 0 0 no-repeat transparent;
+  opacity: 0.99; /* this is needed to make buttons appear correctly in Chrome */
+}
+
+#abooktoolbar a.buttonPas {
+  opacity: 0.35;
+}
+
+#abooktoolbar a.addcontactSel {
+  background-position: 0 -31px;
+}
+
+#abooktoolbar a.compose {
+  background-position: -32px 0;
+}
+
+#abooktoolbar a.composeSel {
+  background-position: -32px -31px;
+}
+
+#abooktoolbar a.delete {
+  background-position: -64px 0;
+}
+
+#abooktoolbar a.deleteSel {
+  background-position: -64px -31px;
+}
+
+#abooktoolbar a.import {
+  background-position: -96px 1px;
+}
+
+#abooktoolbar a.importSel {
+  background-position: -96px -30px;
+}
+
+#abooktoolbar a.export {
+  background-position: -128px 1px;
+}
+
+#abooktoolbar a.exportSel {
+  background-position: -128px -30px;
+}
+
+#abooktoolbar span.separator {
+  width: 5px;
+  background-position: -162px 0;
+}
+
+#abookcountbar
+{
+  margin-top: 4px;
+  margin-left: 4px;
+}
+
+#addressscreen
+{
+  position: absolute;
+  top: 85px;
+  right: 20px;
+  bottom: 20px;
+  left: 225px;
+}
+
+#directorylistbox
+{
+  position: absolute;
+  top: 85px;
+  bottom: 20px;
+  left: 20px;
+  width: 195px;
+  border: 1px solid #999999;
+  background-color: #FFFFFF;
+  overflow: hidden;
+}
+
+#directorylistbox input
+{
+  margin: 2px;
+  width: 90%;
+}
+
+#addresslist
+{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  border: 1px solid #999999;
+  background-color: #FFFFFF;
+  overflow: hidden;
+}
+
+#contactgroupslist
+{
+  border-top: 1px solid #999;
+}
+
+#addresslist
+{
+  left: 0px;
+  width: 280px;
+}
+
+#directorylist
+{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background-color: #FFFFFF;
+}
+
+#directorylist li
+{
+  display: block;
+  font-size: 11px;
+  background: url(../crystal/images/icons/folders.png) 5px -108px no-repeat;
+  border-bottom: 1px solid #EBEBEB;
+  white-space: nowrap;
+}
+
+#directorylist li a
+{
+  cursor: default;
+  display: block;
+  padding-left: 25px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+#directorylist li.contactgroup
+{
+  padding-left: 15px;
+  background-position: 20px -144px;
+}
+
+#directorylist li.selected
+{
+  background-color: #929292;
+  border-bottom: 1px solid #898989;
+}
+
+#directorylist li.selected a
+{
+  color: #FFF;
+  font-weight: bold;
+}
+
+#directorylist li.droptarget
+{
+  background-color: #FFFFA6;
+}
+
+#contacts-table
+{
+  width: 100%;
+  table-layout: fixed;
+}
+
+#contacts-table tbody td
+{
+  cursor: default;
+  text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+}
+
+#contacts-box
+{
+  position: absolute;
+  top: 0px;
+  left: 290px;
+  right: 0px;
+  bottom: 0px;
+  border: 0;
+  overflow: hidden;
+}
+
+body.iframe,
+#contact-frame
+{
+  background-color: #FFFFFF;
+  border: none;
+}
+
+#contact-details
+{
+  position: absolute;
+  top: 23px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  border-left: 1px solid #999999;
+  padding: 25px 20px 20px 20px;
+  overflow: auto;
+}
+
+#contact-details table td
+{
+  padding: 2px 0 2px 0;
+}
+
+#contact-details table td.title
+{
+  font-weight: bold;
+  text-align: left;
+}
+
+#address-tabsbar
+{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 22px;
+  border-bottom: 1px solid #999999;
+  background-color: #FFFFFF;
+  white-space: nowrap;
+}
+
+#contact-details div input, #contact-details div textarea
+{
+  width: 250px;
+}
+
+#group-manager
+{
+  position: absolute;
+  width: 600px;
+  top: 25px;
+  left: 20px;
+  bottom: 25px;
+  overflow: auto;
+  border: 1px solid #999999;
+}
+
+
+#groups-table
+{
+  width: 100%;
+}
+
+#groups-table tbody td input
+{
+  width: auto;
+}
+
+#groups-table tbody td
+{
+  cursor: default;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+  height: 22px !important;
+  height: 18px;
+  padding: 2px 4px 2px 4px;
+}
+
+#groups-table thead td
+{
+  padding: 0px 4px 0px 4px;
+}
+
+#groups-table thead td.name
+{
+  width: 510px;
+}
+
+#groups-table thead td.member
+{
+  width: 90px;
+}
+#gravatar {
+position: absolute;
+top: 25px;
+right: 25px;
+width: 75px;
+height: 75px;
+padding:5px;
+background-color: #eeeeee;
+background-image:url('../../program/crystal/resources/spinner.gif');
+background-repeat:no-repeat;
+background-position:center;
+border: 1px #CCC solid;
+-moz-border-radius: 2px;
+border-radius: 2px;
+}
+#gravatar-image {
+-moz-border-radius: 2px;
+border-radius: 2px;
+}
+

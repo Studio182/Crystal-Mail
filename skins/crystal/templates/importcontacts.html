@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title><crystalmail:object name="pagetitle" /></title>
+<crystalmail:include file="/includes/links.html" />
+<style>
+#back {
+display: block;
+float: left;
+width: 22px;
+height: 32px;
+padding: 0;
+background: url(./skins/crystal/images/mail_toolbar.png) 0 0 no-repeat transparent;
+opacity: 0.99;
+background-position: -32px 0;
+z-index: 1000000000000;
+}
+</style>
+</head>
+<body>
+
+<crystalmail:include file="/includes/taskbar.html" />
+<crystalmail:include file="/includes/header.html" />
+
+<div id="abooktoolbar">
+<div style="margin-left: -190px;"><a id="back" title="" href="?_task=addressbook" onclick="return cmail.command('list','',this)"> </a></div>
+</div>
+
+<div id="mainscreen" class="box darkbg">
+<div class="boxtitle"><crystalmail:label name="importcontacts" /></div>
+
+<div class="boxcontent">
+<crystalmail:object name="importstep" />
+
+<p><br />
+<crystalmail:object name="importnav" class="button" />
+</p>
+
+</div>
+</div>
+
+</body>
+</html>
