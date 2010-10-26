@@ -111,17 +111,16 @@ function Update()
 //Tell iniset.php that you just wan't the version number
 $ov = 'true';
 include ('../program/include/iniset.php');
-
-cm_download('http://www.crystalmail.net/update/v2/info.php?v='.cmail_VERSION, '../temp/info.php');
+ $version = cmail_VERSION; 
+cm_download('http://www.crystalmail.net/update/v2/info.php?v='.$version, '../temp/info.php');
   
   //Check if we are in kill mode
   include('../temp/info.php');      
+ 
   cm_clean('../temp/info.php');
   if ($kill == false)
     {
-     //See if Update Exists
-      
-      if ($version < $infoversion)
+           if ($version >= $infoversion)
         {
 echo "
 <script type='text/javascript'>                                         
