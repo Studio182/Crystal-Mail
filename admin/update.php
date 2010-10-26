@@ -76,11 +76,11 @@ Successfully Extracted Files";
     {
       //Include Info File
       
-      include('./temp/info.php');
+      include('../temp/info.php');
       
       //Clean up Info File
       
-      cm_clean('./temp/info.php');
+      cm_clean('../temp/info.php');
       
       //See if Update Exists
       
@@ -95,7 +95,7 @@ Successfully Extracted Files";
           cm_unzip('../temp/update.zip', '../temp/');
           
           //Move into place
-          mover('./temp/' . $githubusername . '-' . $githubrepo . '-' . $hash . '/', './');
+          mover('../temp/' . $githubusername . '-' . $githubrepo . '-' . $hash . '/', '../');
           
           //Run Update Script (If any)
           if (file_exists('../install-update.php')) {
@@ -106,6 +106,5 @@ Successfully Extracted Files";
           
           cm_clean('../temp/update.zip');
         }
-    }
     }
 ?>

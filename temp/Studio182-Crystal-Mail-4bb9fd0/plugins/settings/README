@@ -1,0 +1,16 @@
+Function: adds a new menu item to the Settings menu (Account Administration)
+
+Required plugin: none
+
+instructions:
+
+1: copy the "hmail_settings" folder to your plugin directory.
+   <install directory>\plugins\settings
+
+2: copy <install directory>\plugins\settings\config\config.inc.php.dist 
+   to   <install directory>\plugins\settings\config\config.inc.php
+ 
+3: add "settings" to your plugin array settings in your <install directory>\config\main.inc.php
+   $cmail_config['plugins'] = array('settings')
+   
+   If configured correctly, your Settings options should have a new menu item, Account Administration.

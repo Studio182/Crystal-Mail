@@ -1,0 +1,41 @@
+h1. Crystal Mail :: Readme
+
+h2. Introduction
+
+Crystal Mail is a web based multilingual IMAP email client. With an application like interface it provides all the features you would expect from a regular email client and more. Including but limited to, MIMI support, Address Book, Folder Management, Message searching, Spell Checking, an Admin Panel, Multiple IMAP account support (for a per user basis and a global basis), and much more! Crystal Mail is written in PHP, the requirments to run Crystal Mail are
+
+
+* An Apache, or Lighttpd webserver (or something like it, sorry no IIS support)
+* PHP Version 5.2.1 or higher
+* A IMAP server with uspport for IMAP4 rev1
+* A SMTP server or PHP configured mail delivery (A SMTP server is recommened)
+* One of the following compatible SQL servers, MySQL, PostgreSQL, SQLite, or MSSQL (Not all features supported for MSSQL)
+
+
+This project includes other open-source classes/libraries from PEAR (http://pear.php.net), an IMAP library derived from IlohaMail the TinyMCE rich text editor, Googiespell library for spell checking or the HTML sanitizer by Frederic Motte. Crystal Mail is based on the "RoundCube Webmail Project":http://roundcube.net/.
+
+h2. Installation
+
+For more information on installing Crystal Mail on your server please take look at the "Install Documentation":http://wiki.github.com/crystal-mail/Crystal-Mail/install-documentation document
+
+h2. Licensing
+
+This product is distributed under the GNU General Public License Version 2.
+Please read through the file LICENSE for more information about our license.
+Even if skins might contain some programming work, they are not considered
+as a linked part of the application and therefore skins DO NOT fall under
+the provisions of the GPL license. See the README file located in the skins
+folder for details on the skin license.
+
+h2. Contribute
+
+What to help us make Crystal Mail better than it already is? Crystal Mail is open source which means all of our developers are volunteers. We are always looking for new team members. One of the downsides of running an a *Free* open source project is that keeping the project alive isn't free. Please concider donaiting. For more info about anything in the contribute section please visit our "Contribute":http://www.crystalmail.net/contribute page.
+
+h2. Support
+
+Got a question? Post it on our "support forum":http://forum.crystalmail.net!
+
+h2. Contact
+
+For any bug reports or feature requests please refer to our tracking system at "http://tracker.crystalmail.net/":http://tracker.crystalmail.net/ And you can always contact the project admin at "hunter@crystalmail.net":mailto:hunter@crystalmail.net!
+

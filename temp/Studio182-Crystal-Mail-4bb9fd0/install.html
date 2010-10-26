@@ -1,0 +1,260 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!-- saved from url=(0051)http://www.gnu.org/licenses/gpl-3.0-standalone.html -->
+<HTML><STYLE>
+body {
+font-family:Arial,Helvetica,sans-serif;
+color: #333;
+background-color: #FFFFFF;
+margin: 0px;
+}
+.TxtAddress2
+{
+	z-index: 1000;
+	font-size: 24px;
+}
+
+.Test
+{
+	position: absolute; 
+	top: 1%; 
+	left: 1%; 
+	z-index: 1000;
+}
+a {
+text-decoration: none;
+}
+a:hover {
+text-decoration: underline;
+}
+#container {
+margin: 20px;
+}
+</STYLE><HEAD><META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+ 
+ <TITLE>Crystal Mail :: Install</TITLE>
+ <LINK rel="alternate" type="application/rdf+xml" href="http://www.gnu.org/licenses/gpl-3.0.rdf"> 
+</HEAD><BODY name="top">
+<div id="container">
+<center><h1>Crystal Mail :: Install</h1></center>
+	<h3>INTRODUCTION</h3>
+
+	<p>This file describes the basic steps to install Crystal Mail on your<br />
+web server.</p>
+
+	<h3>REQUIREMENTS</h3>
+
+	<ul>
+		<li>The Apache or Lighttpd Webserver</li>
+		<li>.htaccess support allowing overrides for DirectoryIndex
+		<li>PHP Version 5.2 or greater including
+   &#8211; PCRE, DOM, JSON, XML, Session, Sockets (required)
+   &#8211; libiconv (recommended)
+   &#8211; mbstring, fileinfo, mcrypt (optional)
+		<li>PEAR packages distributed with Crystal Mail or external:
+   &#8211; MDB2 2.5.0 or newer
+   &#8211; Mail_Mime 1.7.0 or newer
+   &#8211; Net_SMTP 1.4.2 or newer
+		<li>php.ini options (see .htaccess file):
+   &#8211; error_reporting E_ALL &#38; ~E_NOTICE (or lower)
+   &#8211; memory_limit > 16MB (increase as suitable to support large attachments)
+   &#8211; file_uploads enabled (for attachment upload features)
+   &#8211; session.auto_start disabled
+   &#8211; zend.ze1_compatibility_mode disabled
+   &#8211; suhosin.session.encrypt disabled
+   &#8211; mbstring.func_overload disabled
+		<li>PHP compiled with OpenSSL to connect to IMAPS and to use the spell checker
+		<li>A MySQL (4.0.8 or newer), PostgreSQL, MSSQL database engine</li>
+  or the SQLite extension for PHP
+		<li>One of the above databases with permission to create tables</li>
+		<li>An SMTP server (recommended) or PHP configured for mail delivery
+</ul>
+	<h3>INSTALLATION</h3>
+
+	<p>1. Decompress and put this folder somewhere inside your document root<br />
+2. Make sure that the following directories (and the files within)</p>
+   are writable by the webserver
+   &#8211; /temp
+   &#8211; /logs<br />
+3. Create a new database and a database user for Crystal Mail (see DATABASE SETUP)<br />
+4. Point your browser to http://url-to-crystalmail/installer/<br />
+5. Follow the instructions of the install script (or see MANUAL CONFIGURATION)<br />
+6. After creating and testing the configuration, remove the installer directory<br />
+7. Done!
+
+	<h3>CONFIGURATION HINTS</h3>
+
+	<p>Crystal Mail writes internal errors to the &#8216;errors&#8217; log file located in the logs<br />
+directory which can be configured in config/main.inc.php. If you want ordinary<br />
+PHP errors to be logged there as well, enable the &#8216;php_value error_log&#8217; line<br />
+in the .htaccess file and set the path to the log file accordingly.</p>
+
+	<p>By default the session_path settings of PHP are not modified by Crystal Mail.<br />
+However if you want to limit the session cookies to the directory where<br />
+Crystal Mail resides you can uncomment and configure the according line<br />
+in the .htaccess file.</p>
+
+	<h3>DATABASE SETUP</h3>
+
+	<p>Note: Database for Crystal Mail must use UTF-8 character set.</p>
+
+		<strong>MySQL</strong><br />
+Setting up the mysql database can be done by creating an empty database,<br />
+importing the table layout and granting the proper permissions to the<br />
+crystalmail user. Here is an example of that procedure:
+
+		<code>mysql<br />
+> CREATE DATABASE crystalmail /*!40101 CHARACTER SET utf8 COLLATE utf8_general_ci */;<br />
+> GRANT ALL PRIVILEGES ON crystalmail.* TO crystalmail@localhost
+    IDENTIFIED BY &#8216;password&#8217;;<br />
+> quit
+
+		mysql crystalmail < SQL/mysql.initial.sql</code>
+
+	<p>Note 1: &#8216;password&#8217; is the master password for the crystalmail user. It is strongly<br />
+recommended you replace this with a more secure password. Please keep in<br />
+mind: You need to specify this password later in &#8216;config/db.inc.php&#8217;.</p>
+
+		<strong>SQLite</strong><br>You need sqlite 2 (preferably 2.8) to setup the sqlite db <br />
+(sqlite 3.x also doesn&#8217;t work at the moment). Here is
+an example how you can setup the sqlite.db for crystalmail:
+
+		sqlite -init SQL/sqlite.initial.sql sqlite.db<br />
+Loading resources from SQL/sqlite.initial.sql<br />
+SQLite version 2.8.16<br />
+Enter &#8221;.help&#8221; for instructions<br /><br>
+<code>sqlite> .exit
+		chmod o+rw sqlite.db</code>
+
+	<p>Make sure your configuration points to the sqlite.db file and that the<br />
+webserver can write to the file and the directory containing the file.</p>
+
+		<strong>PostgreSQL</strong><br>To use Crystal Mail with PostgreSQL support you have to follow these<br />
+simple steps, which have to be done as the postgres system user (or<br />
+which ever is the database superuser):
+
+	<p><code>$ createuser crystalmail<br />
+$ createdb -O crystalmail -E UNICODE crystalmail<br />
+$ psql crystalmail</code></p>
+
+	<code>crystalmail =# ALTER USER crystalmail WITH PASSWORD &#8216;the_new_password&#8217;;<br />
+crystalmail =# \c &#8211; crystalmail<br />
+crystalmail => \i SQL/postgres.initial.sql</code>
+
+	<p>All this has been tested with PostgreSQL 8.x and 7.4.x. Older<br />
+versions don&#8217;t have a -O option for the createdb, so if you are<br />
+using that version you&#8217;ll have to change ownership of the DB later.</p>
+
+	<p><strong>Database cleaning</strong><br />
+Do keep your database slick and clean we recommend to periodically execute<br />
+bin/cleandb.sh which finally removes all records that are marked as deleted.<br />
+Best solution is to install a cronjob running this script daily.</p>
+
+	<h3>MANUAL CONFIGURATION</h3>
+
+	<p>First of all, rename the files config/*.inc.php.dist to config/*.inc.php.<br />
+You can then change these files according to your environment and your needs.<br />
+
+	<p>You can also modify the default .htaccess file. This is necessary to<br />
+increase the allowed size of file attachments, for example:<br />
+<code>php_value       upload_max_filesize     2M</code></p>
+
+	<h3>UPGRADING</h3>
+
+	<p>If you already have a previous version of Crystal Mail installed,<br />
+please refer to the instructions in UPGRADING guide.</p>
+
+	<h3>OPTIMISING</h3>
+
+	<p>There are two forms of optimisation here, compression and caching, both aimed<br />
+at increasing an end user&#8217;s experience using Crystal Mail Webmail. Compression<br />
+allows the static web pages to be delivered with less bandwidth. The index.php<br />
+of Crystal Mail Webmail already enables compression on its output. The settings<br />
+below allow compression to occur for all static files. Caching sets HTTP <br />
+response headers that enable a user&#8217;s web client to understand what is static<br />
+and how to cache it.</p>
+
+	<p>The caching directives used are:</p>
+ * Etags &#8211; sets at tag so the client can request is the page has changed
+ * Cache-control &#8211; defines the age of the page and that the page is &#8216;public&#8217;
+   This enables clients to cache javascript files that don&#8217;t have private 
+   information between sessions even if using HTTPS. It also allows proxies
+   to share the same cached page between users.
+ * Expires &#8211; provides another hint to increase the lifetime of static pages.
+
+	<p>For more information refer to RFC 2616.</p>
+
+	<p><strong>Side effects</strong><br />
+These directives are designed for production use. If you are using this in<br />
+a development environment you may get horribly confused if your webclient<br />
+is caching stuff that you changed on the server. Disabling the expires <br />
+parts below should save you some grief.</p>
+
+	<p>If you are changing the skins, it is recommended that you copy content to <br />
+a different directory apart from &#8216;default&#8217;.</p>
+
+	<p><strong>Apache</strong><br />
+To enable these features in apache the following modules need to be enabled:</p>
+<ul><li>mod_deflate</li>
+  <li>mod_expires</li>
+  <li>mod_headers</li>
+</ul>
+
+	<p>The optimisation is already included in the .htaccess file in the top <br />
+directory of your installation.</p>
+
+	<p>If you are using Apache version 2.2.9 and later, in the .htaccess file<br />
+change the &#8216;append&#8217; word to &#8216;merge&#8217; for a more correct response. Keeping<br />
+as &#8216;append&#8217; shouldn&#8217;t cause any problems though changing to merge will <br />
+eliminate the possibility of duplicate &#8216;public&#8217; headers in Cache-control.</p>
+
+	<p><strong>Lighttpd</strong><br /><br>
+With Lightty the addition of Expire: tags by mod_expire is incompatible with<br />
+the addition of &#8220;Cache-control: public&#8221;. Using Cache-control &#8216;public&#8217; is <br />
+used below as it is assumed to give a better caching result.</p>
+
+	<p>Enable modules in server.modules:</p>
+    <code>&#8220;mod_setenv&#8221;
+    &#8220;mod_compress&#8221;</code>
+
+	<p>Mod_compress is a server side cache of compressed files to improve its performance.</p>
+
+	<p><code>$HTTP["host"] == "www.example.com" {
+
+    static-file.etags = "enable"
+    # http://redmine.lighttpd.net/projects/lighttpd/wiki/Etag.use-mtimeDetails
+    etag.use-mtime = "enable"
+
+    # http://redmine.lighttpd.net/projects/lighttpd/wiki/Docs:ModSetEnv
+    $HTTP["url"] =~ "^/crystalmail/(plugins|skins|program)" {
+        setenv.add-response-header  = ( "Cache-Control" => "public, max-age=2592000")
+    }
+
+    # http://redmine.lighttpd.net/projects/lighttpd/wiki/Docs:ModCompress
+    # set compress.cache-dir to somewhere outside the docroot.
+    compress.cache-dir   = var.statedir + "/cache/compress"
+
+    compress.filetype = ("text/plain", "text/html", "text/javascript", "text/css", "text/xml", "image/gif", "image/png")
+}
+</code><br />
+
+</div>
+<center>
+<a name="translate">
+<div id="google_translate_element"></div><script>
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({
+    pageLanguage: 'en'
+  }, 'google_translate_element');
+}
+</script><script src="http://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<p><a href="#top">Top</a></center></p>
+</a>
+</div>
+</div><div style="position: fixed; bottom: 0; padding-left: -1000px; margin: 0px; width: 100%; border-top: #AAA dotted 1px; height: 25px; background-color: #FFF;">
+&nbsp;&nbsp;&nbsp;<a href="#translate">Translate</a>
+<div style="float:right;">
+
+Visit our site <a href="http://crystalmail.net/">http://crystalmail.net</a>&nbsp;&nbsp;&nbsp;</div></div></p>
+<br>
+
+</BODY></HTML>

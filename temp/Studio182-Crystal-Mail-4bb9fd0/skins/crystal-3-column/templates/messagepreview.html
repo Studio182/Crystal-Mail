@@ -1,0 +1,19 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title><crystalmail:object name="pagetitle" /></title>
+<crystalmail:include file="/includes/links.html" />
+</head>
+<body class="iframe">
+
+<div class="messageheaderbox">
+<crystalmail:button command="permaurl" image="/../crystal/images/icons/extwin.png" width="15" height="15" title="openinextwin" id="messageviewlink" target="_blank" />
+<crystalmail:object name="messageHeaders" class="headers-table" cellspacing="0" cellpadding="2" addicon="/../crystal/images/icons/silhouette.png" summary="Message headers" />
+<crystalmail:object name="messageAttachments" id="attachment-list" />
+</div>
+
+<crystalmail:object name="blockedObjects" id="remote-objects-message" />
+<crystalmail:object name="messageBody" id="messagebody" />
+
+</body>
+</html>

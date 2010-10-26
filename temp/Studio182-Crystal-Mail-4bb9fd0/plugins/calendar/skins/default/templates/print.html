@@ -1,0 +1,20 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title><crystalmail:object name="pagetitle" /></title>
+<link rel="stylesheet" type="text/css" href="skins/default/common.css" />
+</head>
+<body>
+<div id='print'>
+<div id='toolbar'>
+<crystalmail:container name="toolbar" id="toolbar" />
+</div>
+<div id='calendar'></div>
+<div id='agendalist'></div>
+</div>
+<div id='user'>
+<span><crystalmail:var name='session:username'/></span>
+<span>[<crystalmail:label name='calendar.generated' />: <crystalmail:object name='datetime'/>]</span>
+</div>
+</body>
+</html>

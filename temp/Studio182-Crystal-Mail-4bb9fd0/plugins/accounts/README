@@ -1,0 +1,20 @@
+Function: Allows users to configure multiple IMAP profiles from preconfigured servers
+
+Required Plugins: settings
+
+1: copy the "accounts" folder to your plugin directory.
+   <install directory>\plugins\accounts
+
+2: copy <install directory>\plugins\accounts\config\config.inc.php.dist
+   as <install directory>\plugins\accounts\config\config.inc.php
+   **config.inc.php.dist must be present in the folder
+
+3:  configure config.inc.php with your list of remote IMAP servers.
+
+4: use the provided SQL scripts (MSSQL / Mysql) to create the "accounts" table in your database
+
+5: add "accounts" to your plugin array settings in your <install directory>\config\main.inc.php
+
+   $cmail_config['plugins'] = array('settings','accounts')
+   
+Once configured, you should have "Remote IMAP Accounts" menu item under the "Account Administration" listing in Settings

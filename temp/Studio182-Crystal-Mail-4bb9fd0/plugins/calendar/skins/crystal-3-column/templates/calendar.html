@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title><crystalmail:object name="pagetitle" /></title>
+<crystalmail:include file="/includes/links.html" />
+</head>
+<body>
+<div id='calendar'></div>
+<div id="event">
+  <form>
+    <p>
+      <label for="summary"><crystalmail:label name="calendar.summary" /></label>:
+      <br />
+      <input name="summary" size="40" />
+    </p>
+    <p>
+      <label for="description"><crystalmail:label name="calendar.description" /></label>:
+      <br />
+      <textarea name="description" rows="15" cols="40"></textarea>
+    </p>
+    <p>
+      <label for="location"><crystalmail:label name="calendar.location" /></label>:
+      <br />
+      <input name="location" size="40" />
+    </p>
+    <p>
+      <label for="categories"><crystalmail:label name="calendar.category" /></label>:
+      <crystalmail:object name="plugin.category_html" />
+    </p>
+  </form>
+</div>
+<crystalmail:include file="/includes/taskbar.html" />
+<crystalmail:include file="/includes/header.html" />
+<div id="cal-header"></div>
+<crystalmail:object name="plugin.category_css" />
+<div id='toolbar'>
+<crystalmail:container name="toolbar" id="toolbar" />
+</div>
+
+</body>
+</html>

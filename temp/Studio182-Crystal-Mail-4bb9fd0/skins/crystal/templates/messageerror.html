@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title><crystalmail:object name='productname' /> :: <crystalmail:label name='servererror' /></title>
+<crystalmail:include file="/includes/links.html" />
+
+<crystalmail:if condition="env:action!='show'" />
+
+</head>
+<body class="iframe" style="background-color:#F2F2F2;">
+
+<div style="margin:20px auto; text-align:center">
+<img src="/images/watermark.gif" width="260" height="228" alt="" />
+</div>
+
+</body>
+
+<crystalmail:else />
+
+<script type="text/javascript" src="/splitter.js"></script>
+<script type="text/javascript" src="/functions.js"></script>
+<style type="text/css">
+#mailboxlist-container { width: <crystalmail:exp expression="!empty(cookie:mailviewsplitterv) ? cookie:mailviewsplitterv-5 : 170" />px; }
+#messageframe { left: <crystalmail:exp expression="!empty(cookie:mailviewsplitterv) ? cookie:mailviewsplitterv+5 : 180" />px;
+<crystalmail:exp expression="browser:ie ? ('width: expression((parseInt(this.parentNode.offsetWidth)-'.(!empty(cookie:mailviewsplitterv) ? cookie:mailviewsplitterv+5 : 180).')+\\'px\\');') : ''" />
+}
+</style>
+</head>
+
+<body onload="crystal_init_mail_ui()">
+
+<crystalmail:include file="/includes/taskbar.html" />
+<crystalmail:include file="/includes/header.html" />
+
+<div id="messagetoolbar">
+<crystalmail:button command="list" type="link" class="button back" classAct="button back" classSel="button backSel" title="backtolist" content=" " />
+<crystalmail:button command="compose" type="link" class="button compose" classAct="button compose" classSel="button composeSel" title="writenewmessage" content=" " />
+</div>
+
+<div id="mainscreen">
+<div id="mailleftcontainer">
+<div id="mailboxlist-container">
+<div class="boxtitle"><crystalmail:label name="mailboxlist" /></div>
+<div class="boxlistcontent">
+<crystalmail:object name="mailboxlist" id="mailboxlist" maxlength="25" />
+</div>
+<div class="boxfooter">
+  <crystalmail:button name="mailboxmenulink" id="mailboxmenulink" type="link" title="folderactions" class="button groupactions" onclick="cmail_ui.show_popup('mailboxmenu');return false" content=" " />
+</div>
+</div>
+</div>
+
+<div id="messageframe" style="background-color:#F2F2F2;">
+<div style="margin:20px auto; text-align:center">
+<img src="/images/watermark.gif" width="260" height="228" alt="" />
+</div>
+</div>
+
+</div>
+
+<script type="text/javascript">
+    var mailviewsplitv = new crystal_splitter({id:'mailviewsplitterv', p1: 'mailboxlist-container', p2: 'messageframe', orientation: 'v', relative: true, start: 165});
+    cmail.add_onload('mailviewsplitv.init()');
+</script>
+
+<div id="mailboxoptionsmenu" class="popupmenu">
+  <ul>
+    <li><crystalmail:button command="expunge" type="link" label="compact" classAct="active" /></li>
+    <li class="separator_below"><crystalmail:button command="purge" type="link" label="empty" classAct="active" /></li>
+    <li><crystalmail:button command="folders" task="settings" type="link" label="managefolders" classAct="active" /></li>
+    <crystalmail:container name="mailboxoptions" id="mailboxoptionsmenu" />
+  </ul>
+</div>
+
+</body>
+<crystalmail:endif />
+
+</html>
