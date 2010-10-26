@@ -14,7 +14,6 @@
 #########################################################
 */
 
-
 include ('auth.php');
 if ($_GET['hmmm'] == "yep") {
 echo '<br><br><br><br><br><center><div id="intro_text"><h1>HMMMMM... It doesn\'t look like you have any admin panel plugins installed!</h1><br><h3>Don\'t worry it just means that you haven\'t installed any plugins that utilize the Crystal Mail Admin Panel\'s Plugin API.</h3></div></center>';
@@ -44,7 +43,7 @@ echo '<u>'.$user.'</u>';
 }
 
 function version() {
-$_GET['what_do_you_want'] = 'just_the_version_number_please';
+$ov = 'true';
 include ('../program/include/iniset.php');
 echo cmail_VERSION;
 

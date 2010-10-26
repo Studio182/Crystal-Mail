@@ -20,14 +20,24 @@ if ($_GET['show'] == '') {
 echo '<iframe src="updater.php?show=1" scrolling="no" frameborder="no" height = "100%" width = "100%"></iframe>';
 die();
 }
-// Download Function
-function cm_download($url, $file){
-$download = file_get_contents($url, true);
-$formatted = $download."\n";
-$fh = fopen($file, 'w') or die("can't open file");
-fwrite($fh, $formatted);
-fclose($fh);
-}
+  function cm_download($file, $name)
+    {
+      $contents = file_get_contents($file);
+      $name2 = fopen($name, 'w');
+      fwrite($name2, $contents);
+      fclose($name2);
+    }
+  function cm_clean($file)
+    {
+      if (is_array($file))
+        {
+          foreach ($file as $files)
+            {
+              unlink($files);
+            }
+        }
+      unlink($file);
+    }
 ?>
   	<script src="../program/js/jquery-1.4.min.js"></script>
   	<script type="text/javascript">
@@ -98,21 +108,21 @@ function Update()
 <center><div style="font-family:arial; font-size:19px; color: #333;">Checking For Updates</div>
 </div>
 <?php
-
-//Download info file
-
-cm_download ('http://www.crystalmail.net/update/dev/info.php', 'info.php');
-
-//Include Info File
-include ('info.php');
-
-//Tell iniset.php that you just wan't the version number (be polite)
-$_GET['what_do_you_want'] = 'just_the_version_number_please';
+//Tell iniset.php that you just wan't the version number
+$ov = 'true';
 include ('../program/include/iniset.php');
 
-//Check if Installed Version and Info Version
-if (cmail_VERSION == $infoversion){
-
+cm_download('http://www.crystalmail.net/update/v2/info.php?v='.cmail_VERSION, '../temp/info.php');
+  
+  //Check if we are in kill mode
+  include('../temp/info.php');      
+  cm_clean('../temp/info.php');
+  if ($kill == false)
+    {
+     //See if Update Exists
+      
+      if ($version < $infoversion)
+        {
 echo "
 <script type='text/javascript'>                                         
     $(document).ready(function() {
@@ -152,6 +162,19 @@ echo "<script type='text/javascript'>
 </div>
 </div>";
 }
-
-unlink ('info.php');
+} else {
+echo "
+<script type='text/javascript'>                                         
+    $(document).ready(function() {
+    $('#fade').fadeOut('slow');
+    setTimeout(function() { $('#message').fadeIn(); }, 1500);
+});
+ </script>  
+<div id='message' style='display:none;'>
+<center><h1 style='font-family:arial; font-size:30px; color: #333;'>Kill mode is activated</h1>
+<p style='font-family:arial; font-size:15px; color: #333;'>The Crystal Mail Update System is in <b>Kill Mode</b> this means that the system is shutdown.<br><br>";
+if ($kill_message == "") {echo "This is usually due to maintenance. Please check back later";} else { echo $kill_message; } echo "</p> 
+</div>
+";
+}
 ?>

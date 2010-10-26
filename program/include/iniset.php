@@ -41,7 +41,7 @@ define('cmail_CHARSET', 'UTF-8');
 define('JS_OBJECT_NAME', 'cmail');
 define('cmail_START', microtime(true));
 
-if (isset($_GET['what_do_you_want'])) {} else {
+if (isset($ov)) {} else {
 if (!defined('INSTALL_PATH')) {
     define('INSTALL_PATH', dirname($_SERVER['SCRIPT_FILENAME']).'/');
 }
