@@ -45,61 +45,20 @@ die();
     $(document).ready(function() {
     $('#fade').fadeIn("slow");
 });              
-</script><script type="text/javascript">
-function getXMLHttp()
-{
-  var xmlHttp
-
-  try
-  {
-    //Firefox, Opera 8.0+, Safari
-    xmlHttp = new XMLHttpRequest();
-  }
-  catch(e)
-  {
-    //Internet Explorer
-    try
-    {
-      xmlHttp = new ActiveXObject("Msxml2.XMLHTTP");
-    }
-    catch(e)
-    {
-      try
-      {
-        xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
-      }
-      catch(e)
-      {
-        alert("Your browser does not support AJAX!")
-        return false;
-      }
-    }
-  }
-  return xmlHttp;
+</script>
+<script>
+function Update() {
+$('#message').fadeOut('fast');
+$('#hidden').prepend('<iframe src="update.php" width="1px" height="1px" onload="finished()">');
+$('#updating').fadeIn('slow');
+setTimeout(function() { $('#slower').fadeIn(); }, 10000);
 }
-function Update()
-{
-   $('#message').fadeOut('slow');
-    setTimeout(function() { $('#updating').fadeIn(); }, 1000);
-  var xmlHttp = getXMLHttp();
-  
-  xmlHttp.onreadystatechange = function()
-  {
-    if(xmlHttp.readyState == 4)
-    {
-      HandleResponse(xmlHttp.responseText);
-    }
-  }
-
-  xmlHttp.open("GET", "update.php", true); 
-  xmlHttp.send(null);
-  setTimeout(function() { 
-    $('#updating').fadeOut('slow');
-    setTimeout(function() { $('#done').fadeIn(); }, 1500); 
-    }, 4000);
+function finished() {
+$('#slower').fadeOut('fast');
+$('#updating').fadeOut('fast');
+$('#done').fadeIn('slow');
 }
 </script>
-
 	 <!--[if IE]><script language="javascript" type="text/javascript" src="excanvas.pack.js"></script><![endif]-->
 </head>
 <body>
@@ -144,6 +103,7 @@ echo "<script type='text/javascript'>
     setTimeout(function() { $('#message').fadeIn(); }, 1500);
 });
  </script>  
+ <div id='hidden' style='display:none;'></div>
 <div id='message' style='display:none;'>
 <center><h1 style='font-family:arial; font-size:30px; color: #333;'><strong>Update Available</strong></h1>
 <p style='font-family:arial; font-size:15px; color: #333;'>Crystal Mail is not the newest version possable! Please press the <strong>Update</strong> button below to take advantage of this new update.</p> 
@@ -151,7 +111,7 @@ echo "<script type='text/javascript'>
 </div>
 <div id='updating' style='display:none;'>
 <center><img src='ajax-loader.gif'></center>
-<center><div style='font-family:arial; font-size:19px; color: #333;'>Updating</div>
+<center><div style='font-family:arial; font-size:19px; color: #333;'>Updating</div><br><div id='slower'><small>This is taking a bit longer than ususal, but don't worry we can't detect any errors.</div></small></center>
 </div>
 <div id='done' style='display:none;'>
 <center><h1 style='font-family:arial; font-size:30px; color: #333;'>Update Complete!</h1>
