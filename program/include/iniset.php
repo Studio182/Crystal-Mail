@@ -36,7 +36,7 @@ foreach ($crit_opts as $optname => $optval) {
 }
 
 // application constants
-define('cmail_VERSION', '1.1');
+define('cmail_VERSION', '1.2');
 define('cmail_CHARSET', 'UTF-8');
 define('JS_OBJECT_NAME', 'cmail');
 define('cmail_START', microtime(true));
