@@ -108,9 +108,10 @@ echo "<script type='text/javascript'>
 <center><h1 style='font-family:arial; font-size:30px; color: #333;'><strong>Update Available</strong></h1>
 <p style='font-family:arial; font-size:15px; color: #333;'>Crystal Mail is not the newest version possable! Please press the <strong>Update</strong> button below to take advantage of this new update.</p> 
 ";
-if ($release_comment == 'none') {} else { echo "<br><h2 style='font-family:arial; font-size:15px; color: #333;'>Whats new in this version?</h2><p style='font-family:arial; font-size:15px; color: #333;'>".$release_comment."</div>";}
+if ($release_comment == 'none') {} else { echo "<br><h2 style='font-family:arial; font-size:15px; color: #333;'>Whats new in this version?</h2><p style='font-family:arial; font-size:11px; color: #333;'>".$release_comment."</p></center>";}
 echo "
-<input type='button' onclick='Update();' value='Update'/>
+<center><br>
+<input type='button' onclick='Update();' value='Update'/></center>
 </div>
 <div id='updating' style='display:none;'>
 <center><img src='ajax-loader.gif'></center>
