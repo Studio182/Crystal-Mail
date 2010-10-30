@@ -1,5 +1,79 @@
 <link rel="index" href="$__comm_path" />
-<link rel="shortcut icon" href="/images/favicon.ico"/>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.4.2.min.js"></script>
+	<script type="text/javascript" src="./fancybox/jquery.mousewheel-3.0.2.pack.js"></script>
+	<script type="text/javascript" src="./fancybox/jquery.fancybox-1.3.1.js"></script>
+	<link rel="stylesheet" type="text/css" href="./fancybox/jquery.fancybox-1.3.1.css" media="screen" />
+	<script type="text/javascript">
+		$(document).ready(function() {
+			/*
+			*   Examples - images
+			*/
+
+			$("a#example1").fancybox({
+				'titleShow'		: false
+			});
+
+			$("a#example2").fancybox({
+				'titleShow'		: false,
+				'transitionIn'	: 'elastic',
+				'transitionOut'	: 'elastic'
+			});
+
+			$("a#example3").fancybox({
+				'titleShow'		: false,
+				'transitionIn'	: 'none',
+				'transitionOut'	: 'none'
+			});
+
+			$("a#example4").fancybox();
+
+			$("a#example5").fancybox({
+				'titlePosition'	: 'inside'
+			});
+
+			$("a#example6").fancybox({
+				'titlePosition'	: 'over'
+			});
+
+			$("a[rel=example_group]").fancybox({
+				'transitionIn'		: 'none',
+				'transitionOut'		: 'none',
+				'titlePosition' 	: 'over',
+				'titleFormat'		: function(title, currentArray, currentIndex, currentOpts) {
+					return '<span id="fancybox-title-over">Image ' + (currentIndex + 1) + ' / ' + currentArray.length + (title.length ? ' &nbsp; ' + title : '') + '</span>';
+				}
+			});
+
+			/*
+			*   Examples - various
+			*/
+
+			$("#various1").fancybox({
+				'titlePosition'		: 'inside',
+				'transitionIn'		: 'none',
+				'transitionOut'		: 'none'
+			});
+
+			$("#various2").fancybox();
+
+			$("#various3").fancybox({
+				'width'				: '75%',
+				'height'			: '75%',
+				'autoScale'			: false,
+				'transitionIn'		: 'none',
+				'transitionOut'		: 'none',
+				'type'				: 'iframe'
+			});
+
+			$("#various4").fancybox({
+				'padding'			: 0,
+				'autoScale'			: false,
+				'transitionIn'		: 'none',
+				'transitionOut'		: 'none'
+			});
+		});
+	</script>
+<link rel="shortcut icon" href="/../crystal/images/favicon.ico"/>
 <link rel="stylesheet" type="text/css" href="/common.css" />
 <crystalmail:if condition="env:task != 'login' && env:task != 'dummy'" />
 <link rel="stylesheet" type="text/css" href="/<crystalmail:var name="env:task" />.css" />

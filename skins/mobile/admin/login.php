@@ -4,7 +4,7 @@
     <head>
         <title>Crystal Webmail Admin Panel :: Login</title>
         <link rel="index" href="./?_task=login" />
-<link rel="shortcut icon" href="skins/crystal/images/favicon.ico"/>
+<link rel="shortcut icon" href="skins/crystal/../crystal/images/favicon.ico"/>
 <link rel="stylesheet" type="text/css" href="../skins/crystal/common.css?s=1276276489" />
 
         <link rel="stylesheet" type="text/css" href="../skins/crystal/login.css?s=1275926860" />
@@ -21,7 +21,7 @@
         position: absolute;
         top: 0px;
         left: 0px;
-        background: #a8bbfb url("../skins/crystal/images/bg.jpg") center center no-repeat;
+        background: #a8bbfb url("../skins/crystal/../crystal/images/bg.jpg") center center no-repeat;
     z-index: -1;
         }
         

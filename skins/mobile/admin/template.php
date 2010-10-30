@@ -33,7 +33,7 @@ padding-right: 5px;
 padding-top: 2px;
 }
 #header {
-background-image: url('../skins/crystal/images/header.png');
+background-image: url('../skins/crystal/../crystal/images/header.png');
 background-repeat: repeat-x;
 margin: 20px 0 0px 0;
 padding: 30px;
@@ -45,7 +45,7 @@ table.records-table thead tr td
   vertical-align: middle;
   border-bottom: 1px solid #999999;
   color: #333333;
-  background: url(../skins/crystal/images/listheader.gif) top left repeat-x #CCC;
+  background: url(../skins/crystal/../crystal/images/listheader.gif) top left repeat-x #CCC;
   font-size: 10px;
   font-weight: bold;
 
@@ -114,7 +114,7 @@ padding-left: 5px;
   overflow: hidden;
   font-size: 11px;
   overflow: none;
-  background: url(../skins/crystal/images/tabs.gif) top left no-repeat;
+  background: url(../skins/crystal/../crystal/images/tabs.gif) top left no-repeat;
 
 }
 .tablink-active {
@@ -127,7 +127,7 @@ padding-left: 5px;
   overflow: hidden;
   font-size: 11px;
   overflow: none;
-  background: url(../skins/crystal/images/tabs.gif) top left no-repeat;
+  background: url(../skins/crystal/../crystal/images/tabs.gif) top left no-repeat;
   background-position: -102px 0;
 }
 .tablink-disabled {
@@ -140,7 +140,7 @@ padding-left: 5px;
   overflow: hidden;
   font-size: 11px;
   overflow: none;
-  background: url(../skins/crystal/images/tabs.gif) top left no-repeat;
+  background: url(../skins/crystal/../crystal/images/tabs.gif) top left no-repeat;
   opacity:0.6;
   filter:alpha(opacity=60);
   zoom: 1
@@ -150,7 +150,7 @@ color: #444;
 }
 </style>
 <script type="text/javascript" src="js/ajax.js"></script> 
-<link rel="shortcut icon" href="../skins/crystal/images/favicon.ico"/>
+<link rel="shortcut icon" href="../skins/crystal/../crystal/images/favicon.ico"/>
 </HEAD>
 <BODY>
 <div id="stat-bar">&nbsp;&nbsp;Crystal Mail &nbsp;<small>Admin Panel</small><right><small>Welcome <?php name() ?> | Crystal Version: <strong><?php version() ?></strong> | <a href="?_action=logout">Logout</a></small></right></div>

@@ -1,4 +1,5 @@
 <?php
+include('auth.php');
 if ($_GET['debug'] == "1") {}else{error_reporting(E_ALL ^ E_NOTICE ^ E_WARNING);}
   $ov = "true";
   require_once "../program/include/iniset.php";

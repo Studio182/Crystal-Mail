@@ -63,13 +63,13 @@ input, textarea
 #abooktoolbar a.buttonPas
 {
   filter: alpha(opacity=35);
-  background-image: url(images/abook_toolbar.gif);
+  background-image: url(../crystal/images/abook_toolbar.gif);
 }
 
 #messagetoolbar a.buttonPas
 {
   filter: alpha(opacity=35);
-  background-image: url(images/mail_toolbar.gif);
+  background-image: url(../crystal/images/mail_toolbar.gif);
 }
 
 #listcontrols a.buttonPas
@@ -200,7 +200,7 @@ div.message-part div.pre
 div.draglayercopy
 {
   border-color: #00cc00;
-  background: url(images/messageactions.png) 0 -125px no-repeat #fff;
+  background: url(../crystal/images/messageactions.png) 0 -125px no-repeat #fff;
 }
 
 html.ie8 .draglayercopy:before

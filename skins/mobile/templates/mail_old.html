@@ -5,7 +5,18 @@
 <crystalmail:include file="/includes/links.html" />
 <script type="text/javascript" src="/splitter.js"></script>
 <script type="text/javascript" src="/functions.js"></script>
-
+<style type="text/css">
+<crystalmail:if condition="config:preview_pane == true" />
+#mailcontframe { height: <crystalmail:exp expression="!empty(cookie:mailviewsplitter) ? cookie:mailviewsplitter-5 : 195" />px; }
+#mailpreviewframe { top: <crystalmail:exp expression="!empty(cookie:mailviewsplitter) ? cookie:mailviewsplitter+5 : 205" />px;
+<crystalmail:exp expression="browser:ie ? ('height: expression((parseInt(this.parentNode.offsetHeight)-'.(!empty(cookie:mailviewsplitter) ? cookie:mailviewsplitter+25 : 245).')+\\'px\\');') : ''" />
+}
+<crystalmail:endif />
+#mailleftcontainer { width: <crystalmail:exp expression="!empty(cookie:mailviewsplitterv) ? cookie:mailviewsplitterv-5 : 175" />px; }
+#mailrightcontainer { left: <crystalmail:exp expression="!empty(cookie:mailviewsplitterv) ? cookie:mailviewsplitterv+5 : 185" />px;
+<crystalmail:exp expression="browser:ie ? ('width: expression((parseInt(this.parentNode.offsetWidth)-'.(!empty(cookie:mailviewsplitterv) ? cookie:mailviewsplitterv+5 : 180).')+\\'px\\');') : ''" />
+}
+</style>
 </head>
 <body onload="crystal_init_mail_ui()">
 
@@ -40,8 +51,8 @@
 
 <div id="mailrightcontainer">
 <div id="mailrightcontent">
-<div id="mailcontframe" >
-<div id="messagelistcontainer" class="boxlistcontent" style="min-width:350px; top:0">
+<div id="mailcontframe">
+<div id="messagelistcontainer" class="boxlistcontent" style="top:0">
 <crystalmail:object name="messages"
   id="messagelist"
   cellspacing="0"
@@ -59,7 +70,7 @@
   unreadchildrenIcon="" 
   optionsmenuIcon="/../crystal/images/icons/columnpicker.gif" />
 </div>
-<div class="boxfooter" style="min-width:350px;">
+<div class="boxfooter">
     <div id="listcontrols" class="pagenav">
         <span><crystalmail:label name="select" />:&nbsp;</span>
         <crystalmail:button command="select-all" type="link" title="all" class="buttonPas all" classAct="button all" classSel="button allsel" content=" " />
@@ -74,6 +85,10 @@
         <crystalmail:button command="expand-unread" type="link" title="expand-unread" class="buttonPas expand-unread" classAct="button expand-unread" classSel="button expand-unreadsel" content=" " />
         <crystalmail:button command="collapse-all" type="link" title="collapse-all" class="buttonPas collapse-all" classAct="button collapse-all" classSel="button collapse-allsel" content=" " />
     <crystalmail:endif />
+    <crystalmail:if condition="!in_array('preview_pane', (array)config:dont_override)" />
+        <label><span style="margin-left: 12px"><crystalmail:label name="previewpane" />:&nbsp;</span>
+        <input type="checkbox" onclick="cmail_ui.switch_preview_pane(this)"<crystalmail:exp expression="config:preview_pane == true ? ' checked=checked' : ''" /> /></label>
+    <crystalmail:endif />
     </div>
     <div id="countcontrols" class="pagenav">
         <crystalmail:button command="lastpage" type="link" class="buttonPas lastpage" classAct="button lastpage" classSel="button lastpageSel" title="lastmessages" content=" " />
@@ -86,7 +101,7 @@
 </div>
 
 <script type="text/javascript">
-  var mailviewsplit = new crystal_splitter({id:'mailviewsplitter', p1: 'mailcontframe', p2: 'mailpreviewframe', orientation: 'v', relative: true, start: 205});
+  var mailviewsplit = new crystal_splitter({id:'mailviewsplitter', p1: 'mailcontframe', p2: 'mailpreviewframe', orientation: 'h', relative: true, start: 205});
 <crystalmail:if condition="config:preview_pane == true" />
   cmail.add_onload('mailviewsplit.init()');
 <crystalmail:endif />

@@ -1,4 +1,6 @@
-$(function(){
+// Smart isn't ready for primetime yet
+
+/*$(function(){
     $(".message-htmlpart").append("<div id='smartmedia'><h1>Auto Detected Media</h1></div>");
    
    $(".message-htmlpart").each(function() {
@@ -28,3 +30,4 @@ $(function(){
    }
    
 });
+*/

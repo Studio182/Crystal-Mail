@@ -58,6 +58,7 @@ function dashboard_nav() {
 echo '
 <div id="check">
 <tr id="rcmrowmailbox"><td "class="section"><a href="javascript:ajaxpage(\'updater.php\',\'prefs-box\');">Updates</a></tr></td>
+<tr id="rcmrowmailbox"><td "class="section"><a href="javascript:ajaxpage(\'user-man.php\',\'prefs-box\');">User Management</a></tr></td>
 <tr id="rcmrowmailbox"><td "class="section"><a href="javascript:ajaxpage(\'main-config-editor.php\',\'prefs-box\');">Main.inc.php editor</a></tr></td>
 <tr id="rcmrowmailbox"><td "class="section"><a href="javascript:ajaxpage(\'db-config-editor.php\',\'prefs-box\');">Db.inc.php editor</a></tr></td>
 <tr id="rcmrowmailbox"><td "class="section"><a href="javascript:ajaxpage(\'meebo.php\',\'prefs-box\');">Meebo Toolbar Config</a></tr></td>

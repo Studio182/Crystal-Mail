@@ -1,3 +1,4 @@
+if(typeof mobile == "undefined") {
          /*
          * GRAVATAR JS API
          * By: Hunter Dolan
@@ -274,3 +275,4 @@ var img = '<div id="gravatar-show-screen"><img id="gravatar-image-show-screen" s
 <?php
 }
 ?>
+}

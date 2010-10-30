@@ -3,7 +3,7 @@
 #tabsbar
 {
   position: absolute;
-  background: url('images/header.png') repeat-x;
+  background: url('../crystal/images/header.png') repeat-x;
   top: 26px;
   left: 0px;
   right: 0px;
@@ -26,7 +26,7 @@ span.tablink-selected
   height: 22px;
   overflow: hidden;
   text-overflow: ellipsis;
-  background: url(images/tabs.gif) top left no-repeat;
+  background: url(../crystal/images/tabs.gif) top left no-repeat;
 }
 
 span.tablink-selected

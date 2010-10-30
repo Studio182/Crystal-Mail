@@ -169,7 +169,11 @@ function crystal_webmail()
             column_movable:this.env.col_movable, dblclick_time:this.dblclick_time
             });
           this.message_list.row_init = function(o){ p.init_message_row(o); };
-          this.message_list.addEventListener('dblclick', function(o){ p.msglist_dbl_click(o); });
+
+if (navigator.userAgent.toLowerCase().indexOf('iphone') != -1) 
+this.message_list.addEventListener('click', function(o){ p.msglist_dbl_click(o); }); 
+else 
+this.message_list.addEventListener('dblclick', function(o){ p.msglist_dbl_click(o); }); 
           this.message_list.addEventListener('click', function(o){ p.msglist_click(o); });
           this.message_list.addEventListener('keypress', function(o){ p.msglist_keypress(o); });
           this.message_list.addEventListener('select', function(o){ p.msglist_select(o); });

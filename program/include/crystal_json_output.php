@@ -268,7 +268,6 @@ class crystal_json_output
                 implode(',', $args)
             );
         }
-
-        return $out;
+              return $out;
     }
 }
