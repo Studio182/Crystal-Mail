@@ -1,4 +1,23 @@
 <?php
+/*
++----------------------------------------------------------------+
+| ./config/mimetypes.php                                         |
+|                                                                |
+| This file was based on Roundcube Webmail Client                |
+| Copyright (C) 2005-2006, RoundCube Dev. - Switzerland          |
+|                                                                |
+| This file is part of the Crystal Mail Client                   |
+| Copyright (C) 2010, Crystal Mail Dev. Team - United States     |
+|                                                                |
+| Licensed under the GNU GPL                                     |
+|                                                                |
+| PURPOSE:                                                       |
+|   A index of mime types for Crystal Mail                       |
+|                                                                |
++--------------------- RoundCube Dev. Team ----------------------+
+| Thomas Bruederli <roundcube@gmail.com>                         |
++----------------------------------------------------------------+
+*/
 
 return array(
   'xls' => 'application/vnd.ms-excel',
