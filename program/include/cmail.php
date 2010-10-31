@@ -1,31 +1,29 @@
 <?php
-
 /*
- +-----------------------------------------------------------------------+
- | program/include/cmail.php                                            |
- |                                                                       |
- | This file is part of the Crystal Mail client                     |
- | Copyright (C) 2008-2010, Crystal Mail Dev. - United States                 |
- | Licensed under the GNU GPL                                            |
- |                                                                       |
- | PURPOSE:                                                              |
- |   Application class providing core functions and holding              |
- |   instances of all 'global' objects like db- and imap-connections     |
- +-----------------------------------------------------------------------+
- | Author: Thomas Bruederli <roundcube@gmail.com>                        |
- +-----------------------------------------------------------------------+
-
- $Id$
-
++----------------------------------------------------------------+
+| ./program/include/cmail.php                                    |
+|                                                                |
+| This file was based on Roundcube Webmail Client                |
+| Copyright (C) 2008-2010, RoundCube Dev. - Switzerland          |
+|                                                                |
+| This file is part of the Crystal Mail Client                   |
+| Copyright (C) 2010, Crystal Mail Dev. Team - United States     |
+|                                                                |
+| Licensed under the GNU GPL                                     |
+|                                                                |
+| PURPOSE:                                                       |
+|   Application class providing core functions and holding       |
+|   instances of all 'global' objects like db- and imap-         |
+|   connections
+|                                                                |
++--------------------- RoundCube Dev. Team ----------------------+
+| Thomas Bruederli <roundcube@gmail.com>                         |
++----------------------- Studio 182 Team ------------------------+
+| Hunter Dolan <hunter@crystalmail.net>                          |
+| Chris Jones <chris@crystalmail.net>                            |
++----------------------------------------------------------------+
 */
 
-
-/**
- * Application class of Crystal Mail
- * implemented as singleton
- *
- * @package Core
- */
 class cmail
 {
   static public $main_tasks = array('mail','settings','addressbook','login','logout','utils','dummy');

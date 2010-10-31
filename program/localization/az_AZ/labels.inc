@@ -1,19 +1,20 @@
 <?php
-
 /*
-
-+-----------------------------------------------------------------------+
-| language/az_AZ/labels.inc                                             |
-|                                                                       |
-| Language file of the Crystal Mail client                         |
-| Copyright (C) 2005-2010, crystalmail Dev. - Switzerland                 |
-| Licensed under the GNU GPL                                            |
-|                                                                       |
-+-----------------------------------------------------------------------+
-| Author: Orkhan Guliyev, OUR Technology, LLC.<office@ourtechnology.net>|
-+-----------------------------------------------------------------------+
-
++----------------------------------------------------------------+
+| ./program/localization/az_AS/labels.inc                        |
+|                                                                |
+| This file was based on Roundcube Webmail Client                |
+| Copyright (C) 2005-2010, RoundCube Dev. - Switzerland          |
+|                                                                |
+| This file is part of the Crystal Mail Client                   |
+| Copyright (C) 2010, Crystal Mail Dev. Team - United States     |
+|                                                                |
+| Licensed under the GNU GPL                                     |
++--------------------- RoundCube Dev. Team ----------------------+
+|Orkhan Guliyev, Our Technology, LLC. <office@ourtechnology.net> |
++----------------------------------------------------------------+
 */
+
 
 $labels = array();
 $labels['welcome'] = '$product-a xoş gəldiniz!';

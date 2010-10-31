@@ -1,23 +1,22 @@
 <?php
-
 /*
-
- +-----------------------------------------------------------------------+
- | language/bzg/labels.inc                                                |
- |                                                                       |
- | Language file of the Crystal Mail client                         |
- | Copyright (C) 2005-2007, crystalmail Dev. - Switzerland                 |
- | Licensed under the GNU GPL                                            |
- |                                                                       |
- +-----------------------------------------------------------------------+
- | Author: aldweb <info@aldweb.com>                                      |
- |         Pierre HAEGELI <pierre@haegeli.net>                           |
- |         Mickaël Wolff <rcw@lupusmic.org>                              |
- +-----------------------------------------------------------------------+
-
- @version $Id$
-
++----------------------------------------------------------------+
+| ./program/localization/br/labels.inc                           |
+|                                                                |
+| This file was based on Roundcube Webmail Client                |
+| Copyright (C) 2005-2007, RoundCube Dev. - Switzerland          |
+|                                                                |
+| This file is part of the Crystal Mail Client                   |
+| Copyright (C) 2010, Crystal Mail Dev. Team - United States     |
+|                                                                |
+| Licensed under the GNU GPL                                     |
++--------------------- RoundCube Dev. Team ----------------------+
+| aldweb <info@aldweb.com>                                       |
+| Pierre HAEGELI <pierre@haegeli.net>                            |
+| Mickaël Wolff <rcw@lupusmic.org>                               |
++----------------------------------------------------------------+
 */
+
 
 $labels = array();
 $labels['welcome'] = 'Degemer mat war $product';

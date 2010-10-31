@@ -1,22 +1,20 @@
 <?php
-
 /*
-
- +-----------------------------------------------------------------------+
- | language/bzg/messages.inc                                              |
- |                                                                       |
- | Language file of the Crystal Mail client                         |
- | Copyright (C) 2005-2007, crystalmail Dev. - Switzerland                 |
- | Licensed under the GNU GPL                                            |
- |                                                                       |
- +-----------------------------------------------------------------------+
- | Author: aldweb <info@aldweb.com>                                      |
- |         Pierre HAEGELI <pierre@haegeli.net>                           |
- |         Mickaël Wolff <rcw@lupusmic.org>                              |
- +-----------------------------------------------------------------------+
-
- @version $Id$
-
++----------------------------------------------------------------+
+| ./program/localization/br/messages.inc                         |
+|                                                                |
+| This file was based on Roundcube Webmail Client                |
+| Copyright (C) 2005-2007, RoundCube Dev. - Switzerland          |
+|                                                                |
+| This file is part of the Crystal Mail Client                   |
+| Copyright (C) 2010, Crystal Mail Dev. Team - United States     |
+|                                                                |
+| Licensed under the GNU GPL                                     |
++--------------------- RoundCube Dev. Team ----------------------+
+| aldweb <info@aldweb.com>                                       |
+| Pierre HAEGELI <pierre@haegeli.net>                            |
+| Mickaël Wolff <rcw@lupusmic.org>                               |
++----------------------------------------------------------------+
 */
 
 $messages = array();

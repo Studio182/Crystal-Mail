@@ -1,22 +1,18 @@
 <?php
-
 /*
-
-+-----------------------------------------------------------------------+
-| language/ast/messages.inc                                             |
-|                                                                       |
-| Language file of the Crystal Mail client                         |
-| Copyright (C) 2005-2008, crystalmail Dev. - Switzerland                 |
-| Licensed under the GNU GPL                                            |
-|                                                                       |
-+-----------------------------------------------------------------------+
-| Author: Mikel González <dangerous_piper@softastur.org>                |
-|         http://blogs.altuxa.com/gyg                                   |
-|         http://softastur.org                                          |
-+-----------------------------------------------------------------------+
-
-@version $Id$
-
++----------------------------------------------------------------+
+| ./program/localization/ast/messages.inc                        |
+|                                                                |
+| This file was based on Roundcube Webmail Client                |
+| Copyright (C) 2005-2010, RoundCube Dev. - Switzerland          |
+|                                                                |
+| This file is part of the Crystal Mail Client                   |
+| Copyright (C) 2010, Crystal Mail Dev. Team - United States     |
+|                                                                |
+| Licensed under the GNU GPL                                     |
++--------------------- RoundCube Dev. Team ----------------------+
+| Mikel González <dangerous_piper@softastur.org>                 |
++----------------------------------------------------------------+
 */
 
 $messages = array();
