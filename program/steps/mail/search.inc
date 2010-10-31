@@ -1,18 +1,25 @@
 <?php
 /*
- +-----------------------------------------------------------------------+
- | steps/mail/search.inc                                                 |
- |                                                                       |
- | Search functions for rc webmail                                       |
- | Licensed under the GNU GPL                                            |
- |                                                                       |
- +-----------------------------------------------------------------------+
- | Author: Benjamin Smith <defitro@gmail.com>                            |
- |         Thomas Bruederli <roundcube@gmail.com>                        |
- +-----------------------------------------------------------------------+
-
- $Id$
-
++----------------------------------------------------------------+
+| ./steps/mail/search.inc                                        |
+|                                                                |
+| This file was based on Roundcube Webmail Client                |
+| Copyright (C) 2005, RoundCube Dev. - Switzerland               |
+|                                                                |
+| This file is part of the Crystal Mail Client                   |
+| Copyright (C) 2010, Crystal Mail Dev. Team - United States     |
+|                                                                |
+| Licensed under the GNU GPL                                     |
+|                                                                |
+| PURPOSE:                                                       |
+|   Search through message                                       |
+|                                                                |
++--------------------- RoundCube Dev. Team ----------------------+
+| Thomas Bruederli <roundcube@gmail.com>                         |
+| Benjamin Smith <defitro@gmail.com>                             |
++----------------------- Studio 182 Team ------------------------+
+| Hunter Dolan <hunter@crystalmail.net>                          |
++----------------------------------------------------------------+
 */
 
 $REMOTE_REQUEST = TRUE;

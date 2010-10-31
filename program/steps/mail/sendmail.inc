@@ -1,24 +1,28 @@
 <?php
-
 /*
- +-----------------------------------------------------------------------+
- | program/steps/mail/sendmail.inc                                       |
- |                                                                       |
- | This file is part of the Crystal Mail client                     |
- | Copyright (C) 2005-2010, crystalmail Dev. - Switzerland                 |
- | Licensed under the GNU GPL                                            |
- |                                                                       |
- | PURPOSE:                                                              |
- |   Compose a new mail message with all headers and attachments         |
- |   and send it using the PEAR::Net_SMTP class or with PHP mail()       |
- |                                                                       |
- +-----------------------------------------------------------------------+
- | Author: Thomas Bruederli <roundcube@gmail.com>                        |
- +-----------------------------------------------------------------------+
-
- $Id$
-
++----------------------------------------------------------------+
+| ./program/steps/mail/sendmail.inc                              |
+|                                                                |
+| This file was based on Roundcube Webmail Client                |
+| Copyright (C) 2005-2010, RoundCube Dev. - Switzerland          |
+|                                                                |
+| This file is part of the Crystal Mail Client                   |
+| Copyright (C) 2010, Crystal Mail Dev. Team - United States     |
+|                                                                |
+| Licensed under the GNU GPL                                     |
+|                                                                |
+| PURPOSE:                                                       |
+|   Compose a new mail message with all headers and attachments  |
+|   and send it using the PEAR::Net_SMTP class or with PHP mail()|
+|                                                                |
+|                                                                |
++--------------------- RoundCube Dev. Team ----------------------+
+| Thomas Bruederli <roundcube@gmail.com>                         |
++----------------------- Studio 182 Team ------------------------+
+| Hunter Dolan <hunter@crystalmail.net>                          |
++----------------------------------------------------------------+
 */
+
 
 // remove all scripts and act as called in frame
 $OUTPUT->reset();

@@ -1,4 +1,22 @@
 <?php
+/*
++----------------------------------------------------------------+
+| ./program/js/meebo.php                                         |
+|                                                                |
+| This file is part of the Crystal Mail Client                   |
+| Copyright (C) 2010, Crystal Mail Dev. Team - United States     |
+|                                                                |
+| Licensed under the GNU GPL                                     |
+|                                                                |
+| PURPOSE:                                                       |
+|   Crystal Mail Meebo Script                                    |
+|                                                                |
++----------------------- Studio 182 Team ------------------------+
+| Hunter Dolan <hunter@crystalmail.net>                          |
+| William Bentley <william@crystalmail.net>                      |
++----------------------------------------------------------------+
+*/
+
 error_reporting (E_ALL ^ E_NOTICE);
 include('../../config/main.inc.php');
 //Check if meebo is even set (If it is not Kill PHP to prevent ssl certificate errors)

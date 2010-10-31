@@ -1,22 +1,25 @@
 <?php
-
 /*
- +-----------------------------------------------------------------------+
- | program/steps/addressbook/groups.inc                                  |
- |                                                                       |
- | This file is part of the Crystal Mail client                     |
- | Copyright (C) 2010, crystalmail Dev. - Switzerland                      |
- | Licensed under the GNU GPL                                            |
- |                                                                       |
- | PURPOSE:                                                              |
- |   Create/delete/rename contact groups and assign/remove contacts      |
- |                                                                       |
- +-----------------------------------------------------------------------+
- | Author: Thomas Bruederli <roundcube@gmail.com>                        |
- +-----------------------------------------------------------------------+
-
- $Id$
-
++----------------------------------------------------------------+
+| ./program/steps/addressbook/groups.inc                         |
+|                                                                |
+| This file was based on Roundcube Webmail Client                |
+| Copyright (C) 2005-2010, RoundCube Dev. - Switzerland          |
+|                                                                |
+| This file is part of the Crystal Mail Client                   |
+| Copyright (C) 2010, Crystal Mail Dev. Team - United States     |
+|                                                                |
+| Licensed under the GNU GPL                                     |
+|                                                                |
+| PURPOSE:                                                       |
+|   Create/delete/rename contact groups and assign/remove contac |
+|   ts                                                           |
+|                                                                |
++--------------------- RoundCube Dev. Team ----------------------+
+| Thomas Bruederli <roundcube@gmail.com>                         |
++----------------------- Studio 182 Team ------------------------+
+| Hunter Dolan <hunter@crystalmail.net>                          |
++----------------------------------------------------------------+
 */
 
 if ($CONTACTS->readonly || !$CONTACTS->groups) {

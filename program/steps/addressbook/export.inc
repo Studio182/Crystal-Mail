@@ -1,23 +1,26 @@
 <?php
-
 /*
- +-----------------------------------------------------------------------+
- | program/steps/addressbook/export.inc                                  |
- |                                                                       |
- | This file is part of the Crystal Mail client                     |
- | Copyright (C) 2008-2009, crystalmail Dev. - Switzerland                 |
- | Licensed under the GNU GPL                                            |
- |                                                                       |
- | PURPOSE:                                                              |
- |   Export the selected address book as vCard file                      |
- |                                                                       |
- +-----------------------------------------------------------------------+
- | Author: Thomas Bruederli <roundcube@gmail.com>                        |
- +-----------------------------------------------------------------------+
-
- $Id:  $
-
++----------------------------------------------------------------+
+| ./program/steps/addressbook/export.inc                         |
+|                                                                |
+| This file was based on Roundcube Webmail Client                |
+| Copyright (C) 2005-2009, RoundCube Dev. - Switzerland          |
+|                                                                |
+| This file is part of the Crystal Mail Client                   |
+| Copyright (C) 2010, Crystal Mail Dev. Team - United States     |
+|                                                                |
+| Licensed under the GNU GPL                                     |
+|                                                                |
+| PURPOSE:                                                       |
+|   Export the selected address book as vCard file               |
+|                                                                |
++--------------------- RoundCube Dev. Team ----------------------+
+| Thomas Bruederli <roundcube@gmail.com>                         |
++----------------------- Studio 182 Team ------------------------+
+| Hunter Dolan <hunter@crystalmail.net>                          |
++----------------------------------------------------------------+
 */
+
 
 // get contacts for this user
 $CONTACTS->set_page(1);

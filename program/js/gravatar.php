@@ -1,3 +1,21 @@
+<?php
+/*
++----------------------------------------------------------------+
+| ./program/js/gravatar.php                                      |
+|                                                                |
+| This file is part of the Crystal Mail Client                   |
+| Copyright (C) 2010, Crystal Mail Dev. Team - United States     |
+|                                                                |
+| Licensed under the GNU GPL                                     |
+|                                                                |
+| PURPOSE:                                                       |
+|   The Main Gravatar Script for Crystal MAil                    |
+|                                                                |
++----------------------- Studio 182 Team ------------------------+
+| Hunter Dolan <hunter@crystalmail.net>                          |
++----------------------------------------------------------------+
+*/
+?>
 if(typeof mobile == "undefined") {
          /*
          * GRAVATAR JS API

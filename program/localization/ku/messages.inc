@@ -1,17 +1,18 @@
 <?php
-
 /*
- +-----------------------------------------------------------------------+
- | language/ku/messages.inc                                              |
- |                                                                       |
- | Language file of the Crystal Mail client                         |
- | Copyright (C) 2006, crystalmail Dev. - Switzerland                      |
- | Licensed under the GNU GPL                                            |
- |                                                                       |
- +-----------------------------------------------------------------------+
- | Author: Amed çeko Jiyan <amedcj@kurdistan.name>                       |
- +-----------------------------------------------------------------------+
-
++----------------------------------------------------------------+
+| ./program/localization/ku/messages.inc                         |
+|                                                                |
+| This file was based on Roundcube Webmail Client                |
+| Copyright (C) 2005-2010, RoundCube Dev. - Switzerland          |
+|                                                                |
+| This file is part of the Crystal Mail Client                   |
+| Copyright (C) 2010, Crystal Mail Dev. Team - United States     |
+|                                                                |
+| Licensed under the GNU GPL                                     |
++--------------------- RoundCube Dev. Team ----------------------+
+| Amed Çeko Jiyan <amedcj@kurdistan.name>                        |
++----------------------------------------------------------------+
 */
 
 $messages = array();

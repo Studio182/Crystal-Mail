@@ -1,11 +1,20 @@
 <?php
-  //##########################################################
-  //  Crystal Mail Admin Panel IMAP Authentication Script    #
-  //                   By: Hunter Dolan                      #
-  //                Written on June 7, 2010                  #
-  //  Last Ammendment: September 4th 2010 (By: Hunter Dolan) #
-  //               Licensed under GNU GPL 3.0!               #          
-  //##########################################################
+/*
++----------------------------------------------------------------+
+| ./admin/auth-imap.php                                          |
+|                                                                |
+| This file is part of the Crystal Mail Client                   |
+| Copyright (C) 2010, Crystal Mail Dev. Team - United States     |
+|                                                                |
+| Licensed under the GNU GPL                                     |
+|                                                                |
+| PURPOSE:                                                       |
+|   Crystal Mail Admin Panel IMAP Authentication Script          |
+|                                                                |
++----------------------- Studio 182 Team ------------------------+
+| Hunter Dolan <hunter@crystalmail.net>                          |
++----------------------------------------------------------------+
+*/
   
   //Start Session
   ini_set("display_errors", 0);

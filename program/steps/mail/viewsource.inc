@@ -1,23 +1,27 @@
 <?php
-
 /*
- +-----------------------------------------------------------------------+
- | program/steps/mail/viewsource.inc                                     |
- |                                                                       |
- | This file is part of the Crystal Mail client                     |
- | Copyright (C) 2005-2009, crystalmail Dev. - Switzerland                 |
- | Licensed under the GNU GPL                                            |
- |                                                                       |
- | PURPOSE:                                                              |
- |   Display a mail message similar as a usual mail application does     |
- |                                                                       |
- +-----------------------------------------------------------------------+
- | Author: Thomas Bruederli <roundcube@gmail.com>                        |
- +-----------------------------------------------------------------------+
-
- $Id$
-
++----------------------------------------------------------------+
+| ./program/steps/mail/viewsource.inc                            |
+|                                                                |
+| This file was based on Roundcube Webmail Client                |
+| Copyright (C) 2005-2010, RoundCube Dev. - Switzerland          |
+|                                                                |
+| This file is part of the Crystal Mail Client                   |
+| Copyright (C) 2010, Crystal Mail Dev. Team - United States     |
+|                                                                |
+| Licensed under the GNU GPL                                     |
+|                                                                |
+| PURPOSE:                                                       |
+|   Display a mail message similar as a usual mail application   |
+|   does                                                         |
+|                                                                |
++--------------------- RoundCube Dev. Team ----------------------+
+| Thomas Bruederli <roundcube@gmail.com>                         |
++----------------------- Studio 182 Team ------------------------+
+| Hunter Dolan <hunter@crystalmail.net>                          |
++----------------------------------------------------------------+
 */
+
 
 ob_end_clean();
 

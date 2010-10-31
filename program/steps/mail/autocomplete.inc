@@ -1,23 +1,27 @@
 <?php
-
 /*
- +-----------------------------------------------------------------------+
- | program/steps/mail/autocomplete.inc                                   |
- |                                                                       |
- | This file is part of the Crystal Mail client                     |
- | Copyright (C) 2008-2010, crystalmail Dev Team                           |
- | Licensed under the GNU GPL                                            |
- |                                                                       |
- | PURPOSE:                                                              |
- |   Perform a search on configured address books for the address        |
- |   autocompletion of the message compose screen                        |
- +-----------------------------------------------------------------------+
- | Author: Thomas Bruederli <roundcube@gmail.com>                        |
- +-----------------------------------------------------------------------+
-
- $Id$
-
++----------------------------------------------------------------+
+| ./program/steps/mail/autocomplete.inc                          |
+|                                                                |
+| This file was based on Roundcube Webmail Client                |
+| Copyright (C) 2005-2010, RoundCube Dev. - Switzerland          |
+|                                                                |
+| This file is part of the Crystal Mail Client                   |
+| Copyright (C) 2010, Crystal Mail Dev. Team - United States     |
+|                                                                |
+| Licensed under the GNU GPL                                     |
+|                                                                |
+| PURPOSE:                                                       |
+|   Perform a search on configured address books for the address |
+|   autocompletion of the message compose screen                 |
+|                                                                |
++--------------------- RoundCube Dev. Team ----------------------+
+| Thomas Bruederli <roundcube@gmail.com>                         |
++----------------------- Studio 182 Team ------------------------+
+| Hunter Dolan <hunter@crystalmail.net>                          |
++----------------------------------------------------------------+
 */
+
 
 $MAXNUM = 15;
 $book_types = (array) $cmail->config->get('autocomplete_addressbooks', 'sql');

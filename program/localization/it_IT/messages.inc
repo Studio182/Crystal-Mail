@@ -1,20 +1,19 @@
 <?php
-
 /*
-
-+-----------------------------------------------------------------------+
-| language/it/messages.inc                                              |
-|                                                                       |
-| Language file of the Crystal Mail client                         |
-| Copyright (C) 2005-2010, crystalmail Dev. - Switzerland                 |
-| Licensed under the GNU GPL                                            |
-|                                                                       |
-+-----------------------------------------------------------------------+
-| Author: Andrej Mocilnik <amocilnik@dotcom.ts.it>                      |
-|         Yusef Maali <contact@yusefmaali.net>                          |
-+-----------------------------------------------------------------------+
-
-@version $Id$
++----------------------------------------------------------------+
+| ./program/localization/it_IT/messages.inc                      |
+|                                                                |
+| This file was based on Roundcube Webmail Client                |
+| Copyright (C) 2005-2010, RoundCube Dev. - Switzerland          |
+|                                                                |
+| This file is part of the Crystal Mail Client                   |
+| Copyright (C) 2010, Crystal Mail Dev. Team - United States     |
+|                                                                |
+| Licensed under the GNU GPL                                     |
++--------------------- RoundCube Dev. Team ----------------------+
+| Andrej Mocilnik <amocilnik@dotcom.ts.it>                       |
+| Yusef Maali <contact@yusefmaali.net>                           |
++----------------------------------------------------------------+
 
 */
 

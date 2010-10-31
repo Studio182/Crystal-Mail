@@ -1,22 +1,25 @@
 <?php
-
 /*
- +-----------------------------------------------------------------------+
- | program/steps/utils/spell_pspell.inc                                  |
- |                                                                       |
- | This file is part of the Crystal Mail client                     |
- | Licensed under the GNU GPL                                            |
- |                                                                       |
- | PURPOSE:                                                              |
- |   Use the Pspell extension to check spelling, returns results         |
- |   compatible with spell_googie.inc.                                   |
- |                                                                       |
- +-----------------------------------------------------------------------+
- | Author: Kris Steinhoff <steinhof@umich.edu>                           |
- +-----------------------------------------------------------------------+
-
- $Id$
-
++----------------------------------------------------------------+
+| ./program/steps/utils/spell_pspell.inc                         |
+|                                                                |
+| This file was based on Roundcube Webmail Client                |
+| Copyright (C) 2005-2010, RoundCube Dev. - Switzerland          |
+|                                                                |
+| This file is part of the Crystal Mail Client                   |
+| Copyright (C) 2010, Crystal Mail Dev. Team - United States     |
+|                                                                |
+| Licensed under the GNU GPL                                     |
+|                                                                |
+| PURPOSE:                                                       |
+|   Use the Pspell extension to check spelling, returns results  |
+|   compatible with spell_googie.inc                             |
+|                                                                |
++--------------------- RoundCube Dev. Team ----------------------+
+| Kris Steinhoff <steinhof@umich.edu>                            |
++----------------------- Studio 182 Team ------------------------+
+| Hunter Dolan <hunter@crystalmail.net>                          |
++----------------------------------------------------------------+
 */
 
 if (!extension_loaded('pspell')) {

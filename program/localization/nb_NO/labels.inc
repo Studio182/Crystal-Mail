@@ -1,22 +1,21 @@
 <?php
-
 /*
-
-+-----------------------------------------------------------------------+
-| language/nb_NO/labels.inc                                             |
-|                                                                       |
-| Language file of the Crystal Mail client                         |
-| Copyright (C) 2005-2010, crystalmail Dev. - Switzerland                 |
-| Licensed under the GNU GPL                                            |
-|                                                                       |
-+-----------------------------------------------------------------------+
-| Author: Kjetil Waage - Nextline AS <kjetil@nextline.no>               |
-| Author: Tor Erik Linnerud - JKLM <tel@jklm.no>                        |
-| Author: Axel Sjøstedt <crystalmail@sjostedt.no>                         |
-| Author: Odd Henriksen <odd@digicon.no>                                |
-+-----------------------------------------------------------------------+
-
-@version $Id$
++----------------------------------------------------------------+
+| ./program/localization/nb_NO/labels.inc                        |
+|                                                                |
+| This file was based on Roundcube Webmail Client                |
+| Copyright (C) 2005-2010, RoundCube Dev. - Switzerland          |
+|                                                                |
+| This file is part of the Crystal Mail Client                   |
+| Copyright (C) 2010, Crystal Mail Dev. Team - United States     |
+|                                                                |
+| Licensed under the GNU GPL                                     |
++--------------------- RoundCube Dev. Team ----------------------+
+| Kjetil Waage - Nextline AS <kjetil@nextline.no>                |
+| Tor Erik Linnerud - JKLM <tel@jklm.no>                         |
+| Axel Sjøstedt <roundcube@sjostedt.no>                          |
+| Odd Henriksen <odd@digicon.no>                                 |
++----------------------------------------------------------------+
 
 */
 

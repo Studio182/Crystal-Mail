@@ -1,25 +1,23 @@
 <?php
-
 /*
-
-+-----------------------------------------------------------------------+
-| language/pl_PL/messages.inc                                           |
-|                                                                       |
-| Language file of the Crystal Mail client                         |
-| Copyright (C) 2005-2010, crystalmail Dev. - Switzerland                 |
-| Licensed under the GNU GPL                                            |
-|                                                                       |
-+-----------------------------------------------------------------------+
-| Author: Tomasz Pajor        <t.pajor@kei.pl>                          |
-| Author: Sławomir Cichoń     <slawek.cichon@gmail.com>                 |
-|         Janusz Zamecki      <janusz@zamecki.eu>                       |
-|         Mariusz Szulerecki  <nob@force.eu.org>                        |
-|         Wojciech Szczepucha <donkoyote@gmail.com>                     |
-|         Aleksander Machniak <alec@alec.pl>                            |
-+-----------------------------------------------------------------------+
-
-@version $Id$
-
++----------------------------------------------------------------+
+| ./program/localization/pl_PL/messages.inc                      |
+|                                                                |
+| This file was based on Roundcube Webmail Client                |
+| Copyright (C) 2005-2010, RoundCube Dev. - Switzerland          |
+|                                                                |
+| This file is part of the Crystal Mail Client                   |
+| Copyright (C) 2010, Crystal Mail Dev. Team - United States     |
+|                                                                |
+| Licensed under the GNU GPL                                     |
++--------------------- RoundCube Dev. Team ----------------------+
+| Tomasz Pajor        <t.pajor@kei.pl>                           |
+| Sławomir Cichoń     <slawek.cichon@gmail.com>                  |
+| Janusz Zamecki      <janusz@zamecki.eu>                        |
+| Mariusz Szulerecki  <nob@force.eu.org>                         |
+| Wojciech Szczepucha <donkoyote@gmail.com>                      |
+| Aleksander Machniak <alec@alec.pl>                             |
++----------------------------------------------------------------+
 */
 
 $messages = array();

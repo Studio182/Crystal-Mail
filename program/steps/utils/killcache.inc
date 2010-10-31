@@ -1,22 +1,24 @@
 <?php
 /*
-
- +-----------------------------------------------------------------------+
- | program/steps/utils/killcache.inc                                     |
- |                                                                       |
- | This file is part of the Crystal Mail client                     |
- | Copyright (C) 2009-2010, Crystal Mail Dev. - United States            |
- | Licensed under the GNU GPL                                            |
- |                                                                       |
- | PURPOSE:                                                              |
- |   Delete rows from cache and messages tables                          |
- |                                                                       |
- +-----------------------------------------------------------------------+
- | Author: Dennis P. Nikolaenko <dennis@nikolaenko.ru>                   |
- +-----------------------------------------------------------------------+
-
- $Id$
-
++----------------------------------------------------------------+
+| ./program/steps/utils/killcache.inc                            |
+|                                                                |
+| This file was based on Roundcube Webmail Client                |
+| Copyright (C) 2005-2010, RoundCube Dev. - Switzerland          |
+|                                                                |
+| This file is part of the Crystal Mail Client                   |
+| Copyright (C) 2010, Crystal Mail Dev. Team - United States     |
+|                                                                |
+| Licensed under the GNU GPL                                     |
+|                                                                |
+| PURPOSE:                                                       |
+|   Delete rows from cache and messages tables                   |
+|                                                                |
++--------------------- RoundCube Dev. Team ----------------------+
+| Dennis P. Nikolaenko <dennis@nikolaenko.ru>                    |
++----------------------- Studio 182 Team ------------------------+
+| Hunter Dolan <hunter@crystalmail.net>                          |
++----------------------------------------------------------------+
 */
 
 // don't allow public access if not in devel_mode

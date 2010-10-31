@@ -1,19 +1,21 @@
 <?php
-
 /*
- +-----------------------------------------------------------------------+
- | localization/ne/labels.inc                                            |
- |                                                                       |
- | Language file of the Crystal Mail client                         |
- | Copyright (C) 2007, crystalmail Dev. - Switzerland                      |
- | Licensed under the GNU GPL                                            |
- |                                                                       |
- +-----------------------------------------------------------------------+
- | Nepali Translation by:                                                |
- | Prasanna Singh <prasanna@bhunet.com>, <prasanna@bhunet.com>           |
- | crystalmailAuthor: Thomas Bruederli <roundcube@gmail.com>               |
- +-----------------------------------------------------------------------+
++----------------------------------------------------------------+
+| ./program/localization/ne/labels.inc                           |
+|                                                                |
+| This file was based on Roundcube Webmail Client                |
+| Copyright (C) 2005-2010, RoundCube Dev. - Switzerland          |
+|                                                                |
+| This file is part of the Crystal Mail Client                   |
+| Copyright (C) 2010, Crystal Mail Dev. Team - United States     |
+|                                                                |
+| Licensed under the GNU GPL                                     |
++--------------------- RoundCube Dev. Team ----------------------+
+| Thomas Bruederli <roundcube@gmail.com>                         |
+| Prasanna <prasanna@bhunet.com>                                 |
++----------------------------------------------------------------+
 */
+
 
 $labels = array();
 $labels['welcome'] = '$product मा स्वागत छ';

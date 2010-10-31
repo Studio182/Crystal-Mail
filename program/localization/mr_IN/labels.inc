@@ -1,26 +1,20 @@
 <?php
-
-
 /*
-+-----------------------------------------------------------------------+
-|
- language/mr_IN/labels.inc                                             |
-|
-                                                                       |
-|
- Language file of the Crystal Mail client                         |
-|
- Copyright (C) 2009, crystalmail Dev. - Switzerland                      |
-|
- Licensed under the GNU GPL                                            |
-|
-                                                                       |
-+-----------------------------------------------------------------------+
-| 
-Author:Nitin Nimkar <nvncom at yahoo.com>                             |
-+-----------------------------------------------------------------------+
-
++----------------------------------------------------------------+
+| ./program/localization/mr_IN/labels.inc                        |
+|                                                                |
+| This file was based on Roundcube Webmail Client                |
+| Copyright (C) 2005-2010, RoundCube Dev. - Switzerland          |
+|                                                                |
+| This file is part of the Crystal Mail Client                   |
+| Copyright (C) 2010, Crystal Mail Dev. Team - United States     |
+|                                                                |
+| Licensed under the GNU GPL                                     |
++--------------------- RoundCube Dev. Team ----------------------+
+| Nitin Nimkar <nvncom at yahoo dot com>                         |
++----------------------------------------------------------------+
 */
+
 
 
 $labels = array();

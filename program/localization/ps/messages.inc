@@ -1,4 +1,17 @@
 <?php
+/*
++----------------------------------------------------------------+
+| ./program/localization/ps/messages.inc                         |
+|                                                                |
+| This file was based on Roundcube Webmail Client                |
+| Copyright (C) 2005-2010, RoundCube Dev. - Switzerland          |
+|                                                                |
+| This file is part of the Crystal Mail Client                   |
+| Copyright (C) 2010, Crystal Mail Dev. Team - United States     |
+|                                                                |
+| Licensed under the GNU GPL                                     |
++----------------------------------------------------------------+
+*/
 
 $messages['loginfailed']  = 'ننوتنه په بري سره ترسره نه شوه ';
 $messages['cookiesdisabled'] = 'ستاسو لټوني ککوړي ونه منل ';

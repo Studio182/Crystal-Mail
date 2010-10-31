@@ -1,22 +1,21 @@
 <?php
-
 /*
-
-+-----------------------------------------------------------------------+
-| language/sk/labels.inc                                                |
-|                                                                       |
-| Language file of the Crystal Mail client                         |
-| Copyright (C) 2005-2010, crystalmail Dev. - Switzerland                 |
-| Licensed under the GNU GPL                                            |
-|                                                                       |
-+-----------------------------------------------------------------------+
-| Author: Marek Kutnar <marek19@zmail.sk>                               |
-|         Lukas Kraic  <lukas.kraic@truni.sk>                           |
-|         Peter Mann   <peter.mann@tuke.sk>                             |
-|         Ales Pospichal   <ales@pospichalales.info>                    |
-+-----------------------------------------------------------------------+
-
-@version $Id$
++----------------------------------------------------------------+
+| ./program/localization/sk_SK/labels.inc                        |
+|                                                                |
+| This file was based on Roundcube Webmail Client                |
+| Copyright (C) 2005-2010, RoundCube Dev. - Switzerland          |
+|                                                                |
+| This file is part of the Crystal Mail Client                   |
+| Copyright (C) 2010, Crystal Mail Dev. Team - United States     |
+|                                                                |
+| Licensed under the GNU GPL                                     |
++--------------------- RoundCube Dev. Team ----------------------+
+| Marek Kutnar <marek19@zmail.sk>                                |
+| Lukas Kraic  <lukas.kraic@truni.sk>                            |
+| Peter Mann   <peter.mann@tuke.sk>                              |
+| Ales Pospichal   <ales@pospichalales.info>                     |
++----------------------------------------------------------------+
 
 */
 

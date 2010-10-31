@@ -1,20 +1,20 @@
 <?php
-
 /*
- +-----------------------------------------------------------------------+
- | language/si/labels.inc                                                |
- |                                                                       |
- | Language file of the Crystal Mail client                         |
- | Copyright (C) 2005-2010, crystalmail Dev. - Switzerland                 |
- | Licensed under the GNU GPL                                            |
- |                                                                       |
- +-----------------------------------------------------------------------+
- | Author: Melanga Dissanayake <Melanga.Dissanayake@pabcbank.com>        |
- +-----------------------------------------------------------------------+
-
- @version $Id$
-
++----------------------------------------------------------------+
+| ./program/localization/si_LK/labels.inc                        |
+|                                                                |
+| This file was based on Roundcube Webmail Client                |
+| Copyright (C) 2005-2010, RoundCube Dev. - Switzerland          |
+|                                                                |
+| This file is part of the Crystal Mail Client                   |
+| Copyright (C) 2010, Crystal Mail Dev. Team - United States     |
+|                                                                |
+| Licensed under the GNU GPL                                     |
++--------------------- RoundCube Dev. Team ----------------------+
+| Melanga Dissanayake <Melanga.Dissanayake@pabcbank.com>         |
++----------------------------------------------------------------+
 */
+
 
 $labels = array();
 $labels['welcome'] = '$product ආයුබොවන්';

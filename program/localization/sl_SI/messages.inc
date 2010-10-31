@@ -1,16 +1,18 @@
 <?php
-
 /*
-+-----------------------------------------------------------------------+
-| language/sl_SL/messages.inc                                           |
-|                                                                       |
-| Language file of the Crystal Mail client                         |
-| Copyright (C) 2008-2010, RoundQube Dev. - Switzerland                 |
-| Licensed under the GNU GPL                                            |
-|                                                                       |
-+-----------------------------------------------------------------------+
-| Author:   Barbara Krasovec -  barbarak@arnes.si                       |
-+-----------------------------------------------------------------------+
++----------------------------------------------------------------+
+| ./program/localization/si_SI/messages.inc                      |
+|                                                                |
+| This file was based on Roundcube Webmail Client                |
+| Copyright (C) 2005-2010, RoundCube Dev. - Switzerland          |
+|                                                                |
+| This file is part of the Crystal Mail Client                   |
+| Copyright (C) 2010, Crystal Mail Dev. Team - United States     |
+|                                                                |
+| Licensed under the GNU GPL                                     |
++--------------------- RoundCube Dev. Team ----------------------+
+| Barbara Krasovec <barbarak@arnes.si>                           |
++----------------------------------------------------------------+
 
 */
 

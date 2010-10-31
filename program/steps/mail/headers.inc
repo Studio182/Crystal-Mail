@@ -1,21 +1,24 @@
 <?php
 /*
- +-----------------------------------------------------------------------+
- | program/steps/mail/headers.inc                                        |
- |                                                                       |
- | This file is part of the Crystal Mail client                     |
- | Copyright (C) 2005-2007, crystalmail Dev. - Switzerland                 |
- | Licensed under the GNU GPL                                            |
- |                                                                       |
- | PURPOSE:                                                              |
- |   Fetch message headers in raw format for display                     |
- |                                                                       |
- +-----------------------------------------------------------------------+
- | Author: Aleksander Machniak <alec@alec.pl>                            |
- +-----------------------------------------------------------------------+
-
- $Id$
-
++----------------------------------------------------------------+
+| ./program/steps/mail/headers.inc                               |
+|                                                                |
+| This file was based on Roundcube Webmail Client                |
+| Copyright (C) 2005-2010, RoundCube Dev. - Switzerland          |
+|                                                                |
+| This file is part of the Crystal Mail Client                   |
+| Copyright (C) 2010, Crystal Mail Dev. Team - United States     |
+|                                                                |
+| Licensed under the GNU GPL                                     |
+|                                                                |
+| PURPOSE:                                                       |
+|   Fetch message headers in raw format for display              |
+|                                                                |
++--------------------- RoundCube Dev. Team ----------------------+
+| Aleksander 'A.L.E.C' Machniak <alec@alec.pl>                   |
++----------------------- Studio 182 Team ------------------------+
+| Hunter Dolan <hunter@crystalmail.net>                          |
++----------------------------------------------------------------+
 */
 
 if ($uid = get_input_value('_uid', crystal_INPUT_POST))

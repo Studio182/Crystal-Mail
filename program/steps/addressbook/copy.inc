@@ -1,23 +1,26 @@
 <?php
-
 /*
- +-----------------------------------------------------------------------+
- | program/steps/addressbook/copy.inc                                    |
- |                                                                       |
- | This file is part of the Crystal Mail client                     |
- | Copyright (C) 2007, crystalmail Dev. - Switzerland                      |
- | Licensed under the GNU GPL                                            |
- |                                                                       |
- | PURPOSE:                                                              |
- |   Copy a contact record from one direcotry to another                 |
- |                                                                       |
- +-----------------------------------------------------------------------+
- | Author: Thomas Bruederli <roundcube@gmail.com>                        |
- +-----------------------------------------------------------------------+
-
- $Id: copy.inc 471 2007-02-09 21:25:50Z thomasb $
-
++----------------------------------------------------------------+
+| program/steps/addressbook/copy.inc                             |
+|                                                                |
+| This file was based on Roundcube Webmail Client                |
+| Copyright (C) 2005-2010, RoundCube Dev. - Switzerland          |
+|                                                                |
+| This file is part of the Crystal Mail Client                   |
+| Copyright (C) 2010, Crystal Mail Dev. Team - United States     |
+|                                                                |
+| Licensed under the GNU GPL                                     |
+|                                                                |
+| PURPOSE:                                                       |
+|   Copy a contact record from one directory to another          |
+|                                                                |
++--------------------- RoundCube Dev. Team ----------------------+
+| Thomas Bruederli <roundcube@gmail.com>                         |
++----------------------- Studio 182 Team ------------------------+
+| Hunter Dolan <hunter@crystalmail.net>                          |
++----------------------------------------------------------------+
 */
+
 
 // only process ajax requests
 if (!$OUTPUT->ajax_call)

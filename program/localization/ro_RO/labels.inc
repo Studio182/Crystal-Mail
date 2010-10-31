@@ -1,20 +1,20 @@
 <?php
-
 /*
-+-----------------------------------------------------------------------+
-| language/ro_RO/labels.inc                                             |
-|                                                                       |
-| Language file of the Crystal Mail client                         |
-| Copyright (C) 2005-2010, crystalmail Dev. - Switzerland                 |
-| Licensed under the GNU GPL                                            |
-|                                                                       |
-+-----------------------------------------------------------------------+
-| Author: Daniel Anechitoaie - danieLs <daniels@safereaction.ro>        |
-|         Zeno Popovici <zeno.popovici at ulbsibiu.ro>                  |
-|         Cristian Nastase <cristian.nastase@itcaffe.net>               |
-+-----------------------------------------------------------------------+
-
-@version $Id$
++----------------------------------------------------------------+
+| ./program/localization/ro_RO/labels.inc                        |
+|                                                                |
+| This file was based on Roundcube Webmail Client                |
+| Copyright (C) 2005-2010, RoundCube Dev. - Switzerland          |
+|                                                                |
+| This file is part of the Crystal Mail Client                   |
+| Copyright (C) 2010, Crystal Mail Dev. Team - United States     |
+|                                                                |
+| Licensed under the GNU GPL                                     |
++--------------------- RoundCube Dev. Team ----------------------+
+| Daniel Anechitoaie - danieLs <daniels@safereaction.ro>         |
+| Zeno Popovici <zeno.popovici at ulbsibiu.ro>                   |
+| Cristian Nastase <cristian.nastase@itcaffe.net>                |
++----------------------------------------------------------------+
 
 */
 

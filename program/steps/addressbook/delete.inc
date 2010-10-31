@@ -1,23 +1,27 @@
 <?php
-
 /*
- +-----------------------------------------------------------------------+
- | program/steps/addressbook/delete.inc                                  |
- |                                                                       |
- | This file is part of the Crystal Mail client                     |
- | Copyright (C) 2005-2009, crystalmail Dev. - Switzerland                 |
- | Licensed under the GNU GPL                                            |
- |                                                                       |
- | PURPOSE:                                                              |
- |   Delete the submitted contacts (CIDs) from the users address book    |
- |                                                                       |
- +-----------------------------------------------------------------------+
- | Author: Thomas Bruederli <roundcube@gmail.com>                        |
- +-----------------------------------------------------------------------+
-
- $Id$
-
++----------------------------------------------------------------+
+| program/steps/addressbook/delete.inc                           |
+|                                                                |
+| This file was based on Roundcube Webmail Client                |
+| Copyright (C) 2005-2009, RoundCube Dev. - Switzerland          |
+|                                                                |
+| This file is part of the Crystal Mail Client                   |
+| Copyright (C) 2010, Crystal Mail Dev. Team - United States     |
+|                                                                |
+| Licensed under the GNU GPL                                     |
+|                                                                |
+| PURPOSE:                                                       |
+|   Delete the submitted contacts (CIDs) from the users address  |
+|   book                                                         |
+|                                                                |
++--------------------- RoundCube Dev. Team ----------------------+
+| Thomas Bruederli <roundcube@gmail.com>                         |
++----------------------- Studio 182 Team ------------------------+
+| Hunter Dolan <hunter@crystalmail.net>                          |
++----------------------------------------------------------------+
 */
+
 
 if ($OUTPUT->ajax_call &&
     ($cid = get_input_value('_cid', crystal_INPUT_POST)) &&

@@ -1,24 +1,25 @@
 <?php
-
 /*
-
-+-----------------------------------------------------------------------+
-| language/nl_NL/messages.inc                                           |
-|                                                                       |
-| Language file of the Crystal Mail client                         |
-| Copyright (C) 2005-2010, crystalmail Dev. - Switzerland                 |
-| Licensed under the GNU GPL                                            |
-|                                                                       |
-+-----------------------------------------------------------------------+
-| Author: Mark Moses <mark@katmoda.com>                                 |
-|         Lazlo Westerhof <crystalmail@lazlo.me>                          |
-|         Frits Letteboer <f.letteboer@radiotwenterand.nl>              |
-|         Justin van Beusekom <j.v.beusekom@beus-it.nl>                 |
-+-----------------------------------------------------------------------+
-
-@version $Id$
++----------------------------------------------------------------+
+| ./program/localization/nl_NL/messages.inc                      |
+|                                                                |
+| This file was based on Roundcube Webmail Client                |
+| Copyright (C) 2005-2010, RoundCube Dev. - Switzerland          |
+|                                                                |
+| This file is part of the Crystal Mail Client                   |
+| Copyright (C) 2010, Crystal Mail Dev. Team - United States     |
+|                                                                |
+| Licensed under the GNU GPL                                     |
++--------------------- RoundCube Dev. Team ----------------------+
+| Mark Moses <mark@katmoda.com>                                  |
+| Lazlo Westerhof <roundcube@lazlo.me>                           |
+| Laurens Vets <laurens@daemon.be>                               |
+| Frits Letteboer <f.letteboer@radiotwenterand.nl>               |
+| Justin van Beusekom <j.v.beusekom@beus-it.nl>                  |
++----------------------------------------------------------------+
 
 */
+
 
 $messages = array();
 $messages['loginfailed'] = 'Inloggen mislukt';

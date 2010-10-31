@@ -1,22 +1,21 @@
 <?php
-
 /*
-
-+-----------------------------------------------------------------------+
-| language/lt_LT/messages.inc                                           |
-|                                                                       |
-| Language file of the Crystal Mail client                         |
-| Copyright (C) 2005-2010, crystalmail Dev. - Switzerland                 |
-| Licensed under the GNU GPL                                            |
-|                                                                       |
-+-----------------------------------------------------------------------+
-| Authors: Martynas Bendorius <martynas@evanet.lt>                      |
-|          Rimas Kudelis <rq@akl.lt>                                    |
-+-----------------------------------------------------------------------+
-
-@version $Id$
-
++----------------------------------------------------------------+
+| ./program/localization/lt_LD/messages.inc                      |
+|                                                                |
+| This file was based on Roundcube Webmail Client                |
+| Copyright (C) 2005-2010, RoundCube Dev. - Switzerland          |
+|                                                                |
+| This file is part of the Crystal Mail Client                   |
+| Copyright (C) 2010, Crystal Mail Dev. Team - United States     |
+|                                                                |
+| Licensed under the GNU GPL                                     |
++--------------------- RoundCube Dev. Team ----------------------+
+| Martynas Bendorius <martynas@evanet.lt>                        |
+| Rimas Kudelis <rq@akl.lt>										 | 
++----------------------------------------------------------------+
 */
+
 
 $messages = array();
 $messages['loginfailed'] = 'Prisijungti nepavyko';

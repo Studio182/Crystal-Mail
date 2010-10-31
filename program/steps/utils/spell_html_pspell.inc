@@ -1,23 +1,26 @@
 <?php
-
 /*
- +-----------------------------------------------------------------------+
- | program/steps/utils/spell_pspell_tiny.inc                             |
- |                                                                       |
- | This file is part of the Crystal Mail client                     |
- | Copyright (C) 2005-2010, crystalmail Dev. - Switzerland                 |
- | Licensed under the GNU GPL                                            |
- |                                                                       |
- | PURPOSE:                                                              |
- |   Use the Pspell extension to check spelling in TinyMCE               |
- |                                                                       |
- +-----------------------------------------------------------------------+
- | Author: Aleksander Machniak <alec@alec.pl>                            |
- +-----------------------------------------------------------------------+
-
- $Id: spell_pspell.inc 3780 2010-06-23 09:55:08Z alec $
-
++----------------------------------------------------------------+
+| ./program/steps/utils/spell_pspell_tiny.inc                    |
+|                                                                |
+| This file was based on Roundcube Webmail Client                |
+| Copyright (C) 2005-2010, RoundCube Dev. - Switzerland          |
+|                                                                |
+| This file is part of the Crystal Mail Client                   |
+| Copyright (C) 2010, Crystal Mail Dev. Team - United States     |
+|                                                                |
+| Licensed under the GNU GPL                                     |
+|                                                                |
+| PURPOSE:                                                       |
+|   Use the Pspell extension to check spelling in TinyMCE        |
+|                                                                |
++--------------------- RoundCube Dev. Team ----------------------+
+| Aleksander 'A.L.E.C' Machniak <alec@alec.pl>                   |
++----------------------- Studio 182 Team ------------------------+
+| Hunter Dolan <hunter@crystalmail.net>                          |
++----------------------------------------------------------------+
 */
+
 
 function json_error($str)
 {

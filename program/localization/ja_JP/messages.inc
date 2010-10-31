@@ -1,22 +1,21 @@
 <?php
-
 /*
-
-+-----------------------------------------------------------------------+
-| language/ja_JP/messages.inc                                           |
-|                                                                       |
-| Language file of the Crystal Mail client                         |
-| Copyright (C) 2005-2010, crystalmail Dev. - Switzerland                 |
-| Licensed under the GNU GPL                                            |
-|                                                                       |
-+-----------------------------------------------------------------------+
-| Author: Tadashi Jokagi <elf2000@users.sourceforge.net>                |
-|         Takashi Takamatsu <taka717@gmail.com>                         |
-+-----------------------------------------------------------------------+
-
-@version $Id$
-
++----------------------------------------------------------------+
+| ./program/localization/ja_jP/messages.inc                      |
+|                                                                |
+| This file was based on Roundcube Webmail Client                |
+| Copyright (C) 2005-2010, RoundCube Dev. - Switzerland          |
+|                                                                |
+| This file is part of the Crystal Mail Client                   |
+| Copyright (C) 2010, Crystal Mail Dev. Team - United States     |
+|                                                                |
+| Licensed under the GNU GPL                                     |
++--------------------- RoundCube Dev. Team ----------------------+
+| Tadashi Jakagi <elf2000@users.sourceforge.net>                 |
+| Takashi Takamatsu <taka717@gmail.com>                          |
++----------------------------------------------------------------+
 */
+
 
 $messages = array();
 $messages['loginfailed'] = 'ログインに失敗しました。';

@@ -1,3 +1,23 @@
+/*
++----------------------------------------------------------------+
+| ./program/js/smart.php                                         |
+|                                                                |
+| This file is part of the Crystal Mail Client                   |
+| Copyright (C) 2010, Crystal Mail Dev. Team - United States     |
+|                                                                |
+| Licensed under the GNU GPL                                     |
+|                                                                |
+| PURPOSE:                                                       |
+|   Adds Crystal Mail Smart URL Decoder                          |
+|   (More info at http://tracker.cystalmail.net/wiki/smart/)     |
+|                                                                |
++----------------------- Studio 182 Team ------------------------+
+| Hunter Dolan <hunter@crystalmail.net>                          |
+| Chris Jones <chris@crystalmail.net>                            |
++----------------------------------------------------------------+
+*/
+
+
 // Smart isn't ready for primetime yet
 
 /*$(function(){

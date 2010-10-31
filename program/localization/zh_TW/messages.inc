@@ -1,21 +1,20 @@
 <?php
-
 /*
-
-+-----------------------------------------------------------------------+
-| localization/zh_TW/messages.inc                                       |
-|                                                                       |
-| Language file of the Crystal Mail client                         |
-| Copyright (C) 2005-2010, crystalmail Dev. - Switzerland                 |
-| Licensed under the GNU GPL                                            |
-|                                                                       |
-+-----------------------------------------------------------------------+
-| Author: WayneSan <waynesan@zerozone.tw>                               |
-|         kourge <kourge@gmail.com>                                     |
-|         Ting-Hung Chiu <earrl@mmlab.cse.yzu.edu.tw>                   |
-+-----------------------------------------------------------------------+
-
-@version $Id$
++----------------------------------------------------------------+
+| ./program/localization/zh_TW/messages.inc                      |
+|                                                                |
+| This file was based on Roundcube Webmail Client                |
+| Copyright (C) 2005-2010, RoundCube Dev. - Switzerland          |
+|                                                                |
+| This file is part of the Crystal Mail Client                   |
+| Copyright (C) 2010, Crystal Mail Dev. Team - United States     |
+|                                                                |
+| Licensed under the GNU GPL                                     |
++--------------------- RoundCube Dev. Team ----------------------+
+| WayneSan <waynesan@zerozone.tw>                                |
+| kourge <kourge@gmail.com>                                      |
+| Ting-Hung Chiu <earrl@mmlab.cse.yzu.edu.tw>                    |
++----------------------------------------------------------------+
 
 */
 

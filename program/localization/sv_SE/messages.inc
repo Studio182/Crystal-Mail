@@ -1,23 +1,23 @@
 <?php
-
 /*
-
-+-----------------------------------------------------------------------+
-| language/sv_SE/messages.inc                                           |
-|                                                                       |
-| Language file of the Crystal Mail client                         |
-| Copyright (C) 2005-2010, crystalmail Dev. - Switzerland                 |
-| Licensed under the GNU GPL                                            |
-|                                                                       |
-+-----------------------------------------------------------------------+
-| Author: Jonas Nasholm <rcm@bitfuse.net>                               |
-|         Fredrik Nygren <f.nygren@gmail.com>                           |
-|         Andreas Henriksson <andreas@fatal.se>                         |
-+-----------------------------------------------------------------------+
-
-@version $Id$
++----------------------------------------------------------------+
+| ./program/localization/sv_SE/messages.inc                      |
+|                                                                |
+| This file was based on Roundcube Webmail Client                |
+| Copyright (C) 2005-2010, RoundCube Dev. - Switzerland          |
+|                                                                |
+| This file is part of the Crystal Mail Client                   |
+| Copyright (C) 2010, Crystal Mail Dev. Team - United States     |
+|                                                                |
+| Licensed under the GNU GPL                                     |
++--------------------- RoundCube Dev. Team ----------------------+
+| Jonas Nasholm <rcm@bitfuse.net>                                |
+| Fredrik Nygren <f.nygren@gmail.com>                            |
+| Andreas Henriksson <andreas@fatal.se>                          |
++----------------------------------------------------------------+
 
 */
+
 
 $messages = array();
 $messages['loginfailed'] = 'Inloggningen misslyckades';

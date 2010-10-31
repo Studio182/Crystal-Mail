@@ -22,6 +22,32 @@
 
 */
 
+<?php
+/*
++----------------------------------------------------------------+
+| ./program/steps/utils/spell_googie.inc                         |
+|                                                                |
+| This file was based on Roundcube Webmail Client                |
+| Copyright (C) 2005-2010, RoundCube Dev. - Switzerland          |
+|                                                                |
+| This file is part of the Crystal Mail Client                   |
+| Copyright (C) 2010, Crystal Mail Dev. Team - United States     |
+|                                                                |
+| Licensed under the GNU GPL                                     |
+|                                                                |
+| PURPOSE:                                                       |
+|   Submit request to Google's spell checking engine             |
+|                                                                |
++--------------------- RoundCube Dev. Team ----------------------+
+| Thomas Bruederli <roundcube@gmail.com>                         |
++----------------------- Studio 182 Team ------------------------+
+| Hunter Dolan <hunter@crystalmail.net>                          |
++------------------------- Credits ------------------------------+
+| Script from GoogieSpell by amix.dk							 |
++----------------------------------------------------------------+
+*/
+
+
 $REMOTE_REQUEST = TRUE;
 
 // default settings

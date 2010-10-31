@@ -1,20 +1,29 @@
 /*
- +-----------------------------------------------------------------------+
- | Crystal Mail Client Script                                       |
- |                                                                       |
- | This file is part of the Crystal Mail client                     |
- | Copyright (C) 2005-2010, Crystal Mail Dev. - Switzerland                 |
- | Licensed under the GNU GPL                                            |
- |                                                                       |
- +-----------------------------------------------------------------------+
- | Authors: Thomas Bruederli <roundcube@gmail.com>                       |
- |          Aleksander 'A.L.E.C' Machniak <alec@alec.pl>                 |
- |          Charles McNulty <charles@charlesmcnulty.com>                 |
- +-----------------------------------------------------------------------+
- | Requires: jquery.js, common.js, list.js                               |
- +-----------------------------------------------------------------------+
-
-  $Id$
++----------------------------------------------------------------+
+| ./program/js/app.js                                            |
+|                                                                |
+| This file was based on Roundcube Webmail Client                |
+| Copyright (C) 2005-2010, RoundCube Dev. - Switzerland          |
+|                                                                |
+| This file is part of the Crystal Mail Client                   |
+| Copyright (C) 2010, Crystal Mail Dev. Team - United States     |
+|                                                                |
+| Licensed under the GNU GPL                                     |
+|                                                                |
+| PURPOSE:                                                       |
+|   Crystal Mail Client Script                                   |
+|                                                                |
+| Requires:                                                      |
+|   jquery.js, common.js, list.js                                |
+|                                                                |
++--------------------- RoundCube Dev. Team ----------------------+
+| Thomas Bruederli <roundcube@gmail.com>                         |
+| Aleksander 'A.L.E.C' Machniak <alec@alec.pl>                   |
+| Charles McNulty <charles@charlesmcnulty.com>                   |
++----------------------- Studio 182 Team ------------------------+
+| Hunter Dolan <hunter@crystalmail.net>                          |
+| Chris Jones <chris@crystalmail.net>                            |
++----------------------------------------------------------------+
 */
 
 
