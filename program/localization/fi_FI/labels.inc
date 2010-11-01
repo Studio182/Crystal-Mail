@@ -1,23 +1,26 @@
-<?php
-
+﻿<?php
 /*
-+-----------------------------------------------------------------------+
-| language/fi_FI/labels.inc                                             |
-|                                                                       |
-| Language file of the Crystal Mail client                         |
-| Copyright (C) 2005-2010, crystalmail Dev. - Switzerland                 |
-| Licensed under the GNU GPL                                            |
-|                                                                       |
-+-----------------------------------------------------------------------+
-| Author: Ville Alatalo <ville@alatalo.org>                             |
-|         Veljo Velling <veve@utu.fi>                                   |
-|         Jorma Tuomainen <jt@wiza.fi>                                  |
-|         Olli <ollinpostit@gmail.com>                                  |
-+-----------------------------------------------------------------------+
-
-@version $Id$
-
++----------------------------------------------------------------+
+| ./program/localization/fi_FI/labels.inc                        |
+|                                                                |
+| This file was based on Roundcube Webmail Client                |
+| Copyright (C) 2005-2010, RoundCube Dev. - Switzerland          |
+|                                                                |
+| This file is part of the Crystal Mail Client                   |
+| Copyright (C) 2010, Crystal Mail Dev. Team - United States     |
+|                                                                |
+| Licensed under the GNU GPL                                     |
+|                                                                |
++--------------------- RoundCube Dev. Team ----------------------+
+| Ville Alatalo <ville@alatalo.org>                              |
+| Veljo Velling <veve@utu.fi>                                    |
+| Jorma Tuomainen <jt@wiza.fi>                                   |
+| Olli <ollinpostit@gmail.com>                                   |
++----------------------- Studio 182 Team ------------------------+
+| Hunter Dolan <hunter@crystalmail.net>                          |
++----------------------------------------------------------------+
 */
+
 
 $labels = array();
 $labels['welcome'] = 'Tervetuloa $product -käyttäjäksi';

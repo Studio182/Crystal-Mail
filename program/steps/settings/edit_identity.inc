@@ -20,7 +20,7 @@
 | Hunter Dolan <hunter@crystalmail.net>                          |
 +----------------------------------------------------------------+
 */
-
+ 
 
 define('IDENTITIES_LEVEL', intval($cmail->config->get('identities_level', 0)));
 

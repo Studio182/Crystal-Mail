@@ -1,17 +1,21 @@
-<?php
-
+﻿<?php
 /*
-+-----------------------------------------------------------------------+
-| language/cy_GB/labels.inc                                             |
-|                                                                       |
-| Language file of the Crystal Mail client                         |
-| Copyright (C) 2008-2010, crystalmail Dev. - Switzerland                 |
-| Licensed under the GNU GPL                                            |
-|                                                                       |
-+-----------------------------------------------------------------------+
-| Author: Dafydd Tomos <l10n@da.fydd.org>                               |
-+-----------------------------------------------------------------------+
-
++----------------------------------------------------------------+
+| ./program/localization/cy_GB/labels.inc                        |
+|                                                                |
+| This file was based on Roundcube Webmail Client                |
+| Copyright (C) 2005-2010, RoundCube Dev. - Switzerland          |
+|                                                                |
+| This file is part of the Crystal Mail Client                   |
+| Copyright (C) 2010, Crystal Mail Dev. Team - United States     |
+|                                                                |
+| Licensed under the GNU GPL                                     |
+|                                                                |
++--------------------- RoundCube Dev. Team ----------------------+
+| Dafydd Tomos <l10n@da.fydd.org>                                |
++----------------------- Studio 182 Team ------------------------+
+| Hunter Dolan <hunter@crystalmail.net>                          |
++----------------------------------------------------------------+
 */
 
 $labels = array();

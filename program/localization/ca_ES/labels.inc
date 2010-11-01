@@ -1,22 +1,23 @@
-<?php
-
+﻿<?php
 /*
-
-+-----------------------------------------------------------------------+
-| language/ca_ES/labels.inc                                             |
-|                                                                       |
-| Language file of the Crystal Mail client                         |
-| Copyright (C) 2005-2010, crystalmail Dev. - Switzerland                 |
-| Licensed under the GNU GPL                                            |
-|                                                                       |
-+-----------------------------------------------------------------------+
-| Author: Miguel Canteras i Cañizares <miguel@canteras.org>             |
-|         Simo <sim6@graciasensefils.net>                               |
-|         Jordi Sanfeliu <jordi@fibranet.cat>                           |         
-+-----------------------------------------------------------------------+
-
-@version $Id$
-
++----------------------------------------------------------------+
+| ./program/localization/ca_ES/labels.inc                        |
+|                                                                |
+| This file was based on Roundcube Webmail Client                |
+| Copyright (C) 2005-2010, RoundCube Dev. - Switzerland          |
+|                                                                |
+| This file is part of the Crystal Mail Client                   |
+| Copyright (C) 2010, Crystal Mail Dev. Team - United States     |
+|                                                                |
+| Licensed under the GNU GPL                                     |
+|                                                                |
++--------------------- RoundCube Dev. Team ----------------------+
+| Miguel Canteras i Cañizares <miguel@canteras.org>              |
+| Simo <sim6@graciasensefils.net>                                |
+| Jordi Sanfeliu <jordi@fibranet.cat>                            |
++----------------------- Studio 182 Team ------------------------+
+| Hunter Dolan <hunter@crystalmail.net>                          |
++----------------------------------------------------------------+
 */
 
 $labels = array();

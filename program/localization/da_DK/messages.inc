@@ -1,21 +1,23 @@
-<?php
-
+﻿<?php
 /*
-+-----------------------------------------------------------------------+
-| language/da_DK/messages.inc                                           |
-|                                                                       |
-| Language file of the Crystal Mail client                         |
-| Copyright (C) 2005-2010, crystalmail Dev. - Switzerland                 |
-| Licensed under the GNU GPL                                            |
-|                                                                       |
-+-----------------------------------------------------------------------+
-| Author : Martin Moeller <martin@liga.dk>                              |
-|         Jesper R. Meyer <jesper@upthere.dk>                           |
-|         Søren Aggeboe <soren@aggeboe.dk>                              |
-+-----------------------------------------------------------------------+
-
-@version $Id$
-
++----------------------------------------------------------------+
+| ./program/localization/da_DK/messages.inc                      |
+|                                                                |
+| This file was based on Roundcube Webmail Client                |
+| Copyright (C) 2005-2010, RoundCube Dev. - Switzerland          |
+|                                                                |
+| This file is part of the Crystal Mail Client                   |
+| Copyright (C) 2010, Crystal Mail Dev. Team - United States     |
+|                                                                |
+| Licensed under the GNU GPL                                     |
+|                                                                |
++--------------------- RoundCube Dev. Team ----------------------+
+| Martin Moeller <martin@liga.dk>                                |
+| Jesper R. Meyer <jrm@upthere.dk>                               |
+| Søren Aggeboe <soren@aggeboe.dk>                               |
++----------------------- Studio 182 Team ------------------------+
+| Hunter Dolan <hunter@crystalmail.net>                          |
++----------------------------------------------------------------+
 */
 
 $messages = array();

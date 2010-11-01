@@ -1,22 +1,24 @@
-<?php
-
+﻿<?php
 /*
-
-+-----------------------------------------------------------------------+
-| language/es_ES/messages.inc                                           |
-|                                                                       |
-| Language file of the Crystal Mail client                         |
-| Copyright (C) 2005-2008, crystalmail Dev. - Switzerland                 |
-| Licensed under the GNU GPL                                            |
-|                                                                       |
-+-----------------------------------------------------------------------+
-| Author: Javier Smaldone <javier@smaldone.com.ar>                      |
-|         David Grajal Blanco <dgrabla@gmail.com>                       |
-|         Lito Jornero <jornero@gmail.com>                              |
-|         Angel Bueno Prieto <info@mediaiberia.com>                     |
-+-----------------------------------------------------------------------+
-
-@version $Id$
++----------------------------------------------------------------+
+| ./program/localization/es_ES/messages.inc                      |
+|                                                                |
+| This file was based on Roundcube Webmail Client                |
+| Copyright (C) 2005-2010, RoundCube Dev. - Switzerland          |
+|                                                                |
+| This file is part of the Crystal Mail Client                   |
+| Copyright (C) 2010, Crystal Mail Dev. Team - United States     |
+|                                                                |
+| Licensed under the GNU GPL                                     |
+|                                                                |
++--------------------- RoundCube Dev. Team ----------------------+
+| Javier Smaldone <javier@smaldone.com.ar>                       |
+| David Grajal Blanco <dgrabla@gmail.com>                        |
+| Lito Jornero <jornero@gmail.com>                               |
+| Angel Bueno Prieto <info@mediaiberia.com>                      |
++----------------------- Studio 182 Team ------------------------+
+| Hunter Dolan <hunter@crystalmail.net>                          |
++----------------------------------------------------------------+
 */
 
 $messages = array();
