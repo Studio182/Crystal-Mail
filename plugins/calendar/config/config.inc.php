@@ -25,8 +25,8 @@ $cmail_config['time_format'] = "HH:mm";
 // timeslots per hour (1, 2, 3, 4, 6)
 $cmail_config['timeslots'] = 2;
 
-// first day of the week (0-6)
-$cmail_config['first_day'] = 1;
+// first day of the week (eg Sunday, Monday)
+$cmail_config['first_day'] = "sunday";
 
 // first hour of the calendar (0-23)
 $cmail_config['first_hour'] = 6;
