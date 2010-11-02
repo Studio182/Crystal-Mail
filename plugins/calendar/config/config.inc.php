@@ -38,10 +38,11 @@ $cmail_config['categories'] = array('Personal' => 'c0c0c0',
                                       'Holiday' => 'ff6600');
 
 // Settings for CalDAV backend.
-$cmail_config['caldav_server'] = 'https://google.com/calendar/dav/hunterhdolan@gmail.com/user/';
-$cmail_config['caldav_username'] = 'hunterhdolan';
-$cmail_config['caldav_password'] = 'ginger7227';
-$cmail_config['caldav_calendar'] = 'Work';
+#Example For Google Calendar
+#$cmail_config['caldav_server'] = 'https://google.com/calendar/dav/username@gmail.com/user/';
+#$cmail_config['caldav_username'] = 'username';
+#$cmail_config['caldav_password'] = 'password';
+#$cmail_config['caldav_calendar'] = 'Calandar Name';
 
 // --- Options for using RoundCube account for CalDAV authentication
 //     (useful for LDAP)
