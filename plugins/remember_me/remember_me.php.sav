@@ -1,0 +1,163 @@
+<?php
+
+/**
+ * remember_me plugin
+ *
+ *
+ * @version 1.2 - 08.12.2009
+ * @author valsily0 / Roland 'rosali' Liebl
+ * @website http://mycrystalmail.googlecode.com
+ * @licence GNU GPL
+ *
+ **/
+ 
+/** USAGE
+ *
+ * #1- Register plugin ("./config/main.inc.php ::: $cmail_config['plugins']").
+ * #2- Make sure this plugin is registered before "captcha" plugin
+ *
+ **/
+
+
+class remember_me extends crystal_plugin {
+  
+  function init() {
+
+    $this->add_hook('template_object_loginform', array($this,'rememberme_loginform'));
+    $this->add_hook('startup', array($this, 'startup'));
+    $this->add_hook('authenticate', array($this, 'authenticate'));
+    $this->add_hook('login_after', array($this, 'login_after'));
+    $this->add_hook('login_failed', array($this, 'login_failed'));
+    $this->add_hook('kill_session', array($this, 'logout'));
+  }
+
+  function rememberme_loginform($before) {
+  
+    $this->add_texts('localization/');
+    $checked = "";
+    if($_COOKIE['rememberme_checked'] == 1)
+      $checked = 'checked="checked"';
+    $b = $before['content'];
+    $b = str_ireplace ('</tbody>',
+      '<td class="title"><label for="rcmrememberme">' . $this->gettext('rememberme','remember_me') . '</label></td><td><input ' . $checked . ' name="_rememberme" value="1" type="checkbox" /></td>
+      </tbody>',$b);
+    $before['content']=$b;;	
+    return ($before);
+  }
+
+  function startup($args) {
+   
+    if ($args['task'] == 'settings')
+      return $args; // do not login on pwtools request
+
+    if (isset($_SESSION['temp'])
+       && !empty($_COOKIE['rememberme_user']) && !empty($_COOKIE['rememberme_pass']) && !empty($_COOKIE['rememberme_host'])){
+        $user = $this->decode($_COOKIE['rememberme_user']);
+        $pass = $this->decode($_COOKIE['rememberme_pass']);
+        $ssl = "";
+        $imap_port = "";
+        if(!empty($_COOKIE['rememberme_ssl']))
+          $ssl = $this->decode($_COOKIE['rememberme_ssl']);
+        if(!empty($_COOKIE['rememberme_imap_port']))
+          $imap_port = $this->decode($_COOKIE['rememberme_imap_port']);        
+        $host = $ssl . $this->decode($_COOKIE['rememberme_host']) . $imap_port;
+        if($user != "" && $pass != "" && $host != ""){
+          $args['action'] = 'login';
+        }
+    }
+    
+    return $args;
+  }
+
+  function authenticate($args) {
+    if ( !empty($_COOKIE['rememberme_user']) &&  !empty($_COOKIE['rememberme_pass'])&&  !empty($_COOKIE['rememberme_host'])) {
+      $user = $this->decode($_COOKIE['rememberme_user']);
+      $pass = $this->decode($_COOKIE['rememberme_pass']);
+      $host = $this->decode($_COOKIE['rememberme_host']);
+      if($user != "" && $pass != "" && $host != ""){
+        $args['user']= $user;
+        $args['pass']= $pass;
+        #Update cookie time
+        if(!empty($_COOKIE['rememberme_ssl']))
+          setcookie ('rememberme_ssl',$_COOKE['rememberme_ssl'],time()+60*60*24*365);
+        if(!empty($_COOKIE['rememberme_imap_port']))
+          setcookie ('rememberme_imap_port',$_COOKIE['rememberme_imap_port'],time()+60*60*24*365);       
+        setcookie ('rememberme_user',$this->encode($user),time()+60*60*24*365);
+        setcookie ('rememberme_pass',$this->encode($pass),time()+60*60*24*365);
+        setcookie ('rememberme_host',$this->encode($host),time()+60*60*24*365);
+        setcookie ('rememberme_checked',1,time()+60*60*24*365);
+      }
+    } 
+    return $args;
+  }
+
+  function login_after($args) {
+    if (($_POST['_rememberme'] == 1) && !empty($_POST['_user']) &&  !empty($_POST['_pass'])) {
+       setcookie ('rememberme_user',$this->encode(trim($_POST['_user'])),time()+60*60*24*365);
+       setcookie ('rememberme_pass',$this->encode(trim($_POST['_pass'])),time()+60*60*24*365);
+       if(!empty($_SESSION['ssl']))
+         setcookie ('rememberme_ssl',$this->encode($_SESSION['ssl'] . "://"),time()+60*60*24*365);
+       if(!empty($_SESSION['imap_port']))
+         setcookie ('rememberme_imap_port',$this->encode(":".$_SESSION['imap_port']),time()+60*60*24*365);       
+       setcookie ('rememberme_host',$this->encode($_SESSION['imap_host']),time()+60*60*24*365);
+       setcookie ('rememberme_checked',1,time()+60*60*24*365);
+    }
+    return $args;
+  }
+
+  function login_failed($args) {
+    setcookie ('rememberme_user','',time()-3600);
+    setcookie ('rememberme_pass','',time()-3600);
+    setcookie ('rememberme_host','',time()-3600);
+    return $args;
+  }
+  
+  function logout($args) {
+    $this->add_texts('localization/');
+    $cmail = cmail::get_instance();
+    if($cmail->task == "logout" && isset($_COOKIE['rememberme_user']) && isset($_COOKIE['rememberme_pass'])){
+      if(!isset($_POST['_remember_me'])){
+        if(!isset($_GET['_remember_me'])){
+          $cmail->output->send("remember_me.remember_me");
+        }
+        else{
+          $cmail->output->show_message("remember_me.close");
+          $cmail->output->send("remember_me.redirect");
+          exit;
+        }
+      }
+      else{
+        setcookie ('rememberme_user','',time()-3600);
+        setcookie ('rememberme_pass','',time()-3600);
+        setcookie ('rememberme_host','',time()-3600);
+        setcookie ('rememberme_checked','',time()-3600);
+        unset($_COOKIE['rememberme_checked']);
+        header('Location: ./?_task=logout');
+        exit;
+      }
+    }
+    return $args;      
+  } 
+
+  private function encode ($a) {
+    if($a != ""){
+      $cmail = cmail::get_instance();
+      return $cmail->encrypt($a);
+    }
+    else
+      return "";
+  
+  }
+  
+  private function decode ($a) {
+    if($a != ""){
+      $cmail = cmail::get_instance();
+      return $cmail->decrypt($a);
+    }
+    else
+      return "";
+
+  }
+
+}
+?>
