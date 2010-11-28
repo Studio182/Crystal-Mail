@@ -50,7 +50,14 @@ die(cmail_VERSION);
 }
 // init application, start session, init output class, etc.
 $cmail = cmail::get_instance();
-
+if (isset($_GET['apicall'])) {
+if (isset($_GET['request_token'])) {
+$json = array(request_token => $cmail->get_request_token());
+}
+$json = json_encode($json);
+echo $json;
+die();
+}
 // turn on output buffering
 ob_start();
 
@@ -279,8 +286,6 @@ while ($redirects < 5) {
     break;
   }
 }
-
-
 // parse main template (default)
 $OUTPUT->send($cmail->task);
 
