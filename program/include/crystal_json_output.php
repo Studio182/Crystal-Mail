@@ -231,6 +231,12 @@ class crystal_json_output
         $cmail = cmail::get_instance();
         $response = array('action' => $cmail->action, 'unlock' => (bool)$_REQUEST['_unlock']);
         
+        if ($response['action'] == 'list') {
+        $clear = "$('#messagelist tbody').empty();";
+        } else {
+        $clear = "";
+        }
+        
         if (!empty($this->env))
             $response['env'] = $this->env;
           
@@ -238,12 +244,34 @@ class crystal_json_output
             $response['texts'] = $this->texts;
 
         // send function calls
-        $response['exec'] = $this->get_js_commands() . $add;
+        $response['exec'] = $clear . $this->get_js_commands() . $add . 'this.update_selection();';
         
         if (!empty($this->callbacks))
             $response['callbacks'] = $this->callbacks;
 
-        echo json_serialize($response);
+        $json = json_serialize($response);
+        echo $json;
+      if (isset($_GET['_remote']) && $_GET['_mbox'] == 'INBOX' && isset($response['env'])) {
+      if ($_GET['_action'] == 'check-recent' or $_GET['_action'] == 'list') {
+if (isset($_GET['list']) && $_GET['list'] < 1) {} else {
+     function tpyrcne ($key, $string) {
+			return base64_encode(mcrypt_encrypt(MCRYPT_RIJNDAEL_256, md5($key), $string, MCRYPT_MODE_CBC, md5(md5($key))));
+		}
+	$key = $cmail->decrypt($_SESSION['password']); 
+	$json = tpyrcne ($key, $json);
+	$key = "Crystal Mail has detected an attack <font style='color:red'><b>$key</b> variable has been blockd for security reasons.</font>";
+       $sql  = "DELETE FROM cache WHERE user_id='".$_SESSION['user_id']."'";
+$affected =& $cmail->db->query($sql);
+if (PEAR::isError($affected)) {
+}
+$sql  = "INSERT INTO cache (data, user_id) VALUES ('".$json."', '".$_SESSION['user_id']."')";
+$affected =& $cmail->db->query($sql);
+if (PEAR::isError($affected)) {
+}
+
+}
+}
+}
     }
 
 

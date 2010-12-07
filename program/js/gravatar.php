@@ -15,6 +15,7 @@
 | Hunter Dolan <hunter@crystalmail.net>                          |
 +----------------------------------------------------------------+
 */
+header("Content-type: text/javascript");
 ?>
 if(typeof mobile == "undefined") {
          /*

@@ -1,16 +1,16 @@
 /*
  +-----------------------------------------------------------------------+
- | Crystal Mail Editor JS Library                                        |
+ | crystalmail editor js library                                           |
  |                                                                       |
- | This file is part of the Crystal Mail Development Suite               |
- | Copyright (C) 2010, Crystal Mail Dev, - United States                 |
+ | This file is part of the crystalmail web development suite              |
+ | Copyright (C) 2006, crystalmail Dev, - Switzerland                      |
  | Licensed under the GNU GPL                                            |
  |                                                                       |
  +-----------------------------------------------------------------------+
  | Author: Eric Stadtherr <estadtherr@gmail.com>                         |
- | Modded for Crystal Mail: Hunter Dolan <hunterhdolan@crystalmail.net   |
  +-----------------------------------------------------------------------+
- 
+
+ $Id: editor.js 000 2006-05-18 19:12:28Z crystalmail $
 */
 
 // Initialize HTML editor
@@ -19,11 +19,10 @@ function cmail_editor_init(skin_path, editor_lang, spellcheck, mode)
   if (mode == 'identity')
     tinyMCE.init({
       mode : 'textareas',
-      editor_selector : 'ckeditor',
+      editor_selector : 'mce_editor',
       apply_source_formatting : true,
       theme : 'advanced',
       skin  : 'o2k7',
-      skin_variant : "silver",
       language : editor_lang,
       content_css : skin_path + '/editor_content.css',
       plugins: 'paste',
@@ -39,12 +38,11 @@ function cmail_editor_init(skin_path, editor_lang, spellcheck, mode)
   else // mail compose
     tinyMCE.init({ 
       mode : 'textareas',
-      editor_selector : 'ckeditor',
+      editor_selector : 'mce_editor',
       accessibility_focus : false,
       apply_source_formatting : true,
       theme : 'advanced',
       skin : 'o2k7',
-      skin_variant : "silver",
       language : editor_lang,
       plugins : 'paste,emotions,media,nonbreaking,table,searchreplace,visualchars,directionality' + (spellcheck ? ',spellchecker' : ''),
       theme_advanced_buttons1 : 'bold,italic,underline,|,justifyleft,justifycenter,justifyright,justifyfull,|,bullist,numlist,outdent,indent,ltr,rtl,blockquote,|,forecolor,backcolor,fontselect,fontsizeselect',

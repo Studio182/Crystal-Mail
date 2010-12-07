@@ -1074,11 +1074,11 @@ this.message_list.addEventListener('dblclick', function(o){ p.msglist_dbl_click(
     else if (!a && this.gui_objects.message && this.gui_objects.message.__type != 'error')
       this.hide_message();
 
-    this.busy = a;
+ //   this.busy = a;
     //document.body.style.cursor = a ? 'wait' : 'default';
 
-    if (this.gui_objects.editform)
-      this.lock_form(this.gui_objects.editform, a);
+//    if (this.gui_objects.editform)
+  //    this.lock_form(this.gui_objects.editform, a);
 
     // clear pending timer
     if (this.request_timer)

@@ -1,3 +1,4 @@
+<?php header("Content-type: text/javascript"); ?>
 /*
 +----------------------------------------------------------------+
 | ./program/js/smart.php                                         |

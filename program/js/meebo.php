@@ -16,7 +16,7 @@
 | William Bentley <william@crystalmail.net>                      |
 +----------------------------------------------------------------+
 */
-
+header("Content-type: text/javascript");
 error_reporting (E_ALL ^ E_NOTICE);
 include('../../config/main.inc.php');
 //Check if meebo is even set (If it is not Kill PHP to prevent ssl certificate errors)

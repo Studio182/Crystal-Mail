@@ -5,14 +5,14 @@
  | program/include/main.inc                                              |
  |                                                                       |
  | This file is part of the Crystal Mail client                     |
- | Copyright (C) 2005-2009, Crystal Mail Dev. - Switzerland                 |
+ | Copyright (C) 2005-2009, crystalmail Dev, - Switzerland                 |
  | Licensed under the GNU GPL                                            |
  |                                                                       |
  | PURPOSE:                                                              |
  |   Provide basic functions for the webmail package                     |
  |                                                                       |
  +-----------------------------------------------------------------------+
- | Author: Thomas Bruederli <roundcube@gmail.com>                        |
+ | Author: Thomas Bruederli <crystalmail@gmail.com>                        |
  +-----------------------------------------------------------------------+
 
  $Id$
@@ -23,7 +23,7 @@
  * Crystal Mail common functions
  *
  * @package Core
- * @author Thomas Bruederli <roundcube@gmail.com>
+ * @author Thomas Bruederli <crystalmail@gmail.com>
  */
 
 require_once('lib/utf7.inc');
@@ -804,7 +804,7 @@ function cmail_get_edit_field($col, $value, $attrib, $type='text')
   // use value from post
   if (!empty($_POST[$fname]))
     $value = get_input_value($fname, crystal_INPUT_POST,
-	    $type == 'textarea' && strpos($attrib['class'], 'ckeditor')!==false ? true : false);
+	    $type == 'textarea' && strpos($attrib['class'], 'mce_editor')!==false ? true : false);
 
   $out = $input->show($value);
          
@@ -1509,7 +1509,7 @@ function crystal_html_editor($mode='')
   if (!file_exists(INSTALL_PATH . 'program/js/tiny_mce/langs/'.$lang.'.js'))
     $lang = 'en';
 
-  $cmail->output->include_script('ckeditor/ckeditor.js');
+  $cmail->output->include_script('tiny_mce/tiny_mce.js');
   $cmail->output->include_script('editor.js');
   $cmail->output->add_script('cmail_editor_init("$__skin_path",
     "'.JQ($lang).'", '.intval($CONFIG['enable_spellcheck']).', "'.$mode.'");');

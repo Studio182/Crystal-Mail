@@ -3,7 +3,7 @@
  | crystalmail editor js library                                           |
  |                                                                       |
  | This file is part of the crystalmail web development suite              |
- | Copyright (C) 2006, Crystal Mail Dev. - Switzerland                      |
+ | Copyright (C) 2006, crystalmail Dev, - Switzerland                      |
  | Licensed under the GNU GPL                                            |
  |                                                                       |
  +-----------------------------------------------------------------------+
@@ -19,7 +19,7 @@ function cmail_editor_init(skin_path, editor_lang, spellcheck, mode)
   if (mode == 'identity')
     tinyMCE.init({
       mode : 'textareas',
-      editor_selector : 'ckeditor',
+      editor_selector : 'mce_editor',
       apply_source_formatting : true,
       theme : 'advanced',
       skin  : 'o2k7',
@@ -38,7 +38,7 @@ function cmail_editor_init(skin_path, editor_lang, spellcheck, mode)
   else // mail compose
     tinyMCE.init({ 
       mode : 'textareas',
-      editor_selector : 'ckeditor',
+      editor_selector : 'mce_editor',
       accessibility_focus : false,
       apply_source_formatting : true,
       theme : 'advanced',

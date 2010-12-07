@@ -150,18 +150,20 @@ $rcl = new crystalLogin("/Crystal-Mail/", true);
  
 try {
    # If we are already logged in, simply redirect
-   if ($rcl->isLoggedIn())
-     // $rcl->redirect();
- $POST = $GET;
+   if ($rcl->isLoggedIn()){
+     echo '{"loggedin":"true"}';
+     die();
+     }
    # If not, try to login and simply redirect on success
-   $rcl->login($_POST['user'], $_POST['pass']);
+   $rcl->login($_GET['user'], $_GET['pass']);
  
-   if ($rcl->isLoggedIn())
-      $rcl->redirect();
+   if ($rcl->isLoggedIn()) {
+      echo '{"loggedin":"true"}';
+      die();
+   }
    # If the login fails, display an error message
-   die("ERROR: Login failed due to a wrong user/pass combination.");
+   die('{"loggedin":"false"}');
 }
 catch (crystalLoginException $ex) {
-   echo "ERROR: Technical problem, ".$ex->getMessage();
-   $rcl->dumpDebugStack(); exit;
+   echo '{"loggedin":"error"}';
    }

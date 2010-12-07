@@ -11,13 +11,13 @@ $cmail_config['db_table_accounts'] = 'accounts';
 
 $cmail_config['accounts_hosts'] = array();
 
-/*
+
 //Limit the hosts the users can pick... simply comment out the above line and un-comment this line
  $cmail_config['accounts_hosts'] = array(
   "My Host" => "localhost",
   "Google Mail" => "ssl://imap.gmail.com:993",
 );
-*/
+
 
 
 /* always use default smtp server */

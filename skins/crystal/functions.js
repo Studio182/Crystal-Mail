@@ -459,4 +459,3 @@ function iframe_events()
   var doc = this.contentDocument ? this.contentDocument : this.contentWindow ? this.contentWindow.document : null;
   crystal_event.add_listener({ element: doc, object:cmail_ui, method:'body_mouseup', event:'mouseup' });
 }
-
