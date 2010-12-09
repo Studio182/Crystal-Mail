@@ -1,9 +1,8 @@
 <?php
 /*
-
  +-------------------------------------------------------------------------+
  | Crystal Mail IMAP Webmail Client                                        |
- | Version 1.2                                                             |
+ | Version 1.3                                                             |
  |                                                                         |
  | Copyright (C) 2009-2010, Crystal Mail Dev. - United States              |
  |                                                                         |
