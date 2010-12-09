@@ -38,5 +38,3 @@ Got a question? Post it on our "support forum":http://forum.crystalmail.net!
 h2. Contact
 
 For any bug reports or feature requests please refer to our tracking system at "http://tracker.crystalmail.net/":http://tracker.crystalmail.net/ And you can always contact the project admin at "hunter@crystalmail.net":mailto:hunter@crystalmail.net!
-
-:)
