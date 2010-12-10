@@ -29,6 +29,8 @@
  +-------------------------------------------------------------------------+
  |Special thanks to the RoundCube dev team for providing such a great base!|
  +-------------------------------------------------------------------------+
+ 
+ :)
 
 */
 //Hide Errors Unless in Debug Mode
