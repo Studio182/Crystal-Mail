@@ -1,5 +1,0 @@
-<?php
-
-// Help content iframe source
-// $cmail_config['help_source'] = 'http://trac.crystalmail.net/wiki';
-$cmail_config['help_source'] = '';
