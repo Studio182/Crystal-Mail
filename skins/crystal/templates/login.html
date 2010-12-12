@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title><crystalmail:object name="pagetitle" /></title>
+		<crystalmail:include file="/includes/links.html" />
+		<link rel="stylesheet" type="text/css" href="/login.css" />
+		<style type="text/css" media="screen"> 
+        html {
+        }
+        
+        body {
+        font: 12px 'Lucida Grande', Arial, sans-serif;
+        margin: auto auto auto auto;
+        width: 100%;
+		height: 100%;
+		min-height: 100%;
+		background-image:url('skins/crystal/images/bg.png');
+        }
+        
+        #login-container {
+        	height: 100%;
+        }
+        
+            #login-container #mainwin {
+                background: #c3d0f8 url('skins/crystal/images/loginbar/loginbg.png') repeat-x;
+                border-bottom: 2px solid #ffffff;
+                border-left: 2px solid #ffffff;
+                border-right: 2px solid #ffffff;
+                padding: 20px 20px 20px 20px;
+                width: 300px;
+                margin: 0 auto;
+                text-align: center;
+                <!--[if IE]>
+                text-align: left;
+                <![end if]-->
+                -webkit-border-bottom-right-radius: 8px;
+				-webkit-border-bottom-left-radius: 8px;
+				-moz-border-radius-bottomright: 8px;
+				-moz-border-radius-bottomleft: 8px;
+				border-bottom-right-radius: 8px;
+				border-bottom-left-radius: 8px;
+				border-bottom: 1px solid rgb(138,157,205);
+                border-left: 1px solid rgb(138,157,205);
+                border-right: 1px solid rgb(138,157,205);
+                z-index:10000;
+            }
+            
+                        #login-container #topwin {
+                background-image:url('skins/crystal/images/header.png');
+                height: 34px;
+                color: #ffffff;
+                padding: 7px 0px 5px 0px;
+                width: 100%;
+                z-index:-1;
+                margin-bottom:-1px;
+            }
+           
+            
+    </style>
+	</head>
+	<body>
+		<table width="100%" height="100%" cellspacing="0" cellpadding="0" border="0" class="bg">
+		<tr>
+			<td width="100%" height="100%" align="center" valign="middle" style="margin-top:50px;">
+					<form name="form" action="./" method="post">
+					<div id="login-container">
+					<font size="5"><crystalmail:object name="productname" /></font><br><br>
+					<div id="topwin">
+					<span style="padding-right:35px"><img src="skins/crystal/images/loginbar/email.png"></span>
+					<span style="padding-right:35px"><img src="skins/crystal/images/loginbar/person.png"></span>
+					<span style="padding-right:35px"><img src="skins/crystal/images/loginbar/lightbulb.png"></span>
+					<img src="skins/crystal/images/loginbar/lock.png">
+					</div>
+					<div id="mainwin" height="80%">
+					
+					
+						<center><crystalmail:object name="loginform" form="form" /></center>
+<br>
+								<input type="submit" value="<crystalmail:label name='login' />" />
+<br><br>
+						<crystalmail:object name="message" id="loginmessage" />
+
+					</form>
+				</div>
+			</td>
+		</tr>
+		</table>
+		<div class="canvas"></div>
+	</body>
+</html>
