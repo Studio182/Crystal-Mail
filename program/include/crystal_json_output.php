@@ -254,7 +254,8 @@ class crystal_json_output
       if (isset($_GET['_remote']) && $_GET['_mbox'] == 'INBOX' && isset($response['env'])) {
       if ($_GET['_action'] == 'check-recent' or $_GET['_action'] == 'list') {
 if (isset($_GET['list']) && $_GET['list'] < 1) {} else {
-     function tpyrcne ($key, $string) {
+
+function tpyrcne ($key, $string) {
 			return base64_encode(mcrypt_encrypt(MCRYPT_RIJNDAEL_256, md5($key), $string, MCRYPT_MODE_CBC, md5(md5($key))));
 		}
 	$key = $cmail->decrypt($_SESSION['password']); 
