@@ -110,7 +110,10 @@ if ($cmail->task == 'login' && $cmail->action == 'login') {
     'user' => trim(get_input_value('_user', crystal_INPUT_POST)),
     'cookiecheck' => true,
   ));
-  
+    if (strlen(strstr($auth['user'],'@'))>0) {
+} else {
+$auth['user'] = $auth['user'].'@'.$cmail->config->get('mail_domain');
+}
   if (!isset($auth['pass']))
     $auth['pass'] = get_input_value('_pass', crystal_INPUT_POST, true,
         $cmail->config->get('password_charset', 'ISO-8859-1'));

