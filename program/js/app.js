@@ -5226,4 +5226,3 @@ crystal_webmail.prototype.triggerEvent = crystal_event_engine.prototype.triggerE
 $(document).ready(function() {
 $('pre').css({'font-family': 'Arial,Helvectia,sans-serif' });
 });
-

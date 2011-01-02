@@ -62,15 +62,6 @@ CREATE TABLE `messages` (
 
 -- Table structure for table `cache`
 
-CREATE TABLE `cache` (
- `data` longtext NOT NULL,
- `user_id` int(10) UNSIGNED NOT NULL DEFAULT '0',
- PRIMARY KEY(`cache_id`),
- CONSTRAINT `user_id_fk_cache` FOREIGN KEY (`user_id`)
-   REFERENCES `users`(`user_id`) ON DELETE CASCADE ON UPDATE CASCADE,
- INDEX `created_index` (`created`),
- INDEX `user_cache_index` (`user_id`,`cache_key`)
-) /*!40000 ENGINE=INNODB */ /*!40101 CHARACTER SET utf8 COLLATE utf8_general_ci */;
 
 
 -- Table structure for table `contacts`
