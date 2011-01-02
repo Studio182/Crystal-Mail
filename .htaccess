@@ -1,0 +1,16 @@
+# +-----------------------------------------------------------------+
+# | .htaccess                                                       |
+# |                                                                 |
+# | This file is part of the Crystal Mail Client                    |
+# | Copyright (C) 2010-2011, Crystal Mail Dev. Team - United States |
+# |                                                                 |
+# | Licensed under the GNU GPL                                      |
+# |                                                                 |
+# | PURPOSE:                                                        |
+# |   This file forbids directory listings                          |
+# |                                                                 |
+# +----------------------- Studio 182 Team -------------------------+
+# | Hunter Dolan <hunter@crystalmail.net>                           |
+# +-----------------------------------------------------------------+
+
+Options -Indexes
