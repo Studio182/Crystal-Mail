@@ -38,6 +38,13 @@ if ($_GET['debug_mode'] = "1") {}else{error_reporting(0);}
 
 // include environment
 require_once 'program/include/iniset.php';
+
+if (isset($_GET['api'])) {
+$allowapi = 'true';
+include('program/crystal/api/delegate.php');
+die();
+}
+
 if (file_exists('config/main.inc.php')) { 
 include ('config/main.inc.php');
 //Update Script
