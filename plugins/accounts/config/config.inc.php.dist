@@ -2,23 +2,16 @@
 
 /*accounts plugin */
 
-// navigation config (requires plugin settings @website http://mycrystalmail.googlecode.com)
+// navigation config (requires plugin settings @website http://myroundcube.googlecode.com)
 $cmail_config['settingsnav'][] = array('part' => '', 'locale' => 'settings.accounts', 'href' => './?_task=settings&_action=plugin.accounts&_framed=1', 'onclick' => '', 'descr' => 'accounts');
 
 /* database table name */
 $cmail_config['db_table_accounts'] = 'accounts';
 
-
-$cmail_config['accounts_hosts'] = array();
-
-
-//Limit the hosts the users can pick... simply comment out the above line and un-comment this line
- $cmail_config['accounts_hosts'] = array(
-  "My Host" => "localhost",
-  "Google Mail" => "ssl://imap.gmail.com:993",
+/* allowed hosts ::: array() = all */
+$cmail_config['accounts_hosts'] = array(
+  "Gmail Mail" => "ssl://imap.gmail.com:993",
 );
-
-
 
 /* always use default smtp server */
 $cmail_config['accounts_smtp_default'] = TRUE;

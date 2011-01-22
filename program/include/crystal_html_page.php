@@ -69,6 +69,8 @@ class crystal_html_page
         $this->script_files[$position][] = $file;
     }
 			function __cache() {
+			$cmail = cmail::get_instance();
+			if ($cmail->action == 'compose'){} else {
 			if (isset($_GET['_task'])){$task = $_GET['_task'];} else {$task = 'mail';}
 			if (isset($_GET['_mbox'])){$mbox = $_GET['mbox'];} else {$mbox = 'INBOX';}
 			if (isset($_GET['_uid'])) {$task = 'read';}
@@ -95,6 +97,7 @@ class crystal_html_page
 		</script>";
 		}
 		return $cache;
+		}
 		}
 		}
     /**

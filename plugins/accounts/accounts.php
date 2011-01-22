@@ -3,16 +3,16 @@
  * accounts plugin
  *
  *
- * @version 1.5 - 23.04.2010
+ * @version 1.7 - 14.09.2010
  * @author Roland 'rosali' Liebl
- * @website http://mycrystalmail.googlecode.com
+ * @website http://myroundcube.googlecode.com
  * @licence GNU GPL
  *
  **/
  
 /**
  *
- * Usage: http://mail4us.net/mycrystalmail/
+ * Usage: http://mail4us.net/myroundcube/
  *
  **/
  
@@ -41,8 +41,8 @@ class accounts extends crystal_plugin
     $this->add_hook('template_object_accounts_form_edit', array($this, 'accounts_edit'));
     $this->add_hook('template_object_accounts_list', array($this, 'accounts_list'));
     $this->add_hook('render_page', array($this, 'select_account'));
-    $this->add_hook('user_preferences', array($this, 'special_folders_form'));
-    $this->add_hook('save_preferences', array($this, 'special_folders_save'));
+    $this->add_hook('preferences_list', array($this, 'special_folders_form'));
+    $this->add_hook('preferences_save', array($this, 'special_folders_save'));
     $this->add_hook('render_mailboxlist', array($this, 'render_mailboxlist'));
     $this->add_hook('template_object_composeheaders', array($this, 'select_identity')); 
   }
@@ -69,7 +69,7 @@ class accounts extends crystal_plugin
   function navigation()
   {
      if(isset($_GET['_switch'])){
-      $this->switch_account(get_input_value('_switch', crystal_INPUT_GET));
+      $this->switch_account(get_input_value('_switch', RCUBE_INPUT_GET));
     }
      
     if(isset($_GET['_add'])){
@@ -209,11 +209,11 @@ class accounts extends crystal_plugin
   {
     $cmail = cmail::get_instance();
     if((strtolower($cmail->user->data['username']) != strtolower($_SESSION['username'])) && $_POST['_section'] == 'folders'){
-      $arr_save['drafts_mbox'] = get_input_value('_drafts_mbox', crystal_INPUT_POST);
-      $arr_save['junk_mbox'] = get_input_value('_junk_mbox', crystal_INPUT_POST);
-      $arr_save['trash_mbox'] = get_input_value('_trash_mbox', crystal_INPUT_POST);
-      $arr_save['sent_mbox'] = get_input_value('_sent_mbox', crystal_INPUT_POST);
-      $arr_save['archive_mbox'] = get_input_value('_archive_mbox', crystal_INPUT_POST);
+      $arr_save['drafts_mbox'] = get_input_value('_drafts_mbox', RCUBE_INPUT_POST);
+      $arr_save['junk_mbox'] = get_input_value('_junk_mbox', RCUBE_INPUT_POST);
+      $arr_save['trash_mbox'] = get_input_value('_trash_mbox', RCUBE_INPUT_POST);
+      $arr_save['sent_mbox'] = get_input_value('_sent_mbox', RCUBE_INPUT_POST);
+      $arr_save['archive_mbox'] = get_input_value('_archive_mbox', RCUBE_INPUT_POST);
       $arr_save['default_imap_folders'] = array(
         'INBOX',
         $arr_save['drafts_mbox'],
@@ -365,23 +365,18 @@ class accounts extends crystal_plugin
       return $p; 
 
     $skin  = $cmail->config->get('skin');
-    $_skin = get_input_value('_skin', crystal_INPUT_POST);
+    $_skin = get_input_value('_skin', RCUBE_INPUT_POST);
 
     if($_skin != "")
       $skin = $_skin;
 
     // abort if there are no css adjustments
-    if($skin == "crystal-3-column") {
-    $skin = "crystal";
-    } else {
-    
     if(!file_exists('plugins/accounts/skins/' . $skin . '/accounts.css')){
       if(!file_exists('plugins/accounts/skins/default/accounts.css'))   
         return $p;
       else
         $skin = "default";
     }
-}
     $this->include_stylesheet('skins/' . $skin . '/accounts.css');
     $browser = new crystal_browser;
     if($browser->ie && $browser->ver == 6){
@@ -580,9 +575,9 @@ class accounts extends crystal_plugin
       'accounts.hostempty'
     );
     
-    $account_dn = get_input_value('_account_dn', crystal_INPUT_POST);    
-    $account_id = get_input_value('_account_id', crystal_INPUT_POST);
-    $account_host = get_input_value('_account_host', crystal_INPUT_POST);
+    $account_dn = get_input_value('_account_dn', RCUBE_INPUT_POST);    
+    $account_id = get_input_value('_account_id', RCUBE_INPUT_POST);
+    $account_host = get_input_value('_account_host', RCUBE_INPUT_POST);
         
     $out  = "<form onsubmit='return accounts_validate()' method='post' action='./?_task=settings&_action=plugin.accounts&_add_do=1&_framed=1'>\n";
     
@@ -605,7 +600,7 @@ class accounts extends crystal_plugin
     if(isset($_GET['_exists']))
       $cmail->output->show_message('accounts.accountexists', 'error');
     
-    $aid = get_input_value('_aid', crystal_INPUT_GET);
+    $aid = get_input_value('_aid', RCUBE_INPUT_GET);
     
     $arr = $this->get($aid);
         
@@ -643,12 +638,12 @@ class accounts extends crystal_plugin
   function add_do()
   {
     $cmail = cmail::get_instance();
-    $account_dn = get_input_value('_account_dn', crystal_INPUT_POST);    
-    $account_id = get_input_value('_account_id', crystal_INPUT_POST);
-    $account_pw = get_input_value('_account_pw', crystal_INPUT_POST);
+    $account_dn = get_input_value('_account_dn', RCUBE_INPUT_POST);    
+    $account_id = get_input_value('_account_id', RCUBE_INPUT_POST);
+    $account_pw = get_input_value('_account_pw', RCUBE_INPUT_POST);
     if($account_pw != "")
       $account_pw = $cmail->encrypt($account_pw);
-    $account_host = get_input_value('_account_host', crystal_INPUT_POST);
+    $account_host = get_input_value('_account_host', RCUBE_INPUT_POST);
     $user_id = $cmail->user->data['user_id'];
     
     $url = parse_url($account_host);
@@ -738,7 +733,7 @@ class accounts extends crystal_plugin
   function delete()
   {
     $cmail = cmail::get_instance();
-    $aid = get_input_value('_aid', crystal_INPUT_GET);
+    $aid = get_input_value('_aid', RCUBE_INPUT_GET);
     $query = "DELETE FROM " . get_table_name('accounts') . " WHERE aid=?";
     $ret = $cmail->db->query($query, $aid);
     if($ret)
@@ -760,11 +755,11 @@ class accounts extends crystal_plugin
   {
     $cmail = cmail::get_instance();
       
-    $aid = get_input_value('_aid', crystal_INPUT_POST);
-    $account_dn = get_input_value('_account_dn', crystal_INPUT_POST);
-    $account_id = get_input_value('_account_id', crystal_INPUT_POST);
-    $account_pw = get_input_value('_account_pw', crystal_INPUT_POST);
-    $account_host = get_input_value('_account_host', crystal_INPUT_POST);
+    $aid = get_input_value('_aid', RCUBE_INPUT_POST);
+    $account_dn = get_input_value('_account_dn', RCUBE_INPUT_POST);
+    $account_id = get_input_value('_account_id', RCUBE_INPUT_POST);
+    $account_pw = get_input_value('_account_pw', RCUBE_INPUT_POST);
+    $account_host = get_input_value('_account_host', RCUBE_INPUT_POST);
 
     if($account_pw == ""){
       $query = "UPDATE " . get_table_name('accounts') . " SET account_dn=?, account_id=?, account_host=? WHERE aid=?";

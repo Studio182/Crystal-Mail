@@ -25,4 +25,6 @@
     //Congrats were in! Just send the client the auth token.
     die(json_encode(array('error' => 'false', 'token' => $cmail->get_request_token())));
     }
+    
+
 ?>

@@ -268,6 +268,7 @@ $action_map = array(
     'enable-threading'  => 'manage_folders.inc',
     'disable-threading' => 'manage_folders.inc',
     'add-identity'  => 'edit_identity.inc',
+    'qrcode'		=> 'qr.inc',
   )
 );
 
