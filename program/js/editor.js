@@ -44,7 +44,7 @@ function cmail_editor_init(skin_path, editor_lang, spellcheck, mode)
       theme : 'advanced',
       skin : 'o2k7',
       language : editor_lang,
-      plugins : 'paste,emotions,media,nonbreaking,table,searchreplace,visualchars,directionality' + (spellcheck ? ',spellchecker' : ''),
+      plugins : 'paste,emotions,media,nonbreaking,table,searchreplace,visualchars,directionality',
       theme_advanced_buttons1 : 'bold,italic,underline,|,justifyleft,justifycenter,justifyright,justifyfull,|,bullist,numlist,outdent,indent,ltr,rtl,blockquote,|,forecolor,backcolor,fontselect,fontsizeselect',
       theme_advanced_buttons2 : 'link,unlink,code,|,emotions,charmap,image,media,|,search' + (spellcheck ? ',spellchecker' : '') + ',undo,redo',
       theme_advanced_buttons3 : '',

@@ -423,5 +423,9 @@ $labels['vietnamese'] = 'Vietnamese';
 $labels['japanese'] = 'Japanese';
 $labels['korean'] = 'Korean';
 $labels['chinese'] = 'Chinese';
+
+//Api
+
+$labels['apikey'] = 'Api Encryption Key';
 																												
 ?>

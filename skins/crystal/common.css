@@ -785,3 +785,6 @@ span.tablink-selected a
 {
   color: #000000;
 }
+#compose-headers label {
+color: #333;
+}

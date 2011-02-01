@@ -26,7 +26,6 @@
 +----------------------------------------------------------------+
 */
 
-
 function crystal_webmail()
 {
   this.env = {};
@@ -240,13 +239,7 @@ this.message_list.addEventListener('dblclick', function(o){ p.msglist_dbl_click(
         else if (this.env.action == 'compose') {
           this.enable_command('send-attachment', 'remove-attachment', 'send', 'toggle-editor', true);
 
-          if (this.env.spellcheck) {
-            this.env.spellcheck.spelling_state_observer = function(s){ ref.set_spellcheck_state(s); };
-            this.set_spellcheck_state('ready');
-            if ($("input[name='_is_html']").val() == '1')
-              this.display_spellcheck_controls(false);
-          }
-
+    
           if (this.env.drafts_mailbox)
             this.enable_command('savedraft', true);
 
@@ -409,7 +402,6 @@ this.message_list.addEventListener('dblclick', function(o){ p.msglist_dbl_click(
     // start keep-alive interval
     this.start_keepalive();
   };
-
 
   /*********************************************************/
   /*********       client command interface        *********/
@@ -844,16 +836,6 @@ this.message_list.addEventListener('dblclick', function(o){ p.msglist_dbl_click(
         url = url.replace(/&_framed=1/, '');
 
         this.redirect(url);
-        break;
-
-      case 'spellcheck':
-        if (window.tinyMCE && tinyMCE.get(this.env.composebody)) {
-          tinyMCE.execCommand('mceSpellCheck', true);
-        }
-        else if (this.env.spellcheck && this.env.spellcheck.spellCheck && this.spellcheck_ready) {
-          this.env.spellcheck.spellCheck();
-          this.set_spellcheck_state('checking');
-        }
         break;
 
       case 'savedraft':
@@ -2853,10 +2835,7 @@ this.message_list.addEventListener('dblclick', function(o){ p.msglist_dbl_click(
       tinyMCE.get(this.env.composebody).focus();
       return false;
     }
-
-    // Apply spellcheck changes if spell checker is active
-    this.stop_spellchecking();
-
+    
     // move body from html editor to textarea (just to be sure, #1485860)
     if (window.tinyMCE && tinyMCE.get(this.env.composebody))
       tinyMCE.triggerSave();
@@ -2867,15 +2846,12 @@ this.message_list.addEventListener('dblclick', function(o){ p.msglist_dbl_click(
   this.toggle_editor = function(props)
   {
     if (props.mode == 'html') {
-      this.display_spellcheck_controls(false);
       this.plain2html($('#'+props.id).val(), props.id);
       tinyMCE.execCommand('mceAddControl', false, props.id);
     }
     else {
       var thisMCE = tinyMCE.get(props.id), existingHtml;
-      if (thisMCE.plugins.spellchecker && thisMCE.plugins.spellchecker.active)
-        thisMCE.execCommand('mceSpellCheck', false);
-
+      
       if (existingHtml = thisMCE.getContent()) {
         if (!confirm(this.get_label('editorwarning'))) {
           return false;
@@ -2883,37 +2859,10 @@ this.message_list.addEventListener('dblclick', function(o){ p.msglist_dbl_click(
         this.html2plain(existingHtml, props.id);
       }
       tinyMCE.execCommand('mceRemoveControl', false, props.id);
-      this.display_spellcheck_controls(true);
     }
 
     return true;
   };
-
-  this.stop_spellchecking = function()
-  {
-    if (this.env.spellcheck && !this.spellcheck_ready) {
-      $(this.env.spellcheck.spell_span).trigger('click');
-      this.set_spellcheck_state('ready');
-    }
-  };
-
-  this.display_spellcheck_controls = function(vis)
-  {
-    if (this.env.spellcheck) {
-      // stop spellchecking process
-      if (!vis)
-        this.stop_spellchecking();
-
-      $(this.env.spellcheck.spell_container).css('visibility', vis ? 'visible' : 'hidden');
-    }
-  };
-
-  this.set_spellcheck_state = function(s)
-  {
-    this.spellcheck_ready = (s == 'ready' || s == 'no_error_found');
-    this.enable_command('spellcheck', this.spellcheck_ready);
-  };
-
   this.set_draft_id = function(id)
   {
     $("input[name='_draft_saveid']").val(id);
@@ -5225,4 +5174,7 @@ crystal_webmail.prototype.removeEventListener = crystal_event_engine.prototype.r
 crystal_webmail.prototype.triggerEvent = crystal_event_engine.prototype.triggerEvent;
 $(document).ready(function() {
 $('pre').css({'font-family': 'Arial,Helvectia,sans-serif' });
+//Hide the Spell Check button... spell checking is a security hole and unnecessary with todays browsers.
+$('.spellcheck').css({'display': 'none'});
+
 });

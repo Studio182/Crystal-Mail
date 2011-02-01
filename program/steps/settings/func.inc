@@ -128,6 +128,7 @@ function cmail_user_prefs($current=null)
 
   $sections['general'] = array('id' => 'general', 'section' => crystal_label('uisettings'));
   $sections['mailbox'] = array('id' => 'mailbox', 'section' => crystal_label('mailboxview'));
+  $sections['apikey'] = array('id' => 'apikey', 'section' => crystal_label('apikey'));
   $sections['compose'] = array('id' => 'compose', 'section' => crystal_label('messagescomposition'));
   $sections['mailview'] = array('id' => 'mailview','section' => crystal_label('messagesdisplaying'));
   $sections['folders'] = array('id' => 'folders', 'section' => crystal_label('specialfolders'));
@@ -604,6 +605,22 @@ function cmail_user_prefs($current=null)
     }
 
     break;
+    
+      case 'apikey':
+    
+    $blocks = array(
+      'main' => array('name' => Q(crystal_label('apikey'))),
+    );
+    $key = md5(md5($config['des_key']).md5($cmail->user->data['username']));
+    $key_input = new html_inputfield(array('name' => '_key', 'size' => 45, 'readonly' => true));
+        $blocks['main']['options']['apikey'] = array(
+          'title' => Q(crystal_label('apikey')),
+          'content' => $key_input->show($key).'<style>#rcmbtn101{display:none;}</style>'
+        );
+
+
+    break;
+
     
     // Server settings
     case 'server':

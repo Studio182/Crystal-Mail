@@ -25,6 +25,7 @@ define('crystal_COMPOSE_FORWARD', 0x0107);
 define('crystal_COMPOSE_DRAFT', 0x0108);
 define('crystal_COMPOSE_EDIT', 0x0109);
 
+
 $MESSAGE_FORM = NULL;
 $MESSAGE = NULL;
 
@@ -225,18 +226,29 @@ function cmail_compose_headers($attrib)
       // we have a set of recipients stored is session
       if (($mailto_id = $_SESSION['compose']['param']['mailto']) && $_SESSION['mailto'][$mailto_id])
         $fvalue = urldecode($_SESSION['mailto'][$mailto_id]);
+        
+         if (isset($_GET['_to'])) {
+    $fvalue = get_input_value('_to', crystal_INPUT_GET, TRUE);
+  }
 
     case 'cc':
       if (!$fname)
       {
         $fname = '_cc';
         $header = $param = 'cc';
+        
+    if (isset($_GET['_cc'])) {
+    $fvalue = get_input_value('_cc', crystal_INPUT_GET, TRUE);
+  	}
       }
     case 'bcc':
       if (!$fname)
       {
         $fname = '_bcc';
         $header = $param = 'bcc';
+            if (isset($_GET['_cc'])) {
+    $fvalue = get_input_value('_cc', crystal_INPUT_GET, TRUE);
+  	}
       }
 
       $allow_attrib = array('id', 'class', 'style', 'cols', 'rows', 'tabindex');
@@ -313,7 +325,7 @@ function cmail_compose_headers($attrib)
   if ($fname && $field_type)
   {
     // pass the following attributes to the form class
-    $field_attrib = array('name' => $fname, 'spellcheck' => 'false');
+    $field_attrib = array('name' => $fname);
     foreach ($attrib as $attr => $value)
       if (in_array($attr, $allow_attrib))
         $field_attrib[$attr] = $value;
@@ -443,6 +455,10 @@ function cmail_prepare_message_body()
   {
     $body = get_input_value('_message', crystal_INPUT_POST, true);
   }
+  else if (!empty($_GET['_message']))
+  {
+    $body = get_input_value('_message', crystal_INPUT_GET, true);
+  }
   else if ($_SESSION['compose']['param']['body'])
   {
     $body = $_SESSION['compose']['param']['body'];
@@ -537,67 +553,6 @@ function cmail_compose_body($attrib)
 
   // include HTML editor
   crystal_html_editor();
-  
-  // include GoogieSpell
-  if (!empty($CONFIG['enable_spellcheck'])) {
-
-    $engine = $cmail->config->get('spellcheck_engine','googie');
-    $spellcheck_langs = (array) $cmail->config->get('spellcheck_languages',
-      array('da'=>'Dansk', 'de'=>'Deutsch', 'en' => 'English', 'es'=>'Español',
-            'fr'=>'Français', 'it'=>'Italiano', 'nl'=>'Nederlands', 'pl'=>'Polski',
-            'pt'=>'Português', 'fi'=>'Suomi', 'sv'=>'Svenska'));
-
-    // googie works only with two-letter codes
-    if ($engine == 'googie') {
-      $lang = strtolower(substr($_SESSION['language'], 0, 2));
-
-      $spellcheck_langs_googie = array();
-      foreach ($spellcheck_langs as $key => $name)
-        $spellcheck_langs_googie[strtolower(substr($key,0,2))] = $name;
-        $spellcheck_langs = $spellcheck_langs_googie;
-    }
-    else {
-      $lang = $_SESSION['language'];
-
-      // if not found in the list, try with two-letter code
-      if (!$spellcheck_langs[$lang])
-        $lang = strtolower(substr($lang, 0, 2));
-    }
-
-    if (!$spellcheck_langs[$lang])
-      $lang = 'en';
-
-    $editor_lang_set = array();
-    foreach ($spellcheck_langs as $key => $name) {
-      $editor_lang_set[] = ($key == $lang ? '+' : '') . JQ($name).'='.JQ($key);
-    }
-    
-    $OUTPUT->include_script('googiespell.js');
-    $OUTPUT->add_script(sprintf(
-      "var googie = new GoogieSpell('\$__skin_path/images/googiespell/','?_task=utils&_action=spell&lang=');\n".
-      "googie.lang_chck_spell = \"%s\";\n".
-      "googie.lang_rsm_edt = \"%s\";\n".
-      "googie.lang_close = \"%s\";\n".
-      "googie.lang_revert = \"%s\";\n".
-      "googie.lang_no_error_found = \"%s\";\n".
-      "googie.setLanguages(%s);\n".
-      "googie.setCurrentLanguage('%s');\n".
-      "googie.setSpellContainer('spellcheck-control');\n".
-      "googie.decorateTextarea('%s');\n".
-      "%s.set_env('spellcheck', googie);",
-      JQ(Q(crystal_label('checkspelling'))),
-      JQ(Q(crystal_label('resumeediting'))),
-      JQ(Q(crystal_label('close'))),
-      JQ(Q(crystal_label('revertto'))),
-      JQ(Q(crystal_label('nospellerrors'))),
-      json_serialize($spellcheck_langs),
-      $lang,
-      $attrib['id'],
-      JS_OBJECT_NAME), 'foot');
-
-    $OUTPUT->add_label('checking');
-    $OUTPUT->set_env('spellcheck_langs', join(',', $editor_lang_set));
-  }
  
   $out .= "\n".'<iframe name="savetarget" src="program/blank.gif" style="width:0;height:0;border:none;visibility:hidden;"></iframe>';
 
@@ -881,7 +836,6 @@ function cmail_compose_subject($attrib)
   unset($attrib['form']);
   
   $attrib['name'] = '_subject';
-  $attrib['spellcheck'] = 'true';
   $textfield = new html_inputfield($attrib);
 
   $subject = '';
@@ -889,6 +843,9 @@ function cmail_compose_subject($attrib)
   // use subject from post
   if (isset($_POST['_subject'])) {
     $subject = get_input_value('_subject', crystal_INPUT_POST, TRUE);
+  }
+    if (isset($_GET['_subject'])) {
+    $subject = get_input_value('_subject', crystal_INPUT_GET, TRUE);
   }
   // create a reply-subject
   else if ($compose_mode == crystal_COMPOSE_REPLY) {
@@ -1130,6 +1087,7 @@ function get_form_tags($attrib)
     
   $form_end = ($MESSAGE_FORM && !strlen($attrib['form'])) ? '</form>' : '';
   $form_name = !empty($attrib['form']) ? $attrib['form'] : 'form';
+
   
   if (!$MESSAGE_FORM)
     $cmail->output->add_gui_object('messageform', $form_name);
@@ -1154,6 +1112,18 @@ $OUTPUT->add_handlers(array(
   'storetarget' => 'cmail_store_target_selection',
 ));
 
+if (isset($_SESSION['compose']['param']['body'])) {
+
+//Quick dirty fix due to the Mailto: additions
+if ($CONFIG['htmleditor'] ? true : false == true) {
+$OUTPUT->add_footer("<script>
+$(document).ready(function(){ 
+cmail.command('toggle-editor', {id:'compose-body', mode:'html'});
+});
+</script>
+");
+} 
+}
 $OUTPUT->send('compose');
 
 
