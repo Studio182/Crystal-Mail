@@ -31,8 +31,6 @@
  |Special thanks to the RoundCube dev team for providing such a great base!|
  +-------------------------------------------------------------------------+
  
- :)
-
 */
 //Hide Errors Unless in Debug Mode
 if ($_GET['debug_mode'] = "1") {}else{error_reporting(0);}
@@ -40,19 +38,13 @@ if ($_GET['debug_mode'] = "1") {}else{error_reporting(0);}
 // include environment
 require_once 'program/include/iniset.php';
 
+// if api call include the api delegate and go from there!
 if (isset($_GET['api'])) {
 $allowapi = 'true';
 include('program/crystal/api/delegate.php');
 die();
 }
 
-if (file_exists('config/main.inc.php')) { 
-include ('config/main.inc.php');
-//Update Script
-if ($cmail_config['enable_auto_updates'] == 'true') {
-include ('./program/crystal/update/update.php');
-}
-}else {header('location: ./installer/');}
 
 // Print version number if requested
 if (isset($_GET['show_version'])) {
@@ -60,15 +52,170 @@ die(cmail_VERSION);
 }
 // init application, start session, init output class, etc.
 $cmail = cmail::get_instance();
-if (isset($_GET['apicall'])) {
-if (isset($_GET['request_token'])) {
-$json = array(request_token => $cmail->get_request_token());
+if ($cmail->config->get('enable_auto_updates') !== '') { 
+if ($cmail->config->get('enable_auto_updates') == 'true') {
+include ('./program/crystal/update/update.php');
 }
-$json = json_encode($json);
-echo $json;
-die();
+}else {header('location: ./installer/');}
+
+/*function curPageURL() {
+ $pageURL = 'http';
+ if ($_SERVER["HTTPS"] == "on") {$pageURL .= "s";}
+ $pageURL .= "://";
+ if ($_SERVER["SERVER_PORT"] != "80") {
+  $pageURL .= $_SERVER["SERVER_NAME"].":".$_SERVER["SERVER_PORT"].$_SERVER["REQUEST_URI"];
+ } else {
+  $pageURL .= $_SERVER["SERVER_NAME"].$_SERVER["REQUEST_URI"];
+ }
+ return $pageURL;
 }
 
+$url = parse_url(curPageURL());
+$ERROR_CODE = "603";
+$__error_title = "Database Error: Connection Failed!";
+$__error_text  = "Unable to connect to database";
+$debug_code['error_code'] = $ERROR_CODE;
+$debug_code['version'] = '1.2';
+$debug_code['url'] = $url['scheme'].'://'.$url['host'].$url['path'];
+$debug_code['stringparams'] = '?'.$url['query'];
+$debug_code = urlencode(json_encode($debug_code));
+$debug_code = file_get_contents('https://secure.crystalmail.net/api/encode_debug/?i='.$debug_code);
+print <<<EOF
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+	<style type="text/css">
+
+	body {
+		padding-top: 10%;
+		text-align: center;
+		font-family: "Lucida Grande", Verdana, Arial, sans-serif;
+	}
+#error-title {
+		font-size: 30px;
+		font-weight: bold;
+	}
+#debug-link {
+		font-size:10px;
+}
+#debug-info pre{
+		background-color:#EEE;
+		width:400px;
+		overflow:scroll;
+		margin:0;
+}
+#debug-why {
+		margin:0;
+		width:378px;
+		background-color:#EEE;
+		border: 1px #DDD Solid;
+		border-top: none;
+		font-size:10px;
+		padding:10px;
+}
+	</style>
+		<title>crystalmail : ERROR $ERROR_CODE</title>
+	<script>
+var timerlen = 5;
+var slideAniLen = 250;
+
+var timerID = new Array();
+var startTime = new Array();
+var obj = new Array();
+var endHeight = new Array();
+var moving = new Array();
+var dir = new Array();
+
+function slidedown(objname){
+        if(moving[objname])
+                return;
+
+        if(document.getElementById(objname).style.display != "none")
+                return; // cannot slide down something that is already visible
+
+        moving[objname] = true;
+        dir[objname] = "down";
+        startslide(objname);
+}
+
+function slideup(objname){
+        if(moving[objname])
+                return;
+
+        if(document.getElementById(objname).style.display == "none")
+                return; // cannot slide up something that is already hidden
+
+        moving[objname] = true;
+        dir[objname] = "up";
+        startslide(objname);
+}
+
+function startslide(objname){
+        obj[objname] = document.getElementById(objname);
+
+        endHeight[objname] = parseInt(obj[objname].style.height);
+        startTime[objname] = (new Date()).getTime();
+
+        if(dir[objname] == "down"){
+                obj[objname].style.height = "1px";
+        }
+
+        obj[objname].style.display = "block";
+
+        timerID[objname] = setInterval('slidetick(\'' + objname + '\');',timerlen);
+}
+
+function slidetick(objname){
+        var elapsed = (new Date()).getTime() - startTime[objname];
+
+        if (elapsed > slideAniLen)
+                endSlide(objname)
+        else {
+                var d =Math.round(elapsed / slideAniLen * endHeight[objname]);
+                if(dir[objname] == "up")
+                        d = endHeight[objname] - d;
+
+                obj[objname].style.height = d + "px";
+        }
+
+        return;
+}
+
+function endSlide(objname){
+        clearInterval(timerID[objname]);
+
+        if(dir[objname] == "up")
+                obj[objname].style.display = "none";
+
+        obj[objname].style.height = endHeight[objname] + "px";
+
+        delete(moving[objname]);
+        delete(timerID[objname]);
+        delete(startTime[objname]);
+        delete(endHeight[objname]);
+        delete(obj[objname]);
+        delete(dir[objname]);
+
+        return;
+}
+</script>
+	</head>
+	<body>
+	<div id="error-box">
+	<div id="error-title">$__error_title</div>
+	<br><div id="error-link">To view more information on this error code click <a href="http://code.crystalmail.net/wiki/Error: $ERROR_CODE">here</a>.</div>
+	<br><div id="debug-link"><a href="#" onclick="slidedown('debug-info')">Get Debug Code</a></div> 
+	<br>
+	<div id="debug-info" style="display:none">
+	<center><pre>$debug_code;</pre>
+	<div id="debug-why"><a href="http://code.crystalmail.net/wiki/Debug%20Codes/">What is this?</a></div></center></div>
+	</div>
+	</body>
+</html>
+EOF;
+
+die();
+*/
 // turn on output buffering
 ob_start();
 

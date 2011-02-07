@@ -101,19 +101,14 @@ $__page_content = <<<EOF
 </div>
 EOF;
 
-if ($OUTPUT && $OUTPUT->template_exists('error')) {
-  $OUTPUT->reset();
-  $OUTPUT->send('error');
-}
 
-$__skin = $CONFIG->skin ? $CONFIG->skin : 'default';
+$__skin = $CONFIG->skin ? $CONFIG->skin : 'crystal';
 
 // print system error page
 print <<<EOF
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"><head>
 <title>crystalmail|Mail : ERROR $ERROR_CODE</title>
-<link rel="stylesheet" type="text/css" href="skins/$__skin/common.css" />
 </head>
 <body>
 
