@@ -1922,6 +1922,7 @@ this.message_list.addEventListener('dblclick', function(o){ p.msglist_dbl_click(
   // removes messages that doesn't exists from list selection array
   this.update_selection = function()
   {
+  try{
     var selected = this.message_list.selection,
       rows = this.message_list.rows,
       i, selection = [];
@@ -1931,6 +1932,9 @@ this.message_list.addEventListener('dblclick', function(o){ p.msglist_dbl_click(
         selection.push(selected[i]);
 
     this.message_list.selection = selection;
+    }
+    catch(err)
+  {}
   }
 
   // expand all threads with unread children
