@@ -19,6 +19,9 @@ require_once("qr.php");
 	case 'list':
 require_once("list.php");
 break;
+	case 'calendar':
+require_once("cal.php");
+break;
 	default: 
 	echo json_encode(array('error' => '003', 'human_error' => 'Function Doesn\'t Exists!'));
 }
