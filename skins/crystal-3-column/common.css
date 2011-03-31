@@ -131,9 +131,9 @@ img
 {
   position: absolute;
   top: 85px;
-  right: 20px;
-  bottom: 20px;
-  left: 20px;
+  right: 10px;
+  bottom: 10px;
+  left: 10px;
 }
 
 #header
@@ -242,7 +242,7 @@ color: #111;
   font-size: 11px;
   font-weight: bold;
   overflow: hidden;
-  background: url(../crystal/images/listheader.gif) top left repeat-x #CCC;
+  background: url(../crystal/images/listheader.png) top left repeat-x #CCC;
 }
 
 .boxcontent
@@ -278,7 +278,7 @@ color: #111;
   overflow: hidden;
   height: 22px;
   border-bottom: 1px solid #999;
-  background: url(../crystal/images/listheader.gif) top left repeat-x #CCC;
+  background: url(../crystal/images/listheader.png) top left repeat-x #CCC;
 }
 
 .boxfooter
@@ -290,7 +290,7 @@ color: #111;
   overflow: hidden;
   height: 22px;
   border-top: 1px solid #999;
-  background: url(../crystal/images/listheader.gif) top left repeat-x #CCC;
+  background: url(../crystal/images/listheader.png) top left repeat-x #CCC;
 }
 
 .boxfooter a.button,
@@ -468,7 +468,7 @@ table.records-table thead tr td
   vertical-align: middle;
   border-bottom: 1px solid #999999;
   color: #333333;
-  background: url(../crystal/images/listheader.gif) top left repeat-x #CCC;
+  background: url(../crystal/images/listheader.png) top left repeat-x #CCC;
   font-size: 11px;
   font-weight: bold;
 }

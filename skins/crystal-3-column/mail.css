@@ -649,7 +649,7 @@ body.messagelist
   vertical-align: middle;
   border-bottom: 1px solid #999999;
   color: #333333;
-  background: url(../crystal/images/listheader.gif) top left repeat-x #CCC;
+  background: url(../crystal/images/listheader.png) top left repeat-x #CCC;
   font-size: 11px;
   font-weight: bold;
 }

@@ -9,12 +9,8 @@
  * @licence GNU GPL
  * @copyright (c) 2010 Lazlo Westerhof - Netherlands
  *
+ * MODIFIED FOR CRYSTAL MAIL (c) 2011
  **/
-body {
-padding-right: 20px;
-padding-left:  20px;
-overflow-x:hidden;
-}
 
 #cal-header {
   position: absolute;

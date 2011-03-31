@@ -58,7 +58,7 @@ span.tablink-selected a
 #folder-manager
 {
   position: absolute;
-  width: 600px;
+  width: 100%;
   top: 0;
   left: 0;
   bottom: 105px;
