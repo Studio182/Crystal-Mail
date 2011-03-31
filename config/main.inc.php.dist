@@ -420,13 +420,13 @@ $cmail_config['list_cols'] = array('subject', 'from', 'date', 'size', 'flag', 'a
 $cmail_config['language'] = null;
 
 // use this format for short date display (date or strftime format)
-$cmail_config['date_short'] = 'D H:i';
+$cmail_config['date_short'] = 'D g:i a';
 
 // use this format for detailed date/time formatting (date or strftime format)
-$cmail_config['date_long'] = 'd.m.Y H:i';
+$cmail_config['date_long'] = 'M j g:i a';
 
 // use this format for today's date display (date or strftime format)
-$cmail_config['date_today'] = 'H:i';
+$cmail_config['date_today'] = 'g:i a';
 
 // use this format for displaying only the date e.g. Brithday (date or strftime format)
 $cmail_config['date_only'] = 'd F Y';
