@@ -253,6 +253,7 @@ filter:alpha(opacity=35);
 
 #searchfilter
 {
+  top: -1px;
   white-space: nowrap;
   position: absolute;
   right: 190px;
@@ -1034,9 +1035,13 @@ table.headers-table tr td.more-headers
 
 #messagebody
 {
+  margin: 15px;
   position:relative;
-  padding-bottom: 10px;
+  padding: 15px;
   background-color: #FFFFFF;
+  box-shadow: 1px 2px 6px rgba(0,0,0, 0.5);
+  -moz-box-shadow: 1px 2px 6px rgba(0,0,0, 0.5);
+  -webkit-box-shadow: 1px 2px 6px rgba(0,0,0, 0.5);
 }
 
 div.message-part,
