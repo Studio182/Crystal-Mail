@@ -1,0 +1,27 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title><crystalmail:object name="pagetitle" /></title>
+<crystalmail:include file="/includes/links.html" />
+<script type="text/javascript" src="/functions.js"></script>
+</head>
+<body class="iframe">
+
+<div id="address-tabsbar">
+<crystalmail:object name="contacttabsbar" />
+<script type="text/javascript"> if (window.cmail) cmail.add_onload(crystal_init_address_tabs); </script>
+</div>
+
+<div id="contact-details" class="boxcontent">
+<crystalmail:object name="contacteditform" addIcon="/../crystal/images/buttons/add_act.png" />
+
+<p><br />
+<input type="button" value="<crystalmail:label name="cancel" />" class="button" onclick="history.back()" />&nbsp;
+<crystalmail:button command="save" type="input" class="button mainaction" label="save" />
+</p>
+
+</form>
+</div>
+
+</body>
+</html>
