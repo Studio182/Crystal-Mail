@@ -1,6 +1,17 @@
 <?php
 switch($_GET['_task']) {
-	case messages:
+case unread_count:
+$cmail = cmail::get_instance();
+$IMAP = new crystal_IMAP(null);
+if ($_SESSION['imap_ssl'] == 'ssl') {$imap_ssl = true;} else {$imap_ssl = false;}
+if (!$IMAP->connect($_SESSION['imap_host'], $_SESSION['username'], $cmail->decrypt($_SESSION['password']), $_SESSION['imap_port'], $imap_ssl)) {
+die(json_encode(array('error' => '104', 'human_error' => 'IMAP Connection Failed')));
+}
+$mailbox = $_GET['mailbox'];
+$unread = $IMAP->messagecount($mailbox, 'UNSEEN');
+echo $unread;
+break;
+case messages:
 $cmail = cmail::get_instance();
 $IMAP = new crystal_IMAP(null);
 if ($_SESSION['imap_ssl'] == 'ssl') {$imap_ssl = true;} else {$imap_ssl = false;}

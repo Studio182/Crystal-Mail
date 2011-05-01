@@ -1,4 +1,7 @@
 <?php
+
+$_POST = $_GET;
+
    if($allowapi == true) {
    //If the user or pass fields aren't filled in... what are we doing? Just kill the whole thing with an error code of blankfields
    if (!isset($_POST['user']) or !isset($_POST['pass'])) {

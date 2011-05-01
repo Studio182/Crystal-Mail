@@ -22,6 +22,9 @@ break;
 	case 'calendar':
 require_once("cal.php");
 break;
+	case 'internal':
+//If its internal well do everything in the script... we just want to get the headers.
+break;
 	default: 
 	echo json_encode(array('error' => '003', 'human_error' => 'Function Doesn\'t Exists!'));
 }

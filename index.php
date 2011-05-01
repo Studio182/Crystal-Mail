@@ -44,6 +44,10 @@ $allowapi = 'true';
 include('program/crystal/api/delegate.php');
 die();
 }
+if (isset($_GET['_userimage'])) {
+include('program/crystal/userimage/userimage.php');
+die();
+}
 
 
 // Print version number if requested
