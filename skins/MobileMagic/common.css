@@ -263,7 +263,7 @@ color: #111;
   position: absolute;
   padding-top: 1px;
   padding-bottom: 2px;
-  right: 150px;
+  right: 185px;
   vertical-align: middle;
 }
 
@@ -278,7 +278,7 @@ color: #111;
 	top: 10px;
 	right: 45px;
 	width: 141px;
-	height: 23px;
+	height: 33px;
 	text-align: right;
 	background: transparent url("images/searchfield.png") top left no-repeat;
 }
@@ -679,28 +679,31 @@ table.records-table tr.unfocused td
 #quicksearchbar
 {
   position: absolute;
-  top: 37px;
-  right: 20px;
-  width: 182px;
-  height: 20px;
+  top: 7px;
+  right: 220px;
+  width: 190px;
+  height: 33px;
   padding-top: 3px;
   text-align: right;
-  background: url(../crystal/images/searchfield.gif) top left no-repeat;
+  background: url(images/searchfield.png) top left no-repeat;
   vertical-align: middle;
-}
+  z-index:1000000;
+  }
 #searchreset
 {
   position: absolute;
-  top: 3px;
-  right: 4px;
+  top: 6px;
+  right: 10px;
   text-decoration: none;
 }
 
 #searchmenulink
 {
  position: absolute;
- top: 3px;
- right: 160px;
+ top: 4px;
+ right: 165px;
+ z-index:1000000000;
+ opacity:0;
 }
 
 #quicksearchbar img
@@ -710,8 +713,8 @@ table.records-table tr.unfocused td
 
 #quicksearchbox
 {
-  position: absolute;
-  top: 2px;
+  position:absolute;
+  top:7px;
   left: 24px;
   width: 140px;
   height: 15px;
@@ -719,10 +722,9 @@ table.records-table tr.unfocused td
   padding: 0px;
   border: none;
   background: transparent;
+  color:#000;
 }
-#searchbar-field {
-padding-top: 0px;
-}
+
 
 
 /***** Crystal Mail pre-defined classes *****/
