@@ -57,6 +57,7 @@ $all = $IMAP->messagecount($mailbox);
 $mailbox = array($mailbox => array('unread' => $unread, 'all' => $all));
 array_push($mailbox_array, $mailbox);
 }
+array_push($mailbox_array, array("blank_padding_row" => array('unread' => 0, 'all' => 0)));
 
 
 echo json_encode(array('error' => 0, 'folders' => $mailbox_array));

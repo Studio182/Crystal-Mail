@@ -561,7 +561,8 @@ color: #111;
 .splitter-v
 {
   cursor: ew-resize;
-  background-position: 2px center;
+background-image: url('./images/border_vertical.png');
+background-repeat: repeat-y;
 }
 
 .popupmenu

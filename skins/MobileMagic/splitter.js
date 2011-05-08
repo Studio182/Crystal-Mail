@@ -74,7 +74,7 @@ function crystal_splitter(attrib)
       }
     }
     else {
-      this.p1.style.width = Math.floor(this.pos - this.p1pos.left - this.layer.width / 2) + 'px';
+      this.p1.style.width = Math.floor(this.pos - this.p1pos.left - this.layer.width / 2 + 3) + 'px';
       this.p2.style.left = Math.ceil(this.pos + this.layer.width / 2) + 'px';
       this.layer.move(Math.round(this.pos - this.layer.width / 2 + 1), this.layer.y);
       if (bw.ie) {

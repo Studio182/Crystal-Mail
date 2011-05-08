@@ -244,7 +244,7 @@ var email = $('.email').html()
 /* MD5 hash the email (for gravatar) */
 var md5 = $.md5(email)
 /* Generate Gravatar URL */
-var url = 'http://gravatar.com/avatar/' + md5;
+var url = 'https://secure.gravatar.com/avatar/' + md5;
 /* Generate Html Code for gravatar */
 var img = '<div id="gravatar"><img id="gravatar-image" style="display:none;" src="' + url + '?s=75&default=<?php echo $blankavatar; ?>"></div>'
 /* Inject HTML into addressdivbasic */
@@ -264,7 +264,7 @@ var email = $(".rcmContactAddress").attr("title");
 /* MD5 hash the email (for gravatar) */
 var md5 = $.md5(email)
 /* Generate Gravatar URL */
-var url = 'http://gravatar.com/avatar/' + md5;
+var url = 'https://secure.gravatar.com/avatar/' + md5;
 /* Generate HTML */
 var img = '<div id="gravatar"><img id="gravatar-image" style="display:none;" src="' + url + '?s=75&default=<?php echo $blankavatar; ?>"></div>'
 /* Inject HTML into messageheaderbox */ 
@@ -285,7 +285,7 @@ var email = $(".rcmContactAddress").attr("title");
 /* MD5 hash the email (for gravatar) */
 var md5 = $.md5(email)
 /* Generate Gravatar URL */
-var url = 'http://gravatar.com/avatar/' + md5;
+var url = 'https://secure.gravatar.com/avatar/' + md5;
 /* Generate HTML */
 var img = '<div id="gravatar-show-screen"><img id="gravatar-image-show-screen" src="' + url + '?s=75&default=<?php echo $blankavatar; ?>"></div>'
 /* Inject HTML */ 

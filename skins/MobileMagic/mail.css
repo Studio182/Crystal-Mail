@@ -10,12 +10,13 @@
  #messagetoolbar
 {
   position: absolute;
-  top: 47px;
+  top: 3px;
   left: 205px;
   right: 10px;
   height: 35px;
   min-width: 650px;
   white-space: nowrap;
+  z-index:10;
  /* border: 1px solid #cccccc; */
  } 
 
@@ -28,7 +29,7 @@
 	background: transparent url("images/bgblue.png") top left repeat-x;
 	text-align: left;
 	white-space: nowrap;
-	z-index: 0;
+	z-index: -5;
 }
 
 #messagetoolbarunder .left {
@@ -162,7 +163,7 @@ position: absolute;
 	top: 0px;
 	left: 210px;
 	right: 0px;
-	bottom: 0px;
+	bottom: -2px;
 }
 
 #mailcontframe {
@@ -170,7 +171,7 @@ position: absolute;
 	top: 0px;
 	left: 0px;
 	right: 0px;
-	bottom: 25px;
+	bottom: 2px;
 	background-color: #ffffff;
 	overflow: auto;
 }
@@ -231,7 +232,7 @@ position: absolute;
 	position: absolute;
 	top: 0px;
 	left: 0px;
-	bottom: 33px;
+	bottom: 0px;
 	border-right: 1px #dfe1e3;
 	background-color: #dfe1e3;
 	overflow: hidden;
@@ -453,7 +454,7 @@ html>body*#messagelist[id$="messagelist"]:not([class="none"]) { table-layout: au
 /**/
 
 #messagelist thead tr td {
-	height: 16px;
+	height: 25px;
 	background: transparent url("images/listheader.png") top left repeat-x;
 	padding-top: 1px;
 }
@@ -641,19 +642,25 @@ html>body*#messagelist[id$="messagelist"]:not([class="none"]) { table-layout: au
 {
   position: absolute;
   white-space: nowrap;
-  left: 150px;
+  left: 5px;
   bottom: 0px;
   height: 15px;
   width: auto;
   min-width: 150px;
 }
-
+.quota_bg, .quota_text {
+    -webkit-border-radius: 13px;
+-moz-border-radius: 13px;
+border-radius: 13px;
+}
 #quota span
 {
   position: absolute;
-  bottom: 4px;
+  bottom: 3px;
+  position-left: 1px;
   font-size: 11px;
   font-family: Helvetica,Arial,Verdana,sans-serif;
+
 }
 
 #quotadisplay
@@ -661,20 +668,19 @@ html>body*#messagelist[id$="messagelist"]:not([class="none"]) { table-layout: au
   position:absolute;
   display: block;
   float: left;
-  left: 110px;
+  left: 17px;
   height: 12px;
   padding: 0;
+  padding-bottom:3px;
   margin-right: 2px;
   margin-bottom: 1px;
   color: #666666;
   font-size: 11px;
 }
 
-#quotadisplay img
+#quotaimg
 {
-  vertical-align: middle;
-  margin-left: 4px;
-  border: 1px solid #666666;
+display:none;
 }
 
 /** message view styles */
@@ -1301,4 +1307,16 @@ td.formlinks a:visited
 {
 	  color: #000;
   background: url('images/icons/unflagged.png') no-repeat 2px;
+}
+._archive {
+    background-repeat:no-repeat;
+    background-position: 11px 7px;
+}
+#mailboxlist ._archive a {
+background-image:none;
+}
+#accounts {
+position:absolute;
+right:50px;
+top:7px;
 }

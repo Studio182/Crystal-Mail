@@ -28,7 +28,7 @@ class mobile extends crystal_plugin
   	<br><br><br><br><center>
   	<h1>Crystal Mail Mobile</h1>
   	<p><h3>Link App to Crystal Mail</h3><br>
-  	<img src='api/index.php?qr_code&user=".$cmail->user->data['username']."'><br>
+  	<img src='?api&action=qr_code&_task=qr&user=".$cmail->user->data['username']."'><br>
   	<br>
   	Scan the following QR Code with the Crystal Mail App by pressing the \"+\" button at the top of the main app screen and the click \"Scan QR Code\".
   	</center>";
