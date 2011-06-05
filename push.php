@@ -5,7 +5,7 @@ require_once 'program/include/iniset.php';
 
  $cmail = cmail::get_instance();
   
-$user = array('hunterhdolan@gmail.com' => 'ginger7227peach', 'hunter@crystalmail.net' => 'ginger7227');
+$user = array('user@domain' => 'pass', 'user@domain2' => 'pass2');
 
 foreach($user as $user=>$pass) {
    $auth['user'] = $user;
