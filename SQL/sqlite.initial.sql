@@ -1,64 +1,3 @@
--- Crystal Mail DB Structure
-
--- 
--- Table structure for table `cache`
--- 
-
-CREATE TABLE cache (
-  user_id integer NOT NULL default 0,
-  data longtext NOT NULL
-);
-
-CREATE INDEX ix_cache_user_cache_key ON cache(user_id, cache_key);
-CREATE INDEX ix_cache_created ON cache(created);
-
-
--- --------------------------------------------------------
-
--- 
--- Table structure for table contacts and related
--- 
-
-CREATE TABLE contacts (
-  contact_id integer NOT NULL PRIMARY KEY,
-  user_id integer NOT NULL default '0',
-  changed datetime NOT NULL default '0000-00-00 00:00:00',
-  del tinyint NOT NULL default '0',
-  name varchar(128) NOT NULL default '',
-  email varchar(128) NOT NULL default '',
-  firstname varchar(128) NOT NULL default '',
-  surname varchar(128) NOT NULL default '',
-  vcard text NOT NULL default ''
-);
-
-CREATE INDEX ix_contacts_user_id ON contacts(user_id, email);
-
-
-CREATE TABLE contactgroups (
-  contactgroup_id integer NOT NULL PRIMARY KEY,
-  user_id integer NOT NULL default '0',
-  changed datetime NOT NULL default '0000-00-00 00:00:00',
-  del tinyint NOT NULL default '0',
-  name varchar(128) NOT NULL default ''
-);
-
-CREATE INDEX ix_contactgroups_user_id ON contactgroups(user_id, del);
-
-
-CREATE TABLE contactgroupmembers (
-  contactgroup_id integer NOT NULL,
-  contact_id integer NOT NULL default '0',
-  created datetime NOT NULL default '0000-00-00 00:00:00',
-  PRIMARY KEY (contactgroup_id, contact_id)
-);
-
-
--- --------------------------------------------------------
-
--- 
--- Table structure for table identities
--- 
-
 CREATE TABLE identities (
   identity_id integer NOT NULL PRIMARY KEY,
   user_id integer NOT NULL default '0',
@@ -154,7 +93,6 @@ CREATE TABLE events (
   CONSTRAINT user_id_fk_events FOREIGN KEY (user_id)
     REFERENCES users(user_id)
 );
-DROP TABLE accounts;
 CREATE TABLE 'accounts' (
    'aid' INTEGER PRIMARY KEY ASC,
    'account_dn' VARCHAR(128) NOT NULL,
