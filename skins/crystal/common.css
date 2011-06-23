@@ -130,7 +130,7 @@ img
 #mainscreen
 {
   position: absolute;
-  top: 85px;
+  top: 57px;
   right: 10px;
   bottom: 10px;
   left: 10px;
@@ -161,10 +161,25 @@ color: #111;
 {
   position: absolute;
   top: 0px;
+  left: 5px;
   right: 0px;
   height: 24px;
-  width: 100%;
-  padding: 5px 4px 5px 0px;
+  width: auto;
+  padding: 15px 4px 5px 0px;
+  text-align: left;
+  white-space: nowrap;
+  z-index: 2;
+  color: #666;
+}
+
+#taskbar .right
+{
+  position: absolute;
+  top: 0px;
+  right: 5px;
+  height: 24px;
+  width: auto;
+  padding: 15px 4px 5px 0px;
   text-align: right;
   white-space: nowrap;
   z-index: 2;
@@ -513,8 +528,8 @@ table.records-table tr.unfocused td
 #quicksearchbar
 {
   position: absolute;
-  top: 40px;
-  right: 20px;
+  top: 14px;
+  right: 60px;
   width: 182px;
   height: 20px;
   padding-top: 3px;
