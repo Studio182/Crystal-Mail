@@ -1,6 +1,13 @@
 
-
 h1. Crystal Mail :: Readme
+
+h2. Crystal Mail EOL
+
+The Studio 182 Team has been disolved and Crystal Mail is no longer maintained.
+
+We would all like to thank our users and beta testers.
+
+- "Hunter Dolan":http://madebyhd.us/, "Chris Jones":http://mrchrisjones.com, "Pablo Merino":http://pmerino.me/, "Seb Jachec":http://sebj.me/
 
 h2. Introduction
 
